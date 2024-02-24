@@ -1,0 +1,30 @@
+quit -sim
+
+if ![info exists QUARTUS_INSTALL_DIR] {
+  set QUARTUS_INSTALL_DIR "c:/intelFPGA_lite/22.1std/quartus/"
+}
+
+if ![info exists PRJ_DIR] {
+  set PRJ_DIR "d:/programming/Ethernet/"
+}
+
+global QUARTUS_INSTALL_DIR
+global PRJ_DIR
+
+cd "$PRJ_DIR/sim"
+vlib work
+vmap work work
+
+vlog ../tb/ethernet/tb_ethernet_receiver.v
+
+vlog ../tb/ethernet/tb_ethernet_fake_data_transmitter_controller.v
+vlog ../tb/ethernet/tb_ethernet_fake_data_transmitter.v
+vlog ../tb/ethernet/tb_ethernet_header_receiver.v
+vlog ../tb/ethernet/tb_preambule_validity.v
+vlog ../tb/ethernet/tb_crc_icmp_calc.v
+vlog ../tb/ethernet/tb_crc_arp_calc.v
+vlog ../tb/ethernet/crc_calc.v
+
+vsim -voptargs=+acc work.tb_ethernet_receiver
+
+run -all

@@ -1,0 +1,403 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Mon Feb 19 19:08:48 2024
+# Process ID: 3912
+# Current directory: C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.runs/synth_1
+# Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file: C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.runs/synth_1/top.vds
+# Journal file: C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source top.tcl -notrace
+Command: synth_design -top top -part xczu9eg-ffvb1156-3-e
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu9eg'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu9eg'
+INFO: [Device 21-403] Loading part xczu9eg-ffvb1156-3-e
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 10048 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1555.820 ; gain = 63.672
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/top.v:1]
+INFO: [Synth 8-6157] synthesizing module 'clock_generator' [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/clock_generator.v:1]
+INFO: [Synth 8-6157] synthesizing module 'IBUFDS' [E:/KhudyakovInstalledProgramms/Vivado/2019.2/scripts/rt/data/unisim_comp.v:32952]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter DIFF_TERM bound to: FALSE - type: string 
+	Parameter DQS_BIAS bound to: FALSE - type: string 
+	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
+	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
+	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
+	Parameter IOSTANDARD bound to: LVDS_25 - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'IBUFDS' (1#1) [E:/KhudyakovInstalledProgramms/Vivado/2019.2/scripts/rt/data/unisim_comp.v:32952]
+WARNING: [Synth 8-3848] Net o_CLK_74_25 in module/entity clock_generator does not have driver. [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/clock_generator.v:8]
+WARNING: [Synth 8-3848] Net o_CLK_125 in module/entity clock_generator does not have driver. [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/clock_generator.v:9]
+WARNING: [Synth 8-3848] Net o_CLK_156_25 in module/entity clock_generator does not have driver. [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/clock_generator.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'clock_generator' (2#1) [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/clock_generator.v:1]
+INFO: [Synth 8-6157] synthesizing module 'ethernet' [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/new/ethernet.v:1]
+INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller' [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.runs/synth_1/.Xil/Vivado-3912-VN-021-1297/realtime/axi4_stream_sfp_ethernet_controller_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller' (3#1) [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.runs/synth_1/.Xil/Vivado-3912-VN-021-1297/realtime/axi4_stream_sfp_ethernet_controller_stub.v:6]
+WARNING: [Synth 8-7023] instance 'axi4_stream_sfp_ethernet_controller_inst' of module 'axi4_stream_sfp_ethernet_controller' has 137 connections declared, but only 112 given [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/new/ethernet.v:62]
+WARNING: [Synth 8-5788] Register prev_rx_valid_reg in module ethernet is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/new/ethernet.v:35]
+WARNING: [Synth 8-3848] Net ctl_tx_enable_0 in module/entity ethernet does not have driver. [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/new/ethernet.v:56]
+WARNING: [Synth 8-3848] Net i_CLK_156_25 in module/entity ethernet does not have driver. [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/new/ethernet.v:69]
+WARNING: [Synth 8-3848] Net ctl_rx_enable_0 in module/entity ethernet does not have driver. [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/new/ethernet.v:26]
+WARNING: [Synth 8-3848] Net tx_axis_tvalid_0 in module/entity ethernet does not have driver. [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/new/ethernet.v:49]
+WARNING: [Synth 8-3848] Net tx_axis_tdata_0 in module/entity ethernet does not have driver. [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/new/ethernet.v:50]
+WARNING: [Synth 8-3848] Net tx_axis_tlast_0 in module/entity ethernet does not have driver. [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/new/ethernet.v:51]
+WARNING: [Synth 8-3848] Net tx_axis_tkeep_0 in module/entity ethernet does not have driver. [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/new/ethernet.v:52]
+WARNING: [Synth 8-3848] Net tx_axis_tuser_0 in module/entity ethernet does not have driver. [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/new/ethernet.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'ethernet' (4#1) [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/new/ethernet.v:1]
+INFO: [Synth 8-6157] synthesizing module 'status_led_control' [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/status_led_control.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'status_led_control' (5#1) [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/status_led_control.v:1]
+WARNING: [Synth 8-3848] Net o_ethernet_tx_clock in module/entity top does not have driver. [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/top.v:20]
+WARNING: [Synth 8-3848] Net o_ethernet_tx_d in module/entity top does not have driver. [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/top.v:22]
+WARNING: [Synth 8-3848] Net o_ethernet_tx_ctrl in module/entity top does not have driver. [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/top.v:24]
+WARNING: [Synth 8-3848] Net o_ethernet_mdc in module/entity top does not have driver. [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/top.v:34]
+WARNING: [Synth 8-3848] Net o_ethernet_mdio in module/entity top does not have driver. [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/top.v:36]
+WARNING: [Synth 8-3848] Net o_rt_tx_p in module/entity top does not have driver. [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/top.v:43]
+WARNING: [Synth 8-3848] Net o_rt_tx_n in module/entity top does not have driver. [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/top.v:45]
+WARNING: [Synth 8-3848] Net o_rt_tx_disable in module/entity top does not have driver. [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/top.v:51]
+WARNING: [Synth 8-3848] Net o_rl_tx_p in module/entity top does not have driver. [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/top.v:54]
+WARNING: [Synth 8-3848] Net o_rl_tx_n in module/entity top does not have driver. [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/top.v:56]
+WARNING: [Synth 8-3848] Net o_rl_tx_disable in module/entity top does not have driver. [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/top.v:62]
+WARNING: [Synth 8-3848] Net o_lt_tx_p in module/entity top does not have driver. [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/top.v:65]
+WARNING: [Synth 8-3848] Net o_lt_tx_n in module/entity top does not have driver. [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/top.v:67]
+WARNING: [Synth 8-3848] Net o_lt_tx_disable in module/entity top does not have driver. [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/top.v:73]
+WARNING: [Synth 8-3848] Net global_reset in module/entity top does not have driver. [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/top.v:121]
+INFO: [Synth 8-6155] done synthesizing module 'top' (6#1) [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/top.v:1]
+WARNING: [Synth 8-3331] design clock_generator has unconnected port o_CLK_74_25
+WARNING: [Synth 8-3331] design clock_generator has unconnected port o_CLK_125
+WARNING: [Synth 8-3331] design clock_generator has unconnected port o_CLK_156_25
+WARNING: [Synth 8-3331] design top has unconnected port o_ethernet_tx_clock
+WARNING: [Synth 8-3331] design top has unconnected port o_ethernet_tx_d[3]
+WARNING: [Synth 8-3331] design top has unconnected port o_ethernet_tx_d[2]
+WARNING: [Synth 8-3331] design top has unconnected port o_ethernet_tx_d[1]
+WARNING: [Synth 8-3331] design top has unconnected port o_ethernet_tx_d[0]
+WARNING: [Synth 8-3331] design top has unconnected port o_ethernet_tx_ctrl
+WARNING: [Synth 8-3331] design top has unconnected port o_ethernet_mdc
+WARNING: [Synth 8-3331] design top has unconnected port o_ethernet_mdio
+WARNING: [Synth 8-3331] design top has unconnected port o_rt_tx_p
+WARNING: [Synth 8-3331] design top has unconnected port o_rt_tx_n
+WARNING: [Synth 8-3331] design top has unconnected port o_rt_tx_disable
+WARNING: [Synth 8-3331] design top has unconnected port o_rl_tx_p
+WARNING: [Synth 8-3331] design top has unconnected port o_rl_tx_n
+WARNING: [Synth 8-3331] design top has unconnected port o_rl_tx_disable
+WARNING: [Synth 8-3331] design top has unconnected port o_lt_tx_p
+WARNING: [Synth 8-3331] design top has unconnected port o_lt_tx_n
+WARNING: [Synth 8-3331] design top has unconnected port o_lt_tx_disable
+WARNING: [Synth 8-3331] design top has unconnected port i_ethernet_rx_clock
+WARNING: [Synth 8-3331] design top has unconnected port i_ethernet_rx_d[3]
+WARNING: [Synth 8-3331] design top has unconnected port i_ethernet_rx_d[2]
+WARNING: [Synth 8-3331] design top has unconnected port i_ethernet_rx_d[1]
+WARNING: [Synth 8-3331] design top has unconnected port i_ethernet_rx_d[0]
+WARNING: [Synth 8-3331] design top has unconnected port i_ethernet_rx_ctrl
+WARNING: [Synth 8-3331] design top has unconnected port i_rt_rx_p
+WARNING: [Synth 8-3331] design top has unconnected port i_rt_rx_n
+WARNING: [Synth 8-3331] design top has unconnected port i_rl_rx_p
+WARNING: [Synth 8-3331] design top has unconnected port i_rl_rx_n
+WARNING: [Synth 8-3331] design top has unconnected port i_lt_rx_p
+WARNING: [Synth 8-3331] design top has unconnected port i_lt_rx_n
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1631.504 ; gain = 139.355
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1636.750 ; gain = 144.602
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1636.750 ; gain = 144.602
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1648.805 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 3 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_in_context.xdc] for cell 'ethernet_inst/axi4_stream_sfp_ethernet_controller_inst'
+Finished Parsing XDC File [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_in_context.xdc] for cell 'ethernet_inst/axi4_stream_sfp_ethernet_controller_inst'
+Parsing XDC File [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/dbg/constraints.xdc]
+Finished Parsing XDC File [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/dbg/constraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/dbg/constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1725.359 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 3 instances were transformed.
+  IBUFDS => IBUFDS (DIFFINBUF, IBUFCTRL): 3 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1725.359 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1725.359 ; gain = 233.211
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu9eg-ffvb1156-3-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1725.359 ; gain = 233.211
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for i_CLK_156_25_N. (constraint file  c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_in_context.xdc, line 5).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for i_CLK_156_25_N. (constraint file  c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_in_context.xdc, line 6).
+Applied set_property IO_BUFFER_TYPE = NONE for i_CLK_156_25_P. (constraint file  c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_in_context.xdc, line 7).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for i_CLK_156_25_P. (constraint file  c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_in_context.xdc, line 8).
+Applied set_property IO_BUFFER_TYPE = NONE for i_ll_rx_n. (constraint file  c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_in_context.xdc, line 9).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for i_ll_rx_n. (constraint file  c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_in_context.xdc, line 10).
+Applied set_property IO_BUFFER_TYPE = NONE for i_ll_rx_p. (constraint file  c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_in_context.xdc, line 11).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for i_ll_rx_p. (constraint file  c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_in_context.xdc, line 12).
+Applied set_property IO_BUFFER_TYPE = NONE for o_ll_tx_n. (constraint file  c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_in_context.xdc, line 13).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for o_ll_tx_n. (constraint file  c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_in_context.xdc, line 14).
+Applied set_property IO_BUFFER_TYPE = NONE for o_ll_tx_p. (constraint file  c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_in_context.xdc, line 15).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for o_ll_tx_p. (constraint file  c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_in_context.xdc, line 16).
+Applied set_property DONT_TOUCH = true for ethernet_inst/axi4_stream_sfp_ethernet_controller_inst. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1725.359 ; gain = 233.211
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1725.359 ; gain = 233.211
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     26 Bit       Adders := 1     
++---Registers : 
+	               26 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     26 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module ethernet 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 2     
+Module status_led_control 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     26 Bit       Adders := 1     
++---Registers : 
+	               26 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     26 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2520 (col length:168)
+BRAMs: 1824 (col length: RAMB18 168 RAMB36 84)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design top has unconnected port o_ethernet_tx_clock
+WARNING: [Synth 8-3331] design top has unconnected port o_ethernet_tx_d[3]
+WARNING: [Synth 8-3331] design top has unconnected port o_ethernet_tx_d[2]
+WARNING: [Synth 8-3331] design top has unconnected port o_ethernet_tx_d[1]
+WARNING: [Synth 8-3331] design top has unconnected port o_ethernet_tx_d[0]
+WARNING: [Synth 8-3331] design top has unconnected port o_ethernet_tx_ctrl
+WARNING: [Synth 8-3331] design top has unconnected port o_ethernet_mdc
+WARNING: [Synth 8-3331] design top has unconnected port o_ethernet_mdio
+WARNING: [Synth 8-3331] design top has unconnected port o_rt_tx_p
+WARNING: [Synth 8-3331] design top has unconnected port o_rt_tx_n
+WARNING: [Synth 8-3331] design top has unconnected port o_rt_tx_disable
+WARNING: [Synth 8-3331] design top has unconnected port o_rl_tx_p
+WARNING: [Synth 8-3331] design top has unconnected port o_rl_tx_n
+WARNING: [Synth 8-3331] design top has unconnected port o_rl_tx_disable
+WARNING: [Synth 8-3331] design top has unconnected port o_lt_tx_p
+WARNING: [Synth 8-3331] design top has unconnected port o_lt_tx_n
+WARNING: [Synth 8-3331] design top has unconnected port o_lt_tx_disable
+WARNING: [Synth 8-3331] design top has unconnected port i_ethernet_rx_clock
+WARNING: [Synth 8-3331] design top has unconnected port i_ethernet_rx_d[3]
+WARNING: [Synth 8-3331] design top has unconnected port i_ethernet_rx_d[2]
+WARNING: [Synth 8-3331] design top has unconnected port i_ethernet_rx_d[1]
+WARNING: [Synth 8-3331] design top has unconnected port i_ethernet_rx_d[0]
+WARNING: [Synth 8-3331] design top has unconnected port i_ethernet_rx_ctrl
+WARNING: [Synth 8-3331] design top has unconnected port i_rt_rx_p
+WARNING: [Synth 8-3331] design top has unconnected port i_rt_rx_n
+WARNING: [Synth 8-3331] design top has unconnected port i_rl_rx_p
+WARNING: [Synth 8-3331] design top has unconnected port i_rl_rx_n
+WARNING: [Synth 8-3331] design top has unconnected port i_lt_rx_p
+WARNING: [Synth 8-3331] design top has unconnected port i_lt_rx_n
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1725.359 ; gain = 233.211
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2322.652 ; gain = 830.504
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2322.727 ; gain = 830.578
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2332.758 ; gain = 840.609
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin ctl_rx_enable_0
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tvalid_0
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[63]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[62]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[61]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[60]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[59]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[58]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[57]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[56]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[55]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[54]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[53]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[52]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[51]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[50]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[49]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[48]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[47]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[46]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[45]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[44]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[43]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[42]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[41]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[40]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[39]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[38]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[37]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[36]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[35]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[34]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[33]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[32]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[31]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[30]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[29]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[28]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[27]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[26]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[25]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[24]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[23]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[22]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[21]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[20]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[19]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[18]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[17]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[16]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[15]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[14]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[13]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[12]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[11]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[10]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[9]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[8]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[7]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[6]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[5]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[4]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[3]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[2]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[1]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tdata_0[0]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tlast_0
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tkeep_0[7]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tkeep_0[6]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tkeep_0[5]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tkeep_0[4]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tkeep_0[3]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tkeep_0[2]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tkeep_0[1]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tkeep_0[0]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tuser_0
+ERROR: [Synth 8-5535] port <i_CLK_156_25_P> has illegal connections. It is illegal to have a port connected to an input buffer and other components. The following are the port connections :
+Input Buffer:
+	Port I of instance \clock_generator_inst/IBUFDS_clk_156_25 (IBUFDS) in module <top>
+Other Components:
+	Port gt_refclk_p[0] of instance \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst (axi4_stream_sfp_ethernet_controller) in module top
+
+ERROR: [Synth 8-2918] Failing due to illegal port connections
+ERROR: synthesis optimization failed, fatal insert_io failure.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 2347.570 ; gain = 766.813
+INFO: [Common 17-83] Releasing license: Synthesis
+21 Infos, 89 Warnings, 76 Critical Warnings and 3 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Vivado Synthesis failed
+INFO: [Common 17-206] Exiting Vivado at Mon Feb 19 19:09:29 2024...
