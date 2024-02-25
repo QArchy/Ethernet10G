@@ -18,7 +18,7 @@ proc create_report { reportName command } {
   }
 }
 set_param power.BramSDPPropagationFix 1
-set_param chipscope.maxJobs 2
+set_param chipscope.maxJobs 1
 set_param power.enableUnconnectedCarry8PinPower 1
 set_param power.enableCarry8RouteBelPower 1
 set_param power.enableLutRouteBelPower 1
@@ -37,26 +37,26 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.cache/wt [current_project]
-set_property parent.project_path C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.xpr [current_project]
+set_property webtalk.parent_dir D:/programming/RLCBC_BROD/project/Ethernet10G.cache/wt [current_project]
+set_property parent.project_path D:/programming/RLCBC_BROD/project/Ethernet10G.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.cache/ip [current_project]
+set_property ip_output_repo d:/programming/RLCBC_BROD/project/Ethernet10G.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
-  C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/clock_generator.v
-  C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/new/ethernet.v
-  C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/status_led_control.v
-  C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/top.v
+  D:/programming/RLCBC_BROD/project/rtl/clock_generator.v
+  D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v
+  D:/programming/RLCBC_BROD/project/rtl/status_led_control.v
+  D:/programming/RLCBC_BROD/project/rtl/top.v
 }
-read_ip -quiet C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller.xci
-set_property used_in_implementation false [get_files -all c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/synth/axi4_stream_sfp_ethernet_controller_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/synth/axi4_stream_sfp_ethernet_controller.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/synth/axi4_stream_sfp_ethernet_controller_exceptions.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/synth/axi4_stream_sfp_ethernet_controller_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/synth/axi4_stream_sfp_ethernet_controller_gt_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/synth/axi4_stream_sfp_ethernet_controller_gt.xdc]
+read_ip -quiet D:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller.xci
+set_property used_in_implementation false [get_files -all d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/synth/axi4_stream_sfp_ethernet_controller_gt_ooc.xdc]
+set_property used_in_implementation false [get_files -all d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/synth/axi4_stream_sfp_ethernet_controller_gt.xdc]
+set_property used_in_implementation false [get_files -all d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/synth/axi4_stream_sfp_ethernet_controller_board.xdc]
+set_property used_in_implementation false [get_files -all d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/synth/axi4_stream_sfp_ethernet_controller.xdc]
+set_property used_in_implementation false [get_files -all d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/synth/axi4_stream_sfp_ethernet_controller_exceptions.xdc]
+set_property used_in_implementation false [get_files -all d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/synth/axi4_stream_sfp_ethernet_controller_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -66,8 +66,8 @@ set_property used_in_implementation false [get_files -all c:/Users/hudyakovas/De
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/dbg/constraints.xdc
-set_property used_in_implementation false [get_files C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/dbg/constraints.xdc]
+read_xdc D:/programming/RLCBC_BROD/dbg/constraints.xdc
+set_property used_in_implementation false [get_files D:/programming/RLCBC_BROD/dbg/constraints.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
