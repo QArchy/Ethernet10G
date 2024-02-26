@@ -1,0 +1,198 @@
+quit -sim
+
+if ![info exists QUARTUS_INSTALL_DIR] {
+  set QUARTUS_INSTALL_DIR "C:/intelFPGA/17.1/quartus"
+}
+
+if ![info exists PRJ_DIR] {
+  set PRJ_DIR "c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD"
+}
+
+global QUARTUS_INSTALL_DIR
+global PRJ_DIR
+
+cd "$PRJ_DIR/sim"
+vlib work
+vmap work work
+
+vlog ../tb/ethernet_64_bit_serial_for_axi/tb_ethernet_top.v
+
+vlog ../tb/ethernet_64_bit_serial_for_axi/tb_ethernet_fake_transmitter.v
+
+vlog ../tb/ethernet_64_bit_serial_for_axi/ethernet_receiver_lib/tb_ethernet_receiver.v
+vlog ../tb/ethernet_64_bit_serial_for_axi/ethernet_receiver_lib/tb_ethernet_header_receiver.v
+
+vsim -voptargs=+acc work.tb_ethernet_top
+
+add wave -position insertpoint  \
+sim:/tb_ethernet_top/DSCP \
+sim:/tb_ethernet_top/DSCP_r \
+sim:/tb_ethernet_top/DST_PORT \
+sim:/tb_ethernet_top/DST_PORT_r \
+sim:/tb_ethernet_top/ECN \
+sim:/tb_ethernet_top/ECN_r \
+sim:/tb_ethernet_top/FPGA_IP \
+sim:/tb_ethernet_top/FPGA_MAC \
+sim:/tb_ethernet_top/HLEN \
+sim:/tb_ethernet_top/HLEN_r \
+sim:/tb_ethernet_top/HTYPE \
+sim:/tb_ethernet_top/HTYPE_r \
+sim:/tb_ethernet_top/IHL \
+sim:/tb_ethernet_top/IHL_r \
+sim:/tb_ethernet_top/IP_DST \
+sim:/tb_ethernet_top/IP_DST_r \
+sim:/tb_ethernet_top/IP_SRC \
+sim:/tb_ethernet_top/IP_SRC_r \
+sim:/tb_ethernet_top/MAC_DST \
+sim:/tb_ethernet_top/MAC_DST_r \
+sim:/tb_ethernet_top/MAC_SRC \
+sim:/tb_ethernet_top/MAC_SRC_r \
+sim:/tb_ethernet_top/OPER \
+sim:/tb_ethernet_top/OPER_r \
+sim:/tb_ethernet_top/PLEN \
+sim:/tb_ethernet_top/PLEN_r \
+sim:/tb_ethernet_top/PTYPE \
+sim:/tb_ethernet_top/PTYPE_r \
+sim:/tb_ethernet_top/SHA \
+sim:/tb_ethernet_top/SHA_r \
+sim:/tb_ethernet_top/SPA \
+sim:/tb_ethernet_top/SPA_r \
+sim:/tb_ethernet_top/SRC_PORT \
+sim:/tb_ethernet_top/SRC_PORT_r \
+sim:/tb_ethernet_top/THA \
+sim:/tb_ethernet_top/THA_r \
+sim:/tb_ethernet_top/TPA \
+sim:/tb_ethernet_top/TPA_r \
+sim:/tb_ethernet_top/arp_valid \
+sim:/tb_ethernet_top/arp_valid_r \
+sim:/tb_ethernet_top/code \
+sim:/tb_ethernet_top/code_r \
+sim:/tb_ethernet_top/data_head_frame_payload \
+sim:/tb_ethernet_top/data_head_frame_payload_keep \
+sim:/tb_ethernet_top/data_head_frame_payload_keep_r \
+sim:/tb_ethernet_top/data_head_frame_payload_r \
+sim:/tb_ethernet_top/data_head_frame_payload_valid \
+sim:/tb_ethernet_top/data_head_frame_payload_valid_r \
+sim:/tb_ethernet_top/eth_tp \
+sim:/tb_ethernet_top/eth_tp_r \
+sim:/tb_ethernet_top/flags \
+sim:/tb_ethernet_top/flags_r \
+sim:/tb_ethernet_top/fragment_offset \
+sim:/tb_ethernet_top/fragment_offset_r \
+sim:/tb_ethernet_top/header_checksum \
+sim:/tb_ethernet_top/header_checksum_r \
+sim:/tb_ethernet_top/header_data \
+sim:/tb_ethernet_top/header_data_r \
+sim:/tb_ethernet_top/i_clk \
+sim:/tb_ethernet_top/i_reset \
+sim:/tb_ethernet_top/icmp_header_checksum \
+sim:/tb_ethernet_top/icmp_header_checksum_r \
+sim:/tb_ethernet_top/icmp_valid \
+sim:/tb_ethernet_top/icmp_valid_r \
+sim:/tb_ethernet_top/identification \
+sim:/tb_ethernet_top/identification_r \
+sim:/tb_ethernet_top/length \
+sim:/tb_ethernet_top/length_r \
+sim:/tb_ethernet_top/protocol \
+sim:/tb_ethernet_top/protocol_r \
+sim:/tb_ethernet_top/rx_axis_tdata \
+sim:/tb_ethernet_top/rx_axis_tkeep \
+sim:/tb_ethernet_top/rx_axis_tlast \
+sim:/tb_ethernet_top/rx_axis_tvalid \
+sim:/tb_ethernet_top/tot_len \
+sim:/tb_ethernet_top/tot_len_r \
+sim:/tb_ethernet_top/ttl \
+sim:/tb_ethernet_top/ttl_r \
+sim:/tb_ethernet_top/type_of_message \
+sim:/tb_ethernet_top/type_of_message_r \
+sim:/tb_ethernet_top/udp_header_checksum \
+sim:/tb_ethernet_top/udp_header_checksum_r \
+sim:/tb_ethernet_top/udp_valid \
+sim:/tb_ethernet_top/udp_valid_r \
+sim:/tb_ethernet_top/version \
+sim:/tb_ethernet_top/version_r
+add wave -position insertpoint  \
+sim:/tb_ethernet_top/tb_ethernet_fake_transmitter_inst/arp_request \
+sim:/tb_ethernet_top/tb_ethernet_fake_transmitter_inst/arp_request_counter \
+sim:/tb_ethernet_top/tb_ethernet_fake_transmitter_inst/arp_request_data_bytes \
+sim:/tb_ethernet_top/tb_ethernet_fake_transmitter_inst/i_clk \
+sim:/tb_ethernet_top/tb_ethernet_fake_transmitter_inst/i_reset \
+sim:/tb_ethernet_top/tb_ethernet_fake_transmitter_inst/icmp_request \
+sim:/tb_ethernet_top/tb_ethernet_fake_transmitter_inst/icmp_request_counter \
+sim:/tb_ethernet_top/tb_ethernet_fake_transmitter_inst/icmp_request_data_bytes \
+sim:/tb_ethernet_top/tb_ethernet_fake_transmitter_inst/init \
+sim:/tb_ethernet_top/tb_ethernet_fake_transmitter_inst/msg_type \
+sim:/tb_ethernet_top/tb_ethernet_fake_transmitter_inst/o_tx_axis_tdata \
+sim:/tb_ethernet_top/tb_ethernet_fake_transmitter_inst/o_tx_axis_tkeep \
+sim:/tb_ethernet_top/tb_ethernet_fake_transmitter_inst/o_tx_axis_tlast \
+sim:/tb_ethernet_top/tb_ethernet_fake_transmitter_inst/o_tx_axis_tvalid \
+sim:/tb_ethernet_top/tb_ethernet_fake_transmitter_inst/start_send \
+sim:/tb_ethernet_top/tb_ethernet_fake_transmitter_inst/udp_request \
+sim:/tb_ethernet_top/tb_ethernet_fake_transmitter_inst/udp_request_counter \
+sim:/tb_ethernet_top/tb_ethernet_fake_transmitter_inst/udp_request_data_bytes
+add wave -position insertpoint  \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/FPGA_IP \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/FPGA_MAC \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/data_head \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/i_clk \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/i_reset \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/i_rx_axis_tdata \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/i_rx_axis_tkeep \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/i_rx_axis_tlast \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/i_rx_axis_tvalid \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_DSCP \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_DST_PORT \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_ECN \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_HLEN \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_HTYPE \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_IHL \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_IP_DST \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_IP_SRC \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_MAC_DST \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_MAC_SRC \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_OPER \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_PLEN \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_PTYPE \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_SHA \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_SPA \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_SRC_PORT \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_THA \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_TPA \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_arp_valid \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_code \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_data_head_frame_payload \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_data_head_frame_payload_keep \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_data_head_frame_payload_valid \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_eth_tp \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_flags \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_fragment_offset \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_header_checksum \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_header_data \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_icmp_header_checksum \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_icmp_valid \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_identification \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_length \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_protocol \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_tot_len \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_ttl \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_type_of_message \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_udp_header_checksum \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_udp_valid \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/o_version
+add wave -position insertpoint  \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/tb_ethernet_header_receiver_inst/enable \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/tb_ethernet_header_receiver_inst/head_counter \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/tb_ethernet_header_receiver_inst/i_clk \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/tb_ethernet_header_receiver_inst/i_reset \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/tb_ethernet_header_receiver_inst/i_rx_axis_tdata \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/tb_ethernet_header_receiver_inst/i_rx_axis_tkeep \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/tb_ethernet_header_receiver_inst/i_rx_axis_tlast \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/tb_ethernet_header_receiver_inst/i_rx_axis_tvalid \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/tb_ethernet_header_receiver_inst/o_data_head \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/tb_ethernet_header_receiver_inst/o_data_head_frame_payload \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/tb_ethernet_header_receiver_inst/o_data_head_frame_payload_keep \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/tb_ethernet_header_receiver_inst/o_data_head_frame_payload_valid \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/tb_ethernet_header_receiver_inst/rx_axis_tvalid_posedge \
+sim:/tb_ethernet_top/tb_ethernet_receiver_inst/tb_ethernet_header_receiver_inst/rx_axis_tvalid_prev
+
+run -all

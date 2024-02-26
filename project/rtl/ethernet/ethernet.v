@@ -216,8 +216,8 @@ module ethernet(
 			ctl_rx_enable					<= 1;                
 			ctl_rx_delete_fcs				<= 1;            
 			ctl_rx_ignore_fcs				<= 0;            
-			ctl_rx_max_packet_len			<= 14'b01111111111111; 
-			ctl_rx_min_packet_len			<= 8'd64;  
+			ctl_rx_max_packet_len			<= 14'b00010111000000; // 1472 - max UDP packe lenght
+			ctl_rx_min_packet_len			<= 8'd4; // min packet lenght = arp request length (42 bits)
 			ctl_rx_custom_preamble_enable	<= 0;
 			ctl_rx_check_sfd				<= 0;             
 			ctl_rx_check_preamble			<= 0;        
@@ -231,8 +231,8 @@ module ethernet(
 				ctl_rx_enable					<= 1;
 				ctl_rx_delete_fcs				<= 1;
 				ctl_rx_ignore_fcs				<= 0;
-				ctl_rx_max_packet_len			<= 14'b01111111111111;
-				ctl_rx_min_packet_len			<= 8'd64;
+				ctl_rx_max_packet_len			<= 14'b00010111000000;
+				ctl_rx_min_packet_len			<= 8'd4;
 				ctl_rx_custom_preamble_enable	<= 0;
 				ctl_rx_check_sfd				<= 0;
 				ctl_rx_check_preamble			<= 0;
@@ -267,7 +267,7 @@ module ethernet(
     axi4_stream_sfp_ethernet_controller axi4_stream_sfp_ethernet_controller_inst(
              //// GT_0 Signals
         .gt_rxp_in_0(gt_rxp_in),                    							//	GT rx in   							//  input  wire gt_rxp_in_0;  
-        .gt_rxn_in_0(gt_rxn_in),                    							//	GT rx in    							//  input  wire gt_rxn_in_0;  
+        .gt_rxn_in_0(gt_rxn_in),                    							//	GT rx in    						//  input  wire gt_rxn_in_0;  
         .gt_txp_out_0(gt_txp_out),                       						//	GT tx out							//  output wire gt_txp_out_0; 
         .gt_txn_out_0(gt_txn_out),                       						//	GT tx out							//  output wire gt_txn_out_0; 
         .tx_clk_out_0(tx_clk_out),                    							//	TX clocking							//  output wire tx_clk_out_0; 
@@ -325,7 +325,8 @@ module ethernet(
         .stat_rx_jabber_0(stat_rx_jabber),                            			//  output wire stat_rx_jabber_0;                    
         .stat_rx_packet_large_0(stat_rx_packet_large),                      	//  output wire stat_rx_packet_large_0;              
         .stat_rx_oversize_0(stat_rx_oversize),                          		//  output wire stat_rx_oversize_0;                  
-        .stat_rx_undersize_0(stat_rx_undersize),                         		//  output wire stat_rx_undersize_0;                 
+        .stat_rx_undersize_0(stat_rx_undersize),                         		//  output wire stat_rx_undersize_0;
+                                                                                //  Packet shorter than ctl_rx_min_packet_len with good FCS    
         .stat_rx_toolong_0(stat_rx_toolong),                           			//  output wire stat_rx_toolong_0;                   
         .stat_rx_fragment_0(stat_rx_fragment),                          		//  output wire stat_rx_fragment_0;                  
         .stat_rx_packet_64_bytes_0(stat_rx_packet_64_bytes),                  	//  output wire stat_rx_packet_64_bytes_0;           

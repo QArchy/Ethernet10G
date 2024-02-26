@@ -2,15 +2,14 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Sun Feb 25 17:16:09 2024
-# Process ID: 12964
-# Current directory: D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1
+# Start of session at: Mon Feb 26 08:30:21 2024
+# Process ID: 6332
+# Current directory: C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
-# Log file: D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1/top.vds
-# Journal file: D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1\vivado.jou
+# Log file: C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.runs/synth_1/top.vds
+# Journal file: C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source top.tcl -notrace
-create_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 449.668 ; gain = 157.441
 Command: synth_design -top top -part xczu9eg-ffvb1156-3-e
 Starting synth_design
 INFO: [IP_Flow 19-5177] IP axi4_stream_sfp_ethernet_controller will be generated with higher license level.
@@ -18,21 +17,21 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xczu9eg'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu9eg'
 INFO: [Device 21-403] Loading part xczu9eg-ffvb1156-3-e
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 10508 
-WARNING: [Synth 8-2507] parameter declaration becomes local in xxv_ethernet_v3_1_0_cl73autoneg_an_pcontrol with formal parameter declaration list [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/hdl/xxv_ethernet_v3_1_vl_rfs.sv:186323]
-WARNING: [Synth 8-2507] parameter declaration becomes local in xxv_ethernet_v3_1_0_cl73autoneg_an_pcontrol with formal parameter declaration list [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/hdl/xxv_ethernet_v3_1_vl_rfs.sv:186345]
-WARNING: [Synth 8-2507] parameter declaration becomes local in xxv_ethernet_v3_1_0_cl73autoneg_10G_an_pcontrol with formal parameter declaration list [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/hdl/xxv_ethernet_v3_1_vl_rfs.sv:190130]
-WARNING: [Synth 8-2507] parameter declaration becomes local in xxv_ethernet_v3_1_0_cl73autoneg_10G_an_pcontrol with formal parameter declaration list [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/hdl/xxv_ethernet_v3_1_vl_rfs.sv:190152]
-WARNING: [Synth 8-2507] parameter declaration becomes local in xxv_ethernet_v3_1_0_32b_cl73autoneg_an_pcontrol with formal parameter declaration list [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/hdl/xxv_ethernet_v3_1_vl_rfs.sv:224391]
-WARNING: [Synth 8-2507] parameter declaration becomes local in xxv_ethernet_v3_1_0_32b_cl73autoneg_an_pcontrol with formal parameter declaration list [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/hdl/xxv_ethernet_v3_1_vl_rfs.sv:224411]
-WARNING: [Synth 8-2507] parameter declaration becomes local in xxv_ethernet_v1_0_xilinx_cl73autoneg_an_pcontrol with formal parameter declaration list [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/hdl/xxv_ethernet_v3_1_vl_rfs.sv:278451]
-WARNING: [Synth 8-2507] parameter declaration becomes local in xxv_ethernet_v1_0_xilinx_cl73autoneg_an_pcontrol with formal parameter declaration list [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/hdl/xxv_ethernet_v3_1_vl_rfs.sv:278462]
+INFO: Helper process launched with PID 10580 
+WARNING: [Synth 8-2507] parameter declaration becomes local in xxv_ethernet_v3_1_0_cl73autoneg_an_pcontrol with formal parameter declaration list [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/hdl/xxv_ethernet_v3_1_vl_rfs.sv:186323]
+WARNING: [Synth 8-2507] parameter declaration becomes local in xxv_ethernet_v3_1_0_cl73autoneg_an_pcontrol with formal parameter declaration list [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/hdl/xxv_ethernet_v3_1_vl_rfs.sv:186345]
+WARNING: [Synth 8-2507] parameter declaration becomes local in xxv_ethernet_v3_1_0_cl73autoneg_10G_an_pcontrol with formal parameter declaration list [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/hdl/xxv_ethernet_v3_1_vl_rfs.sv:190130]
+WARNING: [Synth 8-2507] parameter declaration becomes local in xxv_ethernet_v3_1_0_cl73autoneg_10G_an_pcontrol with formal parameter declaration list [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/hdl/xxv_ethernet_v3_1_vl_rfs.sv:190152]
+WARNING: [Synth 8-2507] parameter declaration becomes local in xxv_ethernet_v3_1_0_32b_cl73autoneg_an_pcontrol with formal parameter declaration list [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/hdl/xxv_ethernet_v3_1_vl_rfs.sv:224391]
+WARNING: [Synth 8-2507] parameter declaration becomes local in xxv_ethernet_v3_1_0_32b_cl73autoneg_an_pcontrol with formal parameter declaration list [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/hdl/xxv_ethernet_v3_1_vl_rfs.sv:224411]
+WARNING: [Synth 8-2507] parameter declaration becomes local in xxv_ethernet_v1_0_xilinx_cl73autoneg_an_pcontrol with formal parameter declaration list [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/hdl/xxv_ethernet_v3_1_vl_rfs.sv:278451]
+WARNING: [Synth 8-2507] parameter declaration becomes local in xxv_ethernet_v1_0_xilinx_cl73autoneg_an_pcontrol with formal parameter declaration list [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/hdl/xxv_ethernet_v3_1_vl_rfs.sv:278462]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1711.293 ; gain = 223.410
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1715.344 ; gain = 223.996
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'top' [D:/programming/RLCBC_BROD/project/rtl/top.v:1]
-INFO: [Synth 8-6157] synthesizing module 'clock_generator' [D:/programming/RLCBC_BROD/project/rtl/clock_generator.v:1]
-INFO: [Synth 8-6157] synthesizing module 'IBUFDS' [D:/Programs/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:32952]
+INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/top.v:1]
+INFO: [Synth 8-6157] synthesizing module 'clock_generator' [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/clock_generator.v:1]
+INFO: [Synth 8-6157] synthesizing module 'IBUFDS' [E:/KhudyakovInstalledProgramms/Vivado/2019.2/scripts/rt/data/unisim_comp.v:32952]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter DIFF_TERM bound to: FALSE - type: string 
 	Parameter DQS_BIAS bound to: FALSE - type: string 
@@ -40,11 +39,11 @@ INFO: [Synth 8-6157] synthesizing module 'IBUFDS' [D:/Programs/Xilinx/Vivado/201
 	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
 	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
 	Parameter IOSTANDARD bound to: LVDS_25 - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'IBUFDS' (1#1) [D:/Programs/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:32952]
-INFO: [Synth 8-6155] done synthesizing module 'clock_generator' (2#1) [D:/programming/RLCBC_BROD/project/rtl/clock_generator.v:1]
-INFO: [Synth 8-6157] synthesizing module 'ethernet' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:1]
-INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller' [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller.v:58]
-INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_wrapper' [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_wrapper.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'IBUFDS' (1#1) [E:/KhudyakovInstalledProgramms/Vivado/2019.2/scripts/rt/data/unisim_comp.v:32952]
+INFO: [Synth 8-6155] done synthesizing module 'clock_generator' (2#1) [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/clock_generator.v:1]
+INFO: [Synth 8-6157] synthesizing module 'ethernet' [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/ethernet/ethernet.v:1]
+INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller' [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller.v:58]
+INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_wrapper' [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_wrapper.v:53]
 	Parameter C_LINE_RATE bound to: 10 - type: integer 
 	Parameter C_NUM_OF_CORES bound to: 1 - type: integer 
 	Parameter C_CLOCKING bound to: Asynchronous - type: string 
@@ -74,14 +73,14 @@ INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_wr
 	Parameter C_RUNTIME_SWITCH bound to: 0 - type: integer 
 	Parameter C_INCLUDE_SHARED_LOGIC bound to: 1 - type: integer 
 	Parameter MASTER_WATCHDOG_TIMER_RESET bound to: 29'b00101100101101000001011110000 
-INFO: [Synth 8-6157] synthesizing module 'IBUFDS_GTE4' [D:/Programs/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:33128]
+INFO: [Synth 8-6157] synthesizing module 'IBUFDS_GTE4' [E:/KhudyakovInstalledProgramms/Vivado/2019.2/scripts/rt/data/unisim_comp.v:33128]
 	Parameter REFCLK_EN_TX_PATH bound to: 1'b0 
 	Parameter REFCLK_HROW_CK_SEL bound to: 2'b00 
 	Parameter REFCLK_ICNTL_RX bound to: 2'b00 
-INFO: [Synth 8-6155] done synthesizing module 'IBUFDS_GTE4' (3#1) [D:/Programs/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:33128]
-INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_common_wrapper' [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_common_wrapper.v:51]
-INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_gt_gthe4_common_wrapper' [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_gt_gthe4_common_wrapper.v:4]
-INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_7_gthe4_common' [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/gtwizard_ultrascale_v1_7_gthe4_common.v:55]
+INFO: [Synth 8-6155] done synthesizing module 'IBUFDS_GTE4' (3#1) [E:/KhudyakovInstalledProgramms/Vivado/2019.2/scripts/rt/data/unisim_comp.v:33128]
+INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_common_wrapper' [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_common_wrapper.v:51]
+INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_gt_gthe4_common_wrapper' [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_gt_gthe4_common_wrapper.v:4]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_7_gthe4_common' [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/gtwizard_ultrascale_v1_7_gthe4_common.v:55]
 	Parameter GTHE4_COMMON_AEN_QPLL0_FBDIV bound to: 1'b1 
 	Parameter GTHE4_COMMON_AEN_QPLL1_FBDIV bound to: 1'b1 
 	Parameter GTHE4_COMMON_AEN_SDM0TOGGLE bound to: 1'b0 
@@ -286,7 +285,7 @@ INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_7_gthe4_commo
 	Parameter GTHE4_COMMON_TCONPOWERUP_TIE_EN bound to: 1'b0 
 	Parameter GTHE4_COMMON_TCONRESET_TIE_EN bound to: 2'b00 
 	Parameter GTHE4_COMMON_TCONRSVDIN1_TIE_EN bound to: 2'b00 
-INFO: [Synth 8-6157] synthesizing module 'GTHE4_COMMON' [D:/Programs/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:18090]
+INFO: [Synth 8-6157] synthesizing module 'GTHE4_COMMON' [E:/KhudyakovInstalledProgramms/Vivado/2019.2/scripts/rt/data/unisim_comp.v:18090]
 	Parameter AEN_QPLL0_FBDIV bound to: 1'b1 
 	Parameter AEN_QPLL1_FBDIV bound to: 1'b1 
 	Parameter AEN_SDM0TOGGLE bound to: 1'b0 
@@ -369,15 +368,15 @@ INFO: [Synth 8-6157] synthesizing module 'GTHE4_COMMON' [D:/Programs/Xilinx/Viva
 	Parameter SIM_DEVICE bound to: ULTRASCALE_PLUS - type: string 
 	Parameter SIM_MODE bound to: FAST - type: string 
 	Parameter SIM_RESET_SPEEDUP bound to: TRUE - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'GTHE4_COMMON' (4#1) [D:/Programs/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:18090]
-INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_7_gthe4_common' (5#1) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/gtwizard_ultrascale_v1_7_gthe4_common.v:55]
-INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller_gt_gthe4_common_wrapper' (6#1) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_gt_gthe4_common_wrapper.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller_common_wrapper' (7#1) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_common_wrapper.v:51]
-INFO: [Synth 8-6157] synthesizing module 'BUFG_GT' [D:/Programs/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:1251]
+INFO: [Synth 8-6155] done synthesizing module 'GTHE4_COMMON' (4#1) [E:/KhudyakovInstalledProgramms/Vivado/2019.2/scripts/rt/data/unisim_comp.v:18090]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_7_gthe4_common' (5#1) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/gtwizard_ultrascale_v1_7_gthe4_common.v:55]
+INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller_gt_gthe4_common_wrapper' (6#1) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_gt_gthe4_common_wrapper.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller_common_wrapper' (7#1) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_common_wrapper.v:51]
+INFO: [Synth 8-6157] synthesizing module 'BUFG_GT' [E:/KhudyakovInstalledProgramms/Vivado/2019.2/scripts/rt/data/unisim_comp.v:1251]
 	Parameter SIM_DEVICE bound to: ULTRASCALE - type: string 
 	Parameter STARTUP_SYNC bound to: FALSE - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'BUFG_GT' (8#1) [D:/Programs/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:1251]
-INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_ultrascale_tx_userclk' [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_ultrascale_tx_userclk.v:62]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG_GT' (8#1) [E:/KhudyakovInstalledProgramms/Vivado/2019.2/scripts/rt/data/unisim_comp.v:1251]
+INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_ultrascale_tx_userclk' [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_ultrascale_tx_userclk.v:62]
 	Parameter P_CONTENTS bound to: 0 - type: integer 
 	Parameter P_FREQ_RATIO_SOURCE_TO_USRCLK bound to: 1 - type: integer 
 	Parameter P_FREQ_RATIO_USRCLK_TO_USRCLK2 bound to: 2 - type: integer 
@@ -385,8 +384,8 @@ INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_ul
 	Parameter P_USRCLK_DIV bound to: 3'b000 
 	Parameter P_USRCLK2_INT_DIV bound to: 1 - type: integer 
 	Parameter P_USRCLK2_DIV bound to: 3'b001 
-INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller_ultrascale_tx_userclk' (9#1) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_ultrascale_tx_userclk.v:62]
-INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_ultrascale_rx_userclk' [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_ultrascale_rx_userclk.v:62]
+INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller_ultrascale_tx_userclk' (9#1) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_ultrascale_tx_userclk.v:62]
+INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_ultrascale_rx_userclk' [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_ultrascale_rx_userclk.v:62]
 	Parameter P_CONTENTS bound to: 0 - type: integer 
 	Parameter P_FREQ_RATIO_SOURCE_TO_USRCLK bound to: 1 - type: integer 
 	Parameter P_FREQ_RATIO_USRCLK_TO_USRCLK2 bound to: 2 - type: integer 
@@ -394,9 +393,9 @@ INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_ul
 	Parameter P_USRCLK_DIV bound to: 3'b000 
 	Parameter P_USRCLK2_INT_DIV bound to: 1 - type: integer 
 	Parameter P_USRCLK2_DIV bound to: 3'b001 
-INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller_ultrascale_rx_userclk' (10#1) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_ultrascale_rx_userclk.v:62]
-INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_gt' [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/synth/axi4_stream_sfp_ethernet_controller_gt.v:63]
-INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_gt_gtwizard_top' [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/synth/axi4_stream_sfp_ethernet_controller_gt_gtwizard_top.v:175]
+INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller_ultrascale_rx_userclk' (10#1) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_ultrascale_rx_userclk.v:62]
+INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_gt' [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/synth/axi4_stream_sfp_ethernet_controller_gt.v:63]
+INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_gt_gtwizard_top' [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/synth/axi4_stream_sfp_ethernet_controller_gt_gtwizard_top.v:175]
 	Parameter C_CHANNEL_ENABLE bound to: 192'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000 
 	Parameter C_PCIE_ENABLE bound to: 0 - type: integer 
 	Parameter C_PCIE_CORECLK_FREQ bound to: 250 - type: integer 
@@ -489,7 +488,7 @@ INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_gt
 	Parameter C_TX_USER_DATA_WIDTH bound to: 64 - type: integer 
 	Parameter C_TX_USRCLK_FREQUENCY bound to: 312.500000 - type: double 
 	Parameter C_TX_USRCLK2_FREQUENCY bound to: 156.250000 - type: double 
-INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_gt_gtwizard_gthe4' [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/synth/axi4_stream_sfp_ethernet_controller_gt_gtwizard_gthe4.v:143]
+INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_gt_gtwizard_gthe4' [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/synth/axi4_stream_sfp_ethernet_controller_gt_gtwizard_gthe4.v:143]
 	Parameter C_CHANNEL_ENABLE bound to: 192'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000 
 	Parameter C_PCIE_ENABLE bound to: 0 - type: integer 
 	Parameter C_PCIE_CORECLK_FREQ bound to: 250 - type: integer 
@@ -549,10 +548,10 @@ INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_gt
 	Parameter P_CPLL_CAL_WAIT_DEASSERT_CPLLPD bound to: 16'b0000000100000000 
 	Parameter P_CPLL_CAL_TXOUTCLK_PERIOD_DIV100 bound to: 18'b000000000000101001 
 	Parameter P_CDR_TIMEOUT_FREERUN_CYC bound to: 26'b00000001101101011111100101 
-INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_gt_gthe4_channel_wrapper' [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/synth/axi4_stream_sfp_ethernet_controller_gt_gthe4_channel_wrapper.v:56]
+INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_gt_gthe4_channel_wrapper' [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/synth/axi4_stream_sfp_ethernet_controller_gt_gthe4_channel_wrapper.v:56]
 	Parameter MASTER_EN bound to: 0 - type: integer 
 	Parameter NUM_CHANNELS bound to: 1 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_7_gthe4_channel' [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/synth/gtwizard_ultrascale_v1_7_gthe4_channel.v:55]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_7_gthe4_channel' [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/synth/gtwizard_ultrascale_v1_7_gthe4_channel.v:55]
 	Parameter NUM_CHANNELS bound to: 1 - type: integer 
 	Parameter GTHE4_CHANNEL_ACJTAG_DEBUG_MODE bound to: 1'b0 
 	Parameter GTHE4_CHANNEL_ACJTAG_MODE bound to: 1'b0 
@@ -1532,7 +1531,7 @@ INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_7_gthe4_chann
 	Parameter GTHE4_CHANNEL_TXUSERRDY_TIE_EN bound to: 1'b0 
 	Parameter GTHE4_CHANNEL_TXUSRCLK_TIE_EN bound to: 1'b0 
 	Parameter GTHE4_CHANNEL_TXUSRCLK2_TIE_EN bound to: 1'b0 
-INFO: [Synth 8-6157] synthesizing module 'GTHE4_CHANNEL' [D:/Programs/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:16898]
+INFO: [Synth 8-6157] synthesizing module 'GTHE4_CHANNEL' [E:/KhudyakovInstalledProgramms/Vivado/2019.2/scripts/rt/data/unisim_comp.v:16898]
 	Parameter ACJTAG_DEBUG_MODE bound to: 1'b0 
 	Parameter ACJTAG_MODE bound to: 1'b0 
 	Parameter ACJTAG_RESET bound to: 1'b0 
@@ -2037,29 +2036,29 @@ INFO: [Synth 8-6157] synthesizing module 'GTHE4_CHANNEL' [D:/Programs/Xilinx/Viv
 	Parameter USB_U2_SAS_MIN_COM bound to: 36 - type: integer 
 	Parameter USE_PCS_CLK_PHASE_SEL bound to: 1'b0 
 	Parameter Y_ALL_MODE bound to: 1'b0 
-INFO: [Synth 8-6155] done synthesizing module 'GTHE4_CHANNEL' (11#1) [D:/Programs/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:16898]
-INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_7_gthe4_channel' (12#1) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/synth/gtwizard_ultrascale_v1_7_gthe4_channel.v:55]
-INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller_gt_gthe4_channel_wrapper' (13#1) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/synth/axi4_stream_sfp_ethernet_controller_gt_gthe4_channel_wrapper.v:56]
-INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_7_gthe4_delay_powergood' [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:55]
+INFO: [Synth 8-6155] done synthesizing module 'GTHE4_CHANNEL' (11#1) [E:/KhudyakovInstalledProgramms/Vivado/2019.2/scripts/rt/data/unisim_comp.v:16898]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_7_gthe4_channel' (12#1) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/synth/gtwizard_ultrascale_v1_7_gthe4_channel.v:55]
+INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller_gt_gthe4_channel_wrapper' (13#1) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/synth/axi4_stream_sfp_ethernet_controller_gt_gthe4_channel_wrapper.v:56]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_7_gthe4_delay_powergood' [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:55]
 	Parameter C_USER_GTPOWERGOOD_DELAY_EN bound to: 1 - type: integer 
 	Parameter C_PCIE_ENABLE bound to: 0 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:87]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:88]
-INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:89]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:89]
-INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:90]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:90]
-INFO: [Synth 8-226] default block is never used [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:138]
-INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_7_gthe4_delay_powergood' (14#1) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:55]
-INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_7_bit_synchronizer' [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:55]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:87]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:88]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:89]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:89]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:90]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:90]
+INFO: [Synth 8-226] default block is never used [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:138]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_7_gthe4_delay_powergood' (14#1) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_gthe4_delay_powergood.v:55]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_7_bit_synchronizer' [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:55]
 	Parameter INITIALIZE bound to: 5'b00000 
 	Parameter FREQUENCY bound to: 512 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:71]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:72]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:73]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:74]
-INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_7_bit_synchronizer' (15#1) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:55]
-INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_7_gtwiz_reset' [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_gtwiz_reset.v:55]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:71]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:72]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:73]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:74]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_7_bit_synchronizer' (15#1) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_bit_sync.v:55]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_7_gtwiz_reset' [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_gtwiz_reset.v:55]
 	Parameter P_FREERUN_FREQUENCY bound to: 125.000000 - type: double 
 	Parameter P_USE_CPLL_CAL bound to: 0 - type: integer 
 	Parameter P_TX_PLL_TYPE bound to: 0 - type: integer 
@@ -2091,50 +2090,50 @@ INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_7_gtwiz_reset
 	Parameter ST_RESET_RX_WAIT_USERRDY bound to: 3'b101 
 	Parameter ST_RESET_RX_WAIT_RESETDONE bound to: 3'b110 
 	Parameter ST_RESET_RX_IDLE bound to: 3'b111 
-INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_7_reset_synchronizer' [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:55]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_7_reset_synchronizer' [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:55]
 	Parameter FREQUENCY bound to: 512 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:72]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:73]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:74]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:75]
-INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_7_reset_synchronizer' (16#1) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:55]
-INFO: [Synth 8-155] case statement is not full and has no default [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_gtwiz_reset.v:164]
-INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_7_reset_inv_synchronizer' [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:55]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:72]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:73]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:74]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:75]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_7_reset_synchronizer' (16#1) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_sync.v:55]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_gtwiz_reset.v:164]
+INFO: [Synth 8-6157] synthesizing module 'gtwizard_ultrascale_v1_7_7_reset_inv_synchronizer' [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:55]
 	Parameter FREQUENCY bound to: 512 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:72]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:73]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:74]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:75]
-INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_7_reset_inv_synchronizer' (17#1) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:55]
-INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_7_gtwiz_reset' (18#1) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_gtwiz_reset.v:55]
-INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller_gt_gtwizard_gthe4' (19#1) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/synth/axi4_stream_sfp_ethernet_controller_gt_gtwizard_gthe4.v:143]
-INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller_gt_gtwizard_top' (20#1) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/synth/axi4_stream_sfp_ethernet_controller_gt_gtwizard_top.v:175]
-INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller_gt' (21#1) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/synth/axi4_stream_sfp_ethernet_controller_gt.v:63]
-INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_cdc_sync' [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_wrapper.v:1015]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_wrapper.v:1021]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_wrapper.v:1022]
-INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller_cdc_sync' (22#1) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_wrapper.v:1015]
-INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_retiming_sync' [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_wrapper.v:1047]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:72]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:73]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:74]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:75]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_7_reset_inv_synchronizer' (17#1) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_reset_inv_sync.v:55]
+INFO: [Synth 8-6155] done synthesizing module 'gtwizard_ultrascale_v1_7_7_gtwiz_reset' (18#1) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/hdl/gtwizard_ultrascale_v1_7_gtwiz_reset.v:55]
+INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller_gt_gtwizard_gthe4' (19#1) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/synth/axi4_stream_sfp_ethernet_controller_gt_gtwizard_gthe4.v:143]
+INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller_gt_gtwizard_top' (20#1) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/synth/axi4_stream_sfp_ethernet_controller_gt_gtwizard_top.v:175]
+INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller_gt' (21#1) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/synth/axi4_stream_sfp_ethernet_controller_gt.v:63]
+INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_cdc_sync' [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_wrapper.v:1015]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_wrapper.v:1021]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_wrapper.v:1022]
+INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller_cdc_sync' (22#1) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_wrapper.v:1015]
+INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_retiming_sync' [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_wrapper.v:1047]
 	Parameter WIDTH bound to: 64 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller_retiming_sync' (23#1) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_wrapper.v:1047]
-INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_retiming_sync__parameterized0' [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_wrapper.v:1047]
+INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller_retiming_sync' (23#1) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_wrapper.v:1047]
+INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_retiming_sync__parameterized0' [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_wrapper.v:1047]
 	Parameter WIDTH bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller_retiming_sync__parameterized0' (23#1) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_wrapper.v:1047]
-INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_retiming_sync__parameterized1' [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_wrapper.v:1047]
+INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller_retiming_sync__parameterized0' (23#1) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_wrapper.v:1047]
+INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_retiming_sync__parameterized1' [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_wrapper.v:1047]
 	Parameter WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller_retiming_sync__parameterized1' (23#1) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_wrapper.v:1047]
-INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_top' [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_top.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller_retiming_sync__parameterized1' (23#1) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_wrapper.v:1047]
+INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller_top' [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_top.v:53]
 	Parameter SERDES_WIDTH bound to: 64 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'RAM32M' [D:/Programs/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:70267]
-INFO: [Synth 8-6155] done synthesizing module 'RAM32M' (43#1) [D:/Programs/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:70267]
-INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller_top' (71#1) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_top.v:53]
-INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller_wrapper' (72#1) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_wrapper.v:53]
-INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller' (73#1) [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller.v:58]
-INFO: [Synth 8-6155] done synthesizing module 'ethernet' (74#1) [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:1]
-INFO: [Synth 8-6157] synthesizing module 'status_led_control' [D:/programming/RLCBC_BROD/project/rtl/status_led_control.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'status_led_control' (75#1) [D:/programming/RLCBC_BROD/project/rtl/status_led_control.v:1]
-WARNING: [Synth 8-3848] Net global_reset in module/entity top does not have driver. [D:/programming/RLCBC_BROD/project/rtl/top.v:117]
-INFO: [Synth 8-6155] done synthesizing module 'top' (76#1) [D:/programming/RLCBC_BROD/project/rtl/top.v:1]
+INFO: [Synth 8-6157] synthesizing module 'RAM32M' [E:/KhudyakovInstalledProgramms/Vivado/2019.2/scripts/rt/data/unisim_comp.v:70267]
+INFO: [Synth 8-6155] done synthesizing module 'RAM32M' (43#1) [E:/KhudyakovInstalledProgramms/Vivado/2019.2/scripts/rt/data/unisim_comp.v:70267]
+INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller_top' (71#1) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_top.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller_wrapper' (72#1) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_wrapper.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller' (73#1) [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'ethernet' (74#1) [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/ethernet/ethernet.v:1]
+INFO: [Synth 8-6157] synthesizing module 'status_led_control' [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/status_led_control.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'status_led_control' (75#1) [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/status_led_control.v:1]
+WARNING: [Synth 8-3848] Net global_reset in module/entity top does not have driver. [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/top.v:117]
+INFO: [Synth 8-6155] done synthesizing module 'top' (76#1) [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/top.v:1]
 WARNING: [Synth 8-3331] design xxv_ethernet_v3_1_0_mac_baser_axis_rx_axis_adapter has unconnected port rx_sop
 WARNING: [Synth 8-3331] design xxv_ethernet_v3_1_0_mac_baser_axis_rlane_fifo_RAM_C2_P1_W214_D8 has unconnected port rd
 WARNING: [Synth 8-3331] design xxv_ethernet_v3_1_0_mac_baser_axis_fcs_64_full has unconnected port i_sop
@@ -2237,7 +2236,7 @@ WARNING: [Synth 8-3331] design axi4_stream_sfp_ethernet_controller_gt_gtwizard_g
 WARNING: [Synth 8-3331] design axi4_stream_sfp_ethernet_controller_gt_gtwizard_gthe4 has unconnected port gtwiz_gthe4_cpll_cal_cnt_tol_in[3]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 1950.742 ; gain = 462.859
+Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1956.430 ; gain = 465.082
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -2250,62 +2249,61 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 1950.742 ; gain = 462.859
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1978.277 ; gain = 486.930
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 1950.742 ; gain = 462.859
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1978.277 ; gain = 486.930
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.934 . Memory (MB): peak = 1950.742 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.395 . Memory (MB): peak = 1978.277 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 41 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/synth/axi4_stream_sfp_ethernet_controller_gt.xdc] for cell 'ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst/i_axi4_stream_sfp_ethernet_controller_gt/inst'
-Finished Parsing XDC File [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/synth/axi4_stream_sfp_ethernet_controller_gt.xdc] for cell 'ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst/i_axi4_stream_sfp_ethernet_controller_gt/inst'
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/synth/axi4_stream_sfp_ethernet_controller_gt.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Parsing XDC File [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/synth/axi4_stream_sfp_ethernet_controller_gt.xdc] for cell 'ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst/i_axi4_stream_sfp_ethernet_controller_gt/inst'
+Finished Parsing XDC File [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/synth/axi4_stream_sfp_ethernet_controller_gt.xdc] for cell 'ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst/i_axi4_stream_sfp_ethernet_controller_gt/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/synth/axi4_stream_sfp_ethernet_controller_gt.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/synth/axi4_stream_sfp_ethernet_controller_board.xdc] for cell 'ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst'
-Finished Parsing XDC File [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/synth/axi4_stream_sfp_ethernet_controller_board.xdc] for cell 'ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst'
-Parsing XDC File [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/synth/axi4_stream_sfp_ethernet_controller.xdc] for cell 'ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst'
-create_clock: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1950.742 ; gain = 0.000
-Finished Parsing XDC File [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/synth/axi4_stream_sfp_ethernet_controller.xdc] for cell 'ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst'
+Parsing XDC File [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/synth/axi4_stream_sfp_ethernet_controller_board.xdc] for cell 'ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst'
+Finished Parsing XDC File [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/synth/axi4_stream_sfp_ethernet_controller_board.xdc] for cell 'ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst'
+Parsing XDC File [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/synth/axi4_stream_sfp_ethernet_controller.xdc] for cell 'ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst'
+Finished Parsing XDC File [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/synth/axi4_stream_sfp_ethernet_controller.xdc] for cell 'ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst'
 WARNING: [Timing 38-277] The instance 'ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst/i_axi4_stream_sfp_ethernet_controller_gt/inst/gen_gtwizard_gthe4_top.axi4_stream_sfp_ethernet_controller_gt_gtwizard_gthe4_inst/gen_gtwizard_gthe4.gen_channel_container[1].gen_enabled_channel.gthe4_channel_wrapper_inst/channel_inst/gthe4_channel_gen.gen_gthe4_channel_inst[0].GTHE4_CHANNEL_PRIM_INST' has RXOUTCLKSEL pins that are not constant, so the corresponding mux will select the input(s) having the worst case (highest frequency) clock(s) for automatic derivation of generated clocks
 WARNING: [Timing 38-277] The instance 'ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst/i_axi4_stream_sfp_ethernet_controller_gt/inst/gen_gtwizard_gthe4_top.axi4_stream_sfp_ethernet_controller_gt_gtwizard_gthe4_inst/gen_gtwizard_gthe4.gen_channel_container[1].gen_enabled_channel.gthe4_channel_wrapper_inst/channel_inst/gthe4_channel_gen.gen_gthe4_channel_inst[0].GTHE4_CHANNEL_PRIM_INST' has TXOUTCLKSEL pins that are not constant, so the corresponding mux will select the input(s) having the worst case (highest frequency) clock(s) for automatic derivation of generated clocks
 WARNING: [Timing 38-277] The instance 'ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst/i_axi4_stream_sfp_ethernet_controller_gt/inst/gen_gtwizard_gthe4_top.axi4_stream_sfp_ethernet_controller_gt_gtwizard_gthe4_inst/gen_gtwizard_gthe4.gen_channel_container[1].gen_enabled_channel.gthe4_channel_wrapper_inst/channel_inst/gthe4_channel_gen.gen_gthe4_channel_inst[0].GTHE4_CHANNEL_PRIM_INST' has RXOUTCLKSEL pins that are not constant, so the corresponding mux will select the input(s) having the worst case (highest frequency) clock(s) for automatic derivation of generated clocks
 WARNING: [Timing 38-277] The instance 'ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst/i_axi4_stream_sfp_ethernet_controller_gt/inst/gen_gtwizard_gthe4_top.axi4_stream_sfp_ethernet_controller_gt_gtwizard_gthe4_inst/gen_gtwizard_gthe4.gen_channel_container[1].gen_enabled_channel.gthe4_channel_wrapper_inst/channel_inst/gthe4_channel_gen.gen_gthe4_channel_inst[0].GTHE4_CHANNEL_PRIM_INST' has TXOUTCLKSEL pins that are not constant, so the corresponding mux will select the input(s) having the worst case (highest frequency) clock(s) for automatic derivation of generated clocks
 INFO: [Timing 38-2] Deriving generated clocks
-Parsing XDC File [D:/programming/RLCBC_BROD/dbg/constraints.xdc]
+Parsing XDC File [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/dbg/constraints.xdc]
 CRITICAL WARNING: [Constraints 18-1056] Clock 'CLK_156_25_P' completely overrides clock 'i_CLK_156_25_P'.
-New: create_clock -period 6.400 -name CLK_156_25_P -waveform {0.000 3.200} [get_ports i_CLK_156_25_P], [D:/programming/RLCBC_BROD/dbg/constraints.xdc:6]
-Previous: create_clock -period 6.400 [get_ports i_CLK_156_25_P], [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/synth/axi4_stream_sfp_ethernet_controller.xdc:54]
+New: create_clock -period 6.400 -name CLK_156_25_P -waveform {0.000 3.200} [get_ports i_CLK_156_25_P], [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/dbg/constraints.xdc:6]
+Previous: create_clock -period 6.400 [get_ports i_CLK_156_25_P], [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/synth/axi4_stream_sfp_ethernet_controller.xdc:54]
 Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
-CRITICAL WARNING: [Vivado 12-1815] Setting property 'IOSTANDARD' is not allowed for GT terminals. [D:/programming/RLCBC_BROD/dbg/constraints.xdc:105]
-CRITICAL WARNING: [Vivado 12-1815] Setting property 'IOSTANDARD' is not allowed for GT terminals. [D:/programming/RLCBC_BROD/dbg/constraints.xdc:107]
-Finished Parsing XDC File [D:/programming/RLCBC_BROD/dbg/constraints.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/programming/RLCBC_BROD/dbg/constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+CRITICAL WARNING: [Vivado 12-1815] Setting property 'IOSTANDARD' is not allowed for GT terminals. [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/dbg/constraints.xdc:105]
+CRITICAL WARNING: [Vivado 12-1815] Setting property 'IOSTANDARD' is not allowed for GT terminals. [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/dbg/constraints.xdc:107]
+Finished Parsing XDC File [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/dbg/constraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/dbg/constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1/dont_touch.xdc]
-Finished Parsing XDC File [D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1/dont_touch.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Parsing XDC File [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.runs/synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.runs/synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 WARNING: [Timing 38-277] The instance 'ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst/i_axi4_stream_sfp_ethernet_controller_gt/inst/gen_gtwizard_gthe4_top.axi4_stream_sfp_ethernet_controller_gt_gtwizard_gthe4_inst/gen_gtwizard_gthe4.gen_channel_container[1].gen_enabled_channel.gthe4_channel_wrapper_inst/channel_inst/gthe4_channel_gen.gen_gthe4_channel_inst[0].GTHE4_CHANNEL_PRIM_INST' has RXOUTCLKSEL pins that are not constant, so the corresponding mux will select the input(s) having the worst case (highest frequency) clock(s) for automatic derivation of generated clocks
 WARNING: [Timing 38-277] The instance 'ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst/i_axi4_stream_sfp_ethernet_controller_gt/inst/gen_gtwizard_gthe4_top.axi4_stream_sfp_ethernet_controller_gt_gtwizard_gthe4_inst/gen_gtwizard_gthe4.gen_channel_container[1].gen_enabled_channel.gthe4_channel_wrapper_inst/channel_inst/gthe4_channel_gen.gen_gthe4_channel_inst[0].GTHE4_CHANNEL_PRIM_INST' has TXOUTCLKSEL pins that are not constant, so the corresponding mux will select the input(s) having the worst case (highest frequency) clock(s) for automatic derivation of generated clocks
 INFO: [Timing 38-2] Deriving generated clocks
-Parsing XDC File [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/synth/axi4_stream_sfp_ethernet_controller_exceptions.xdc] for cell 'ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst'
-Finished Parsing XDC File [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/synth/axi4_stream_sfp_ethernet_controller_exceptions.xdc] for cell 'ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst'
+Parsing XDC File [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/synth/axi4_stream_sfp_ethernet_controller_exceptions.xdc] for cell 'ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst'
+Finished Parsing XDC File [c:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/synth/axi4_stream_sfp_ethernet_controller_exceptions.xdc] for cell 'ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst'
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1950.742 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1979.824 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 41 instances were transformed.
   IBUFDS => IBUFDS (DIFFINBUF, IBUFCTRL): 2 instances
   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 39 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.221 . Memory (MB): peak = 1950.742 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.124 . Memory (MB): peak = 1979.824 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:08 ; elapsed = 00:01:11 . Memory (MB): peak = 1950.742 ; gain = 462.859
+Finished Constraint Validation : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 1979.824 ; gain = 488.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -2313,17 +2311,17 @@ Start Loading Part and Timing Information
 Loading part: xczu9eg-ffvb1156-3-e
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:08 ; elapsed = 00:01:11 . Memory (MB): peak = 1950.742 ; gain = 462.859
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 1979.824 ; gain = 488.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst/i_axi4_stream_sfp_ethernet_controller_gt/inst. (constraint file  D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1/dont_touch.xdc, line 15).
-Applied set_property DONT_TOUCH = true for ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst. (constraint file  D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1/dont_touch.xdc, line 18).
+Applied set_property DONT_TOUCH = true for ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst/i_axi4_stream_sfp_ethernet_controller_gt/inst. (constraint file  C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.runs/synth_1/dont_touch.xdc, line 15).
+Applied set_property DONT_TOUCH = true for ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst. (constraint file  C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.runs/synth_1/dont_touch.xdc, line 18).
 Applied set_property DONT_TOUCH = true for ethernet_inst/axi4_stream_sfp_ethernet_controller_inst. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst/i_axi4_stream_sfp_ethernet_controller_gt. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:08 ; elapsed = 00:01:11 . Memory (MB): peak = 1950.742 ; gain = 462.859
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 1979.824 ; gain = 488.477
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'sm_reset_all_reg' in module 'gtwizard_ultrascale_v1_7_7_gtwiz_reset'
 INFO: [Synth 8-802] inferred FSM for state register 'sm_reset_tx_reg' in module 'gtwizard_ultrascale_v1_7_7_gtwiz_reset'
@@ -2351,26 +2349,26 @@ INFO: [Synth 8-802] inferred FSM for state register 'state7_reg' in module 'xxv_
 INFO: [Synth 8-802] inferred FSM for state register 'state8_reg' in module 'xxv_ethernet_v3_1_0_mac_baser_axis_rx_pause_if'
 INFO: [Synth 8-4490] FSM extraction disabled for register 'rlane_fifo_waddr_reg' through user attribute
 INFO: [Synth 8-4490] FSM extraction disabled for register 'rlane_fifo_raddr_reg' through user attribute
-INFO: [Synth 8-4471] merging register 'ctl_tx_test_pattern_enable_reg' into 'ctl_tx_test_pattern_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:178]
-INFO: [Synth 8-4471] merging register 'ctl_tx_test_pattern_select_reg' into 'ctl_tx_test_pattern_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:179]
-INFO: [Synth 8-4471] merging register 'ctl_tx_data_pattern_select_reg' into 'ctl_tx_test_pattern_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:180]
-INFO: [Synth 8-4471] merging register 'ctl_tx_test_pattern_seed_b_reg[57:0]' into 'ctl_tx_test_pattern_seed_a_reg[57:0]' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:182]
-INFO: [Synth 8-4471] merging register 'ctl_tx_fcs_ins_enable_reg' into 'ctl_tx_enable_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:184]
-INFO: [Synth 8-4471] merging register 'ctl_tx_send_lfi_reg' into 'ctl_tx_test_pattern_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:186]
-INFO: [Synth 8-4471] merging register 'ctl_tx_send_rfi_reg' into 'ctl_tx_test_pattern_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:187]
-INFO: [Synth 8-4471] merging register 'ctl_tx_send_idle_reg' into 'ctl_tx_test_pattern_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:188]
-INFO: [Synth 8-4471] merging register 'ctl_tx_custom_preamble_enable_reg' into 'ctl_tx_test_pattern_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:189]
-INFO: [Synth 8-4471] merging register 'ctl_tx_ignore_fcs_reg' into 'ctl_tx_test_pattern_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:190]
-INFO: [Synth 8-4471] merging register 'ctl_rx_test_pattern_enable_reg' into 'ctl_rx_test_pattern_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:214]
-INFO: [Synth 8-4471] merging register 'ctl_rx_data_pattern_select_reg' into 'ctl_rx_test_pattern_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:215]
-INFO: [Synth 8-4471] merging register 'ctl_rx_delete_fcs_reg' into 'ctl_rx_enable_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:217]
-INFO: [Synth 8-4471] merging register 'ctl_rx_ignore_fcs_reg' into 'ctl_rx_test_pattern_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:218]
-INFO: [Synth 8-4471] merging register 'ctl_rx_custom_preamble_enable_reg' into 'ctl_rx_test_pattern_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:221]
-INFO: [Synth 8-4471] merging register 'ctl_rx_check_sfd_reg' into 'ctl_rx_test_pattern_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:222]
-INFO: [Synth 8-4471] merging register 'ctl_rx_check_preamble_reg' into 'ctl_rx_test_pattern_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:223]
-INFO: [Synth 8-4471] merging register 'ctl_rx_process_lfi_reg' into 'ctl_rx_test_pattern_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:224]
-INFO: [Synth 8-4471] merging register 'ctl_rx_force_resync_reg' into 'ctl_rx_test_pattern_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:225]
-INFO: [Synth 8-4471] merging register 'rxoutclksel_in_reg[2:0]' into 'txoutclksel_in_reg[2:0]' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:254]
+INFO: [Synth 8-4471] merging register 'ctl_tx_test_pattern_enable_reg' into 'ctl_tx_test_pattern_reg' [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/ethernet/ethernet.v:178]
+INFO: [Synth 8-4471] merging register 'ctl_tx_test_pattern_select_reg' into 'ctl_tx_test_pattern_reg' [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/ethernet/ethernet.v:179]
+INFO: [Synth 8-4471] merging register 'ctl_tx_data_pattern_select_reg' into 'ctl_tx_test_pattern_reg' [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/ethernet/ethernet.v:180]
+INFO: [Synth 8-4471] merging register 'ctl_tx_test_pattern_seed_b_reg[57:0]' into 'ctl_tx_test_pattern_seed_a_reg[57:0]' [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/ethernet/ethernet.v:182]
+INFO: [Synth 8-4471] merging register 'ctl_tx_fcs_ins_enable_reg' into 'ctl_tx_enable_reg' [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/ethernet/ethernet.v:184]
+INFO: [Synth 8-4471] merging register 'ctl_tx_send_lfi_reg' into 'ctl_tx_test_pattern_reg' [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/ethernet/ethernet.v:186]
+INFO: [Synth 8-4471] merging register 'ctl_tx_send_rfi_reg' into 'ctl_tx_test_pattern_reg' [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/ethernet/ethernet.v:187]
+INFO: [Synth 8-4471] merging register 'ctl_tx_send_idle_reg' into 'ctl_tx_test_pattern_reg' [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/ethernet/ethernet.v:188]
+INFO: [Synth 8-4471] merging register 'ctl_tx_custom_preamble_enable_reg' into 'ctl_tx_test_pattern_reg' [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/ethernet/ethernet.v:189]
+INFO: [Synth 8-4471] merging register 'ctl_tx_ignore_fcs_reg' into 'ctl_tx_test_pattern_reg' [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/ethernet/ethernet.v:190]
+INFO: [Synth 8-4471] merging register 'ctl_rx_test_pattern_enable_reg' into 'ctl_rx_test_pattern_reg' [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/ethernet/ethernet.v:214]
+INFO: [Synth 8-4471] merging register 'ctl_rx_data_pattern_select_reg' into 'ctl_rx_test_pattern_reg' [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/ethernet/ethernet.v:215]
+INFO: [Synth 8-4471] merging register 'ctl_rx_delete_fcs_reg' into 'ctl_rx_enable_reg' [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/ethernet/ethernet.v:217]
+INFO: [Synth 8-4471] merging register 'ctl_rx_ignore_fcs_reg' into 'ctl_rx_test_pattern_reg' [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/ethernet/ethernet.v:218]
+INFO: [Synth 8-4471] merging register 'ctl_rx_custom_preamble_enable_reg' into 'ctl_rx_test_pattern_reg' [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/ethernet/ethernet.v:221]
+INFO: [Synth 8-4471] merging register 'ctl_rx_check_sfd_reg' into 'ctl_rx_test_pattern_reg' [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/ethernet/ethernet.v:222]
+INFO: [Synth 8-4471] merging register 'ctl_rx_check_preamble_reg' into 'ctl_rx_test_pattern_reg' [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/ethernet/ethernet.v:223]
+INFO: [Synth 8-4471] merging register 'ctl_rx_process_lfi_reg' into 'ctl_rx_test_pattern_reg' [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/ethernet/ethernet.v:224]
+INFO: [Synth 8-4471] merging register 'ctl_rx_force_resync_reg' into 'ctl_rx_test_pattern_reg' [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/ethernet/ethernet.v:225]
+INFO: [Synth 8-4471] merging register 'rxoutclksel_in_reg[2:0]' into 'txoutclksel_in_reg[2:0]' [C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/rtl/ethernet/ethernet.v:254]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -2534,7 +2532,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state1_reg' using encoding
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state0_reg' using encoding 'sequential' in module 'xxv_ethernet_v3_1_0_mac_baser_axis_rx_pause_if'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:25 ; elapsed = 00:01:28 . Memory (MB): peak = 1950.742 ; gain = 462.859
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 1979.824 ; gain = 488.477
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2791,7 +2789,7 @@ WARNING: [Synth 8-3332] Sequential element (FSM_sequential_state1_reg[0]) is unu
 WARNING: [Synth 8-3332] Sequential element (FSM_sequential_state0_reg[1]) is unused and will be removed from module xxv_ethernet_v3_1_0_mac_baser_axis_rx_pause_if.
 WARNING: [Synth 8-3332] Sequential element (FSM_sequential_state0_reg[0]) is unused and will be removed from module xxv_ethernet_v3_1_0_mac_baser_axis_rx_pause_if.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:06 ; elapsed = 00:03:10 . Memory (MB): peak = 1950.742 ; gain = 462.859
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:48 ; elapsed = 00:01:53 . Memory (MB): peak = 1979.824 ; gain = 488.477
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2803,13 +2801,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:28 ; elapsed = 00:03:33 . Memory (MB): peak = 2427.363 ; gain = 939.480
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:59 ; elapsed = 00:02:09 . Memory (MB): peak = 2430.289 ; gain = 938.941
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:03:51 ; elapsed = 00:03:57 . Memory (MB): peak = 2568.648 ; gain = 1080.766
+Finished Timing Optimization : Time (s): cpu = 00:02:14 ; elapsed = 00:02:24 . Memory (MB): peak = 2574.473 ; gain = 1083.125
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2824,7 +2822,7 @@ INFO: [Synth 8-3332] Sequential element (i_RX_TOP/i_RX_CORE/i_RX_DESTRIPER/i_RX_
 INFO: [Synth 8-3332] Sequential element (i_RX_TOP/i_RX_CORE/i_RX_DESTRIPER/i_RX_PAUSE_PARSER/FSM_sequential_state_reg[1]) is unused and will be removed from module xxv_ethernet_v3_1_0_mac_baser_axis_hsec_cores.
 INFO: [Synth 8-3332] Sequential element (i_RX_TOP/i_RX_CORE/i_RX_DESTRIPER/i_RX_PAUSE_PARSER/FSM_sequential_state_reg[0]) is unused and will be removed from module xxv_ethernet_v3_1_0_mac_baser_axis_hsec_cores.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:04:03 ; elapsed = 00:04:09 . Memory (MB): peak = 2677.902 ; gain = 1190.020
+Finished Technology Mapping : Time (s): cpu = 00:02:19 ; elapsed = 00:02:29 . Memory (MB): peak = 2680.426 ; gain = 1189.078
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2849,13 +2847,13 @@ INFO: [Synth 8-4618] Found max_fanout attribute set to 25 on net \i_TX_TOP/i_TX_
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:04:12 ; elapsed = 00:04:18 . Memory (MB): peak = 2680.980 ; gain = 1193.098
+Finished IO Insertion : Time (s): cpu = 00:02:23 ; elapsed = 00:02:33 . Memory (MB): peak = 2683.500 ; gain = 1192.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:04:12 ; elapsed = 00:04:18 . Memory (MB): peak = 2680.980 ; gain = 1193.098
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:23 ; elapsed = 00:02:33 . Memory (MB): peak = 2683.500 ; gain = 1192.152
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2874,25 +2872,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:15 ; elapsed = 00:04:21 . Memory (MB): peak = 2680.980 ; gain = 1193.098
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:24 ; elapsed = 00:02:34 . Memory (MB): peak = 2683.500 ; gain = 1192.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:04:15 ; elapsed = 00:04:21 . Memory (MB): peak = 2680.980 ; gain = 1193.098
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:24 ; elapsed = 00:02:34 . Memory (MB): peak = 2683.500 ; gain = 1192.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:04:16 ; elapsed = 00:04:22 . Memory (MB): peak = 2680.980 ; gain = 1193.098
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:25 ; elapsed = 00:02:35 . Memory (MB): peak = 2683.500 ; gain = 1192.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:04:16 ; elapsed = 00:04:22 . Memory (MB): peak = 2680.980 ; gain = 1193.098
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:25 ; elapsed = 00:02:35 . Memory (MB): peak = 2683.500 ; gain = 1192.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -2933,13 +2931,13 @@ Report Cell Usage:
 |23    |OBUF          |     9|
 +------+--------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:04:16 ; elapsed = 00:04:22 . Memory (MB): peak = 2680.980 ; gain = 1193.098
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:25 ; elapsed = 00:02:35 . Memory (MB): peak = 2683.500 ; gain = 1192.152
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 516 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:03:17 ; elapsed = 00:03:58 . Memory (MB): peak = 2680.980 ; gain = 1193.098
-Synthesis Optimization Complete : Time (s): cpu = 00:04:17 ; elapsed = 00:04:22 . Memory (MB): peak = 2680.980 ; gain = 1193.098
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:59 ; elapsed = 00:02:21 . Memory (MB): peak = 2683.500 ; gain = 1190.605
+Synthesis Optimization Complete : Time (s): cpu = 00:02:25 ; elapsed = 00:02:35 . Memory (MB): peak = 2683.500 ; gain = 1192.152
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.581 . Memory (MB): peak = 2690.008 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.182 . Memory (MB): peak = 2692.621 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 141 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -2947,7 +2945,7 @@ INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Opt 31-441] Inserted BUFG_GT_SYNC ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst/BUFG_GT_SYNC for BUFG_GT ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst/refclk_bufg_gt_i
 INFO: [Opt 31-441] Inserted BUFG_GT_SYNC ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst/i_axi4_stream_sfp_ethernet_controller_gt/inst/gen_gtwizard_gthe4_top.axi4_stream_sfp_ethernet_controller_gt_gtwizard_gthe4_inst/gen_gtwizard_gthe4.gen_channel_container[1].gen_enabled_channel.gthe4_channel_wrapper_inst/channel_inst/BUFG_GT_SYNC for BUFG_GT ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst/i_core_gtwiz_userclk_rx_inst_0/gen_gtwiz_userclk_rx_main.bufg_gt_usrclk2_inst
 INFO: [Opt 31-441] Inserted BUFG_GT_SYNC ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst/i_axi4_stream_sfp_ethernet_controller_gt/inst/gen_gtwizard_gthe4_top.axi4_stream_sfp_ethernet_controller_gt_gtwizard_gthe4_inst/gen_gtwizard_gthe4.gen_channel_container[1].gen_enabled_channel.gthe4_channel_wrapper_inst/channel_inst/BUFG_GT_SYNC_1 for BUFG_GT ethernet_inst/axi4_stream_sfp_ethernet_controller_inst/inst/i_core_gtwiz_userclk_tx_inst_0/gen_gtwiz_userclk_tx_main.bufg_gt_usrclk2_inst
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 2703.680 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2710.781 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 41 instances were transformed.
   BUFG => BUFGCE: 2 instances
@@ -2959,9 +2957,8 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 381 Infos, 133 Warnings, 3 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:04:36 ; elapsed = 00:04:44 . Memory (MB): peak = 2703.680 ; gain = 2198.551
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 2703.680 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1/top.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2703.680 ; gain = 0.000
+synth_design: Time (s): cpu = 00:02:33 ; elapsed = 00:02:48 . Memory (MB): peak = 2710.781 ; gain = 2206.082
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2710.781 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Feb 25 17:21:19 2024...
+INFO: [Common 17-206] Exiting Vivado at Mon Feb 26 08:33:20 2024...

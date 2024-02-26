@@ -74,22 +74,18 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param power.BramSDPPropagationFix 1
-  set_param chipscope.maxJobs 1
-  set_param power.enableUnconnectedCarry8PinPower 1
-  set_param power.enableCarry8RouteBelPower 1
-  set_param power.enableLutRouteBelPower 1
+  set_param chipscope.maxJobs 2
   create_project -in_memory -part xczu9eg-ffvb1156-3-e
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir D:/programming/RLCBC_BROD/project/Ethernet10G.cache/wt [current_project]
-  set_property parent.project_path D:/programming/RLCBC_BROD/project/Ethernet10G.xpr [current_project]
-  set_property ip_output_repo D:/programming/RLCBC_BROD/project/Ethernet10G.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.cache/wt [current_project]
+  set_property parent.project_path C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.xpr [current_project]
+  set_property ip_output_repo C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
-  add_files -quiet D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1/top.dcp
-  read_ip -quiet D:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller.xci
-  read_xdc D:/programming/RLCBC_BROD/dbg/constraints.xdc
+  add_files -quiet C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.runs/synth_1/top.dcp
+  read_ip -quiet C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller.xci
+  read_xdc C:/Users/hudyakovas/Desktop/Khudyakov/MyProjects/RLCBC_BROD/dbg/constraints.xdc
   link_design -top top -part xczu9eg-ffvb1156-3-e
   close_msg_db -file init_design.pb
 } RESULT]
