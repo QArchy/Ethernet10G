@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Mon Feb 26 08:33:20 2024
-| Host         : VN-021-1297 running 64-bit major release  (build 9200)
+| Date         : Sun Mar  3 13:56:00 2024
+| Host         : LAPTOP-3EF4A3RH running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
 | Design       : top
 | Device       : xczu9egffvb1156-3
@@ -28,22 +28,20 @@ Table of Contents
 1. CLB Logic
 ------------
 
-+----------------------------+------+-------+-----------+-------+
-|          Site Type         | Used | Fixed | Available | Util% |
-+----------------------------+------+-------+-----------+-------+
-| CLB LUTs*                  | 5159 |     0 |    274080 |  1.88 |
-|   LUT as Logic             | 4844 |     0 |    274080 |  1.77 |
-|   LUT as Memory            |  315 |     0 |    144000 |  0.22 |
-|     LUT as Distributed RAM |   96 |     0 |           |       |
-|     LUT as Shift Register  |  219 |     0 |           |       |
-| CLB Registers              | 4960 |     0 |    548160 |  0.90 |
-|   Register as Flip Flop    | 4960 |     0 |    548160 |  0.90 |
-|   Register as Latch        |    0 |     0 |    548160 |  0.00 |
-| CARRY8                     |   38 |     0 |     34260 |  0.11 |
-| F7 Muxes                   |   62 |     0 |    137040 |  0.05 |
-| F8 Muxes                   |    0 |     0 |     68520 |  0.00 |
-| F9 Muxes                   |    0 |     0 |     34260 |  0.00 |
-+----------------------------+------+-------+-----------+-------+
++-------------------------+------+-------+-----------+-------+
+|        Site Type        | Used | Fixed | Available | Util% |
++-------------------------+------+-------+-----------+-------+
+| CLB LUTs*               |   27 |     0 |    274080 | <0.01 |
+|   LUT as Logic          |   27 |     0 |    274080 | <0.01 |
+|   LUT as Memory         |    0 |     0 |    144000 |  0.00 |
+| CLB Registers           |   34 |     0 |    548160 | <0.01 |
+|   Register as Flip Flop |   34 |     0 |    548160 | <0.01 |
+|   Register as Latch     |    0 |     0 |    548160 |  0.00 |
+| CARRY8                  |    4 |     0 |     34260 |  0.01 |
+| F7 Muxes                |    0 |     0 |    137040 |  0.00 |
+| F8 Muxes                |    0 |     0 |     68520 |  0.00 |
+| F9 Muxes                |    0 |     0 |     34260 |  0.00 |
++-------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
 
@@ -59,10 +57,10 @@ Table of Contents
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 64    |          Yes |           - |          Set |
-| 18    |          Yes |           - |        Reset |
-| 183   |          Yes |         Set |            - |
-| 4695  |          Yes |       Reset |            - |
+| 0     |          Yes |           - |          Set |
+| 0     |          Yes |           - |        Reset |
+| 0     |          Yes |         Set |            - |
+| 34    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -105,10 +103,10 @@ Table of Contents
 +----------------------+------+-------+-----------+-------+
 |       Site Type      | Used | Fixed | Available | Util% |
 +----------------------+------+-------+-----------+-------+
-| GLOBAL CLOCK BUFFERs |    7 |     0 |       404 |  1.73 |
-|   BUFGCE             |    2 |     0 |       116 |  1.72 |
+| GLOBAL CLOCK BUFFERs |    1 |     0 |       404 |  0.25 |
+|   BUFGCE             |    1 |     0 |       116 |  0.86 |
 |   BUFGCE_DIV         |    0 |     0 |        16 |  0.00 |
-|   BUFG_GT            |    5 |     0 |       168 |  2.98 |
+|   BUFG_GT            |    0 |     0 |       168 |  0.00 |
 |   BUFG_PS            |    0 |     0 |        72 |  0.00 |
 |   BUFGCTRL*          |    0 |     0 |        32 |  0.00 |
 | PLL                  |    0 |     0 |         8 |  0.00 |
@@ -123,8 +121,8 @@ Table of Contents
 +-----------------+------+-------+-----------+-------+
 |    Site Type    | Used | Fixed | Available | Util% |
 +-----------------+------+-------+-----------+-------+
-| GTHE4_CHANNEL   |    1 |     0 |        24 |  4.17 |
-| GTHE4_COMMON    |    1 |     0 |         6 | 16.67 |
+| GTHE4_CHANNEL   |    0 |     0 |        24 |  0.00 |
+| GTHE4_COMMON    |    0 |     0 |         6 |  0.00 |
 | OBUFDS_GTE4     |    0 |     0 |        12 |  0.00 |
 | OBUFDS_GTE4_ADV |    0 |     0 |        12 |  0.00 |
 | PS8             |    0 |     0 |         1 |  0.00 |
@@ -151,44 +149,35 @@ Table of Contents
 8. Primitives
 -------------
 
-+---------------+------+---------------------+
-|    Ref Name   | Used | Functional Category |
-+---------------+------+---------------------+
-| FDRE          | 4695 |            Register |
-| LUT6          | 2671 |                 CLB |
-| LUT5          |  900 |                 CLB |
-| LUT4          |  872 |                 CLB |
-| LUT2          |  687 |                 CLB |
-| LUT3          |  507 |                 CLB |
-| SRL16E        |  219 |                 CLB |
-| FDSE          |  183 |            Register |
-| LUT1          |  135 |                 CLB |
-| RAMD32        |  132 |                 CLB |
-| FDPE          |   64 |            Register |
-| MUXF7         |   62 |                 CLB |
-| RAMS32        |   44 |                 CLB |
-| CARRY8        |   38 |                 CLB |
-| FDCE          |   18 |            Register |
-| IBUFCTRL      |   16 |              Others |
-| INBUF         |   14 |                 I/O |
-| OBUF          |    9 |                 I/O |
-| RAMD64E       |    8 |                 CLB |
-| BUFG_GT       |    5 |               Clock |
-| BUFG_GT_SYNC  |    3 |               Clock |
-| DIFFINBUF     |    2 |                 I/O |
-| BUFGCE        |    2 |               Clock |
-| IBUFDS_GTE4   |    1 |                 I/O |
-| GTHE4_COMMON  |    1 |            Advanced |
-| GTHE4_CHANNEL |    1 |            Advanced |
-+---------------+------+---------------------+
++-----------+------+---------------------+
+|  Ref Name | Used | Functional Category |
++-----------+------+---------------------+
+| FDRE      |   34 |            Register |
+| LUT2      |   31 |                 CLB |
+| IBUFCTRL  |   16 |              Others |
+| INBUF     |   14 |                 I/O |
+| OBUF      |    9 |                 I/O |
+| LUT4      |    5 |                 CLB |
+| CARRY8    |    4 |                 CLB |
+| LUT6      |    2 |                 CLB |
+| DIFFINBUF |    2 |                 I/O |
+| LUT3      |    1 |                 CLB |
+| LUT1      |    1 |                 CLB |
+| BUFGCE    |    1 |               Clock |
++-----------+------+---------------------+
 
 
 9. Black Boxes
 --------------
 
-+----------+------+
-| Ref Name | Used |
-+----------+------+
++-------------------------------------+------+
+|               Ref Name              | Used |
++-------------------------------------+------+
+| fifo_ethernet_payload_keep          |    1 |
+| fifo_ethernet_payload               |    1 |
+| ethernet_controller_to_axi_mem      |    1 |
+| axi4_stream_sfp_ethernet_controller |    1 |
++-------------------------------------+------+
 
 
 10. Instantiated Netlists

@@ -101,11 +101,11 @@ module ethernet(
 	wire user_tx_reset;                                         // Clock domain - ???
 	wire tx_axis_tready;                                        // Clock domain - tx_clk_out
 	
-	reg tx_axis_tvalid;                                         // Clock domain - tx_clk_out
-	reg [63:0] tx_axis_tdata;                                   // Clock domain - tx_clk_out
-	reg tx_axis_tlast;                                          // Clock domain - tx_clk_out
-	reg [7:0] tx_axis_tkeep;                                    // Clock domain - tx_clk_out
-	reg tx_axis_tuser;                                          // Clock domain - tx_clk_out
+	wire tx_axis_tvalid;                                         // Clock domain - tx_clk_out
+	wire [63:0] tx_axis_tdata;                                   // Clock domain - tx_clk_out
+	wire tx_axis_tlast;                                          // Clock domain - tx_clk_out
+	wire [7:0] tx_axis_tkeep;                                    // Clock domain - tx_clk_out
+	wire tx_axis_tuser;                                          // Clock domain - tx_clk_out
 	
 	wire tx_unfout;                                             // Clock domain - ???
 	reg [55:0] tx_preamblein;                                   // Clock domain - tx_clk_out
@@ -166,12 +166,6 @@ module ethernet(
 	always @(posedge tx_clk_out, posedge i_reset) begin		// Clock domain - tx_clk_out
 		if (i_reset) begin
 			o_ll_tx_disable_r 				<= 0;
-						
-			tx_axis_tvalid					<= 0;      
-			tx_axis_tdata					<= 0;
-			tx_axis_tlast					<= 0;       
-			tx_axis_tkeep					<= 0; 
-			tx_axis_tuser					<= 0;        
 			tx_preamblein					<= 0;
 				
 			ctl_tx_test_pattern				<= 0;              
@@ -438,6 +432,58 @@ module ethernet(
         .sys_reset(sys_reset),                            						// 	IP CORE reset						//  input  wire sys_reset;
         .dclk(dclk)                                								// 	reference frequency 				//  input  wire dclk;    
 																				// 	for the GT helper blocks which initiate the GT itself
+    );
+	
+	wire 		rx_contr_tvalid;
+	wire [63:0]	rx_contr_tdata;
+	wire 		rx_contr_tlast;
+	wire [7:0]	rx_contr_tkeep;
+	wire 		tx_contr_tvalid;
+	wire [63:0]	tx_contr_tdata;
+	wire 		tx_contr_tlast;
+	wire [7:0]	tx_contr_tkeep;
+	
+	ethernet_controller #(48'h211abcdef112, 32'hC0000186) ethernet_controller_inst(
+		.i_clk(i_clk),						//	input 			i_clk,
+		.i_reset(i_reset),					//	input 			i_reset,
+											//	
+		.rx_axis_tvalid(rx_contr_tvalid),	//	input 			rx_axis_tvalid,
+		.rx_axis_tdata(rx_contr_tdata), 	//	input [63:0]	rx_axis_tdata, 
+		.rx_axis_tlast(rx_contr_tlast), 	//	input 			rx_axis_tlast, 
+		.rx_axis_tkeep(rx_contr_tkeep),		//	input [7:0]		rx_axis_tkeep,
+											//	
+		.tx_axis_tvalid(tx_contr_tvalid),	//	output 			tx_axis_tvalid,
+		.tx_axis_tdata(tx_contr_tdata), 	//	output [63:0]	tx_axis_tdata, 
+		.tx_axis_tlast(tx_contr_tlast), 	//	output 			tx_axis_tlast, 
+		.tx_axis_tkeep(tx_contr_tkeep)		//	output [7:0]	tx_axis_tkeep
+	);
+	
+	ethernet_controller_axi_stream_bridge ethernet_controller_axi_stream_bridge_inst(
+												//  /* System */
+	   .i_clk(i_clk),                           //  input 				i_clk,
+	   .i_reset(i_reset),                       //  input 				i_reset,
+												//  /* Ethernet controller */
+	   .i_ethernet_controller_clk(i_CLK_125),   //  input 				i_ethernet_controller_clk,
+	   .o_rx_contr_tvalid(rx_contr_tvalid),     //  output reg 			o_rx_contr_tvalid,
+	   .o_rx_contr_tdata(rx_contr_tdata),       //  output reg 	[63:0] 	o_rx_contr_tdata,
+	   .o_rx_contr_tlast(rx_contr_tlast),       //  output reg 			o_rx_contr_tlast, 
+	   .o_rx_contr_tkeep(rx_contr_tkeep),       //  output reg 	[7:0] 	o_rx_contr_tkeep, 
+	   .i_tx_contr_tvalid(tx_contr_tvalid),     //  input 				i_tx_contr_tvalid,
+	   .i_tx_contr_tdata(tx_contr_tdata),       //  input 		[63:0] 	i_tx_contr_tdata,
+	   .i_tx_contr_tlast(tx_contr_tlast),       //  input 				i_tx_contr_tlast, 
+	   .i_tx_contr_tkeep(tx_contr_tkeep),       //  input 		[7:0] 	i_tx_contr_tkeep, 
+												//  /* AXI Stream */
+	   .i_axi_stream_clk(tx_clk_out),           //  input 				i_axi_stream_clk,
+	   .i_tx_axis_tready(tx_axis_tready),       //  input 				i_tx_axis_tready,
+	   .o_tx_axis_tvalid(tx_axis_tvalid),       //  output reg 			o_tx_axis_tvalid,      
+	   .o_tx_axis_tdata(tx_axis_tdata),         //  output reg 	[63:0] 	o_tx_axis_tdata,
+	   .o_tx_axis_tlast(tx_axis_tlast),         //  output reg 			o_tx_axis_tlast,       
+	   .o_tx_axis_tkeep(tx_axis_tkeep),         //  output reg 	[7:0] 	o_tx_axis_tkeep,      
+	   .i_rx_axis_tvalid(rx_axis_tvalid),       //  input 				i_rx_axis_tvalid,       
+	   .i_rx_axis_tdata(rx_axis_tdata),         //  input 		[63:0] 	i_rx_axis_tdata,
+	   .i_rx_axis_tlast(rx_axis_tlast),         //  input 				i_rx_axis_tlast,        
+	   .i_rx_axis_tkeep(rx_axis_tkeep),         //  input 		[7:0] 	i_rx_axis_tkeep,      
+	   .i_rx_preambleout(rx_preambleout)        //  input 		[55:0] 	i_rx_preambleout
     );
     
 endmodule

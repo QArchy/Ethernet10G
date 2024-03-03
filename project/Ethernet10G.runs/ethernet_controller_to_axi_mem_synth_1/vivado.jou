@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Sun Mar  3 13:11:53 2024
+# Process ID: 8068
+# Current directory: D:/programming/RLCBC_BROD/project/Ethernet10G.runs/ethernet_controller_to_axi_mem_synth_1
+# Command line: vivado.exe -log ethernet_controller_to_axi_mem.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ethernet_controller_to_axi_mem.tcl
+# Log file: D:/programming/RLCBC_BROD/project/Ethernet10G.runs/ethernet_controller_to_axi_mem_synth_1/ethernet_controller_to_axi_mem.vds
+# Journal file: D:/programming/RLCBC_BROD/project/Ethernet10G.runs/ethernet_controller_to_axi_mem_synth_1\vivado.jou
+#-----------------------------------------------------------
+source ethernet_controller_to_axi_mem.tcl -notrace

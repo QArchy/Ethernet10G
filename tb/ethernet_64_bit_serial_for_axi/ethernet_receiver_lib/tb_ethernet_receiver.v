@@ -57,12 +57,12 @@ module tb_ethernet_receiver #(parameter FPGA_MAC = 48'h211abcdef112, parameter F
 	//	assign o_TPA					= 	o_data_head[4*8-1:0];
 	//	
 	//	
-	assign o_arp_valid 					= 	(o_data_head[42*8-1:36*8] 	== FPGA_MAC) &&
+	assign o_arp_valid 					= 	((o_data_head[42*8-1:36*8] 	== FPGA_MAC) || (o_data_head[42*8-1:36*8] == 48'hFFFFFFFFFFFF)) &&
 											(o_data_head[30*8-1:28*8]	== 16'h0806) &&
 											(o_data_head[28*8-1:26*8]	== 16'h0001) &&
 											(o_data_head[26*8-1:24*8]	== 16'h0800) &&
 											(o_data_head[22*8-1:20*8]	== 16'h0001) &&
-											(o_data_head[10*8-1:4*8]	== FPGA_MAC) &&
+											((o_data_head[10*8-1:4*8]	== FPGA_MAC) || (o_data_head[10*8-1:4*8]  == 48'h000000000000)) &&
 											(o_data_head[4*8-1:0]		== FPGA_IP);
 	//									
 	//	/* ICMP + UDP GENERAL */

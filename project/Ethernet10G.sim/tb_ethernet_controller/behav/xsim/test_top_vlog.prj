@@ -1,0 +1,31 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/sim/gtwizard_ultrascale_v1_7_gthe4_channel.v" \
+"../../../../Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/sim/axi4_stream_sfp_ethernet_controller_gt_gthe4_channel_wrapper.v" \
+"../../../../Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/sim/axi4_stream_sfp_ethernet_controller_gt_gtwizard_gthe4.v" \
+"../../../../Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/sim/axi4_stream_sfp_ethernet_controller_gt_gtwizard_top.v" \
+"../../../../Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/sim/axi4_stream_sfp_ethernet_controller_gt.v" \
+"../../../../Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_wrapper.v" \
+"../../../../Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_top.v" \
+"../../../../Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/gtwizard_ultrascale_v1_7_gthe4_common.v" \
+"../../../../Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_gt_gthe4_common_wrapper.v" \
+"../../../../Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_common_wrapper.v" \
+"../../../../Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_ultrascale_rx_userclk.v" \
+"../../../../Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/xxv_ethernet_v3_1_0/axi4_stream_sfp_ethernet_controller_ultrascale_tx_userclk.v" \
+"../../../../Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller.v" \
+"../../../../Ethernet10G.srcs/sources_1/ip/fifo_ethernet_payload/sim/fifo_ethernet_payload.v" \
+"../../../../Ethernet10G.srcs/sources_1/ip/fifo_ethernet_payload_keep/sim/fifo_ethernet_payload_keep.v" \
+"../../../../../tb/ethernet_64_bit_serial_for_axi/tb_ethernet_fake_transmitter.v" \
+"../../../../../tb/ethernet_64_bit_serial_for_axi/tb_ethernet_head_reply_builder.v" \
+"../../../../../tb/ethernet_64_bit_serial_for_axi/ethernet_receiver_lib/tb_ethernet_header_receiver.v" \
+"../../../../../tb/ethernet_64_bit_serial_for_axi/tb_ethernet_icmp_checksum_counter.v" \
+"../../../../../tb/ethernet_64_bit_serial_for_axi/ethernet_receiver_lib/tb_ethernet_receiver.v" \
+"../../../../../tb/ethernet_64_bit_serial_for_axi/tb_ethernet_top.v" \
+"../../../../../tb/ethernet_64_bit_serial_for_axi/test_top.v" \
+"../../../../../tb/ethernet_64_bit_serial_for_axi/ethernet_reply_transmitter_lib/tb_ethernet_reply_transmitter.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

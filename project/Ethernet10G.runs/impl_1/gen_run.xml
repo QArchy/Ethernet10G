@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xczu9eg-ffvb1156-3-e" LaunchTime="1708925419">
+<GenRun Id="impl_1" LaunchPart="xczu9eg-ffvb1156-3-e" LaunchTime="1709463240">
   <File Type="BITSTR-BMM" Name="top_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="top_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="top_timing_summary_init.rpt"/>
@@ -77,7 +77,21 @@
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller.xci">
+    <File Path="$PPRDIR/rtl/top.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/rtl/ethernet/ethernet_controller_axi_stream_bridge.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/rtl/status_led_control.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -98,14 +112,42 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/rtl/status_led_control.v">
+    <File Path="$PPRDIR/rtl/ethernet/ethernet_controller/ethernet_reply_transmitter.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/rtl/top.v">
+    <File Path="$PPRDIR/rtl/ethernet/ethernet_controller/ethernet_head_reply_builder.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/rtl/ethernet/ethernet_controller/ethernet_receiver_lib/ethernet_receiver.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/rtl/ethernet/ethernet_controller/ethernet_icmp_checksum_counter.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/rtl/ethernet/ethernet_controller/ethernet_receiver_lib/ethernet_header_receiver.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/rtl/ethernet/ethernet_controller/ethernet_controller.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -115,7 +157,6 @@
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="top"/>
-      <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -149,4 +190,8 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="axi4_stream_sfp_ethernet_controller"/>
+  <BlockFileSet Type="BlockSrcs" Name="fifo_ethernet_payload"/>
+  <BlockFileSet Type="BlockSrcs" Name="fifo_ethernet_payload_keep"/>
+  <BlockFileSet Type="BlockSrcs" Name="ethernet_controller_to_axi_mem"/>
 </GenRun>
