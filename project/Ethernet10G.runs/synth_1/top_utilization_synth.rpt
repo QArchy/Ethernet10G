@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Sun Mar  3 13:56:00 2024
+| Date         : Thu Mar 28 12:39:45 2024
 | Host         : LAPTOP-3EF4A3RH running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
 | Design       : top
@@ -31,13 +31,13 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| CLB LUTs*               |   27 |     0 |    274080 | <0.01 |
-|   LUT as Logic          |   27 |     0 |    274080 | <0.01 |
+| CLB LUTs*               | 1174 |     0 |    274080 |  0.43 |
+|   LUT as Logic          | 1174 |     0 |    274080 |  0.43 |
 |   LUT as Memory         |    0 |     0 |    144000 |  0.00 |
-| CLB Registers           |   34 |     0 |    548160 | <0.01 |
-|   Register as Flip Flop |   34 |     0 |    548160 | <0.01 |
+| CLB Registers           | 1480 |     0 |    548160 |  0.27 |
+|   Register as Flip Flop | 1480 |     0 |    548160 |  0.27 |
 |   Register as Latch     |    0 |     0 |    548160 |  0.00 |
-| CARRY8                  |    4 |     0 |     34260 |  0.01 |
+| CARRY8                  |   41 |     0 |     34260 |  0.12 |
 | F7 Muxes                |    0 |     0 |    137040 |  0.00 |
 | F8 Muxes                |    0 |     0 |     68520 |  0.00 |
 | F9 Muxes                |    0 |     0 |     34260 |  0.00 |
@@ -58,9 +58,9 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 0     |          Yes |           - |        Reset |
+| 1416  |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 34    |          Yes |       Reset |            - |
+| 64    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -93,7 +93,7 @@ Table of Contents
 +------------+------+-------+-----------+-------+
 |  Site Type | Used | Fixed | Available | Util% |
 +------------+------+-------+-----------+-------+
-| Bonded IOB |   27 |     0 |       328 |  8.23 |
+| Bonded IOB |   25 |     0 |       328 |  7.62 |
 +------------+------+-------+-----------+-------+
 
 
@@ -103,8 +103,8 @@ Table of Contents
 +----------------------+------+-------+-----------+-------+
 |       Site Type      | Used | Fixed | Available | Util% |
 +----------------------+------+-------+-----------+-------+
-| GLOBAL CLOCK BUFFERs |    1 |     0 |       404 |  0.25 |
-|   BUFGCE             |    1 |     0 |       116 |  0.86 |
+| GLOBAL CLOCK BUFFERs |    0 |     0 |       404 |  0.00 |
+|   BUFGCE             |    0 |     0 |       116 |  0.00 |
 |   BUFGCE_DIV         |    0 |     0 |        16 |  0.00 |
 |   BUFG_GT            |    0 |     0 |       168 |  0.00 |
 |   BUFG_PS            |    0 |     0 |        72 |  0.00 |
@@ -152,18 +152,19 @@ Table of Contents
 +-----------+------+---------------------+
 |  Ref Name | Used | Functional Category |
 +-----------+------+---------------------+
-| FDRE      |   34 |            Register |
-| LUT2      |   31 |                 CLB |
-| IBUFCTRL  |   16 |              Others |
+| FDCE      | 1416 |            Register |
+| LUT3      |  560 |                 CLB |
+| LUT4      |  493 |                 CLB |
+| LUT2      |  349 |                 CLB |
+| LUT5      |  176 |                 CLB |
+| FDRE      |   64 |            Register |
+| LUT6      |   52 |                 CLB |
+| CARRY8    |   41 |                 CLB |
+| IBUFCTRL  |   15 |              Others |
 | INBUF     |   14 |                 I/O |
 | OBUF      |    9 |                 I/O |
-| LUT4      |    5 |                 CLB |
-| CARRY8    |    4 |                 CLB |
-| LUT6      |    2 |                 CLB |
-| DIFFINBUF |    2 |                 I/O |
-| LUT3      |    1 |                 CLB |
-| LUT1      |    1 |                 CLB |
-| BUFGCE    |    1 |               Clock |
+| LUT1      |    5 |                 CLB |
+| DIFFINBUF |    1 |                 I/O |
 +-----------+------+---------------------+
 
 
@@ -173,9 +174,11 @@ Table of Contents
 +-------------------------------------+------+
 |               Ref Name              | Used |
 +-------------------------------------+------+
+| fifo_72_72                          |    2 |
+| pll_74_25_clk                       |    1 |
+| ila_ethernet                        |    1 |
 | fifo_ethernet_payload_keep          |    1 |
 | fifo_ethernet_payload               |    1 |
-| ethernet_controller_to_axi_mem      |    1 |
 | axi4_stream_sfp_ethernet_controller |    1 |
 +-------------------------------------+------+
 

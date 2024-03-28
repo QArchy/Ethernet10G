@@ -87,7 +87,9 @@ set rc [catch {
   read_ip -quiet D:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller.xci
   read_ip -quiet D:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/fifo_ethernet_payload/fifo_ethernet_payload.xci
   read_ip -quiet D:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/fifo_ethernet_payload_keep/fifo_ethernet_payload_keep.xci
-  read_ip -quiet d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/ethernet_controller_to_axi_mem/ethernet_controller_to_axi_mem.xci
+  read_ip -quiet D:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/ila_ethernet/ila_ethernet.xci
+  read_ip -quiet D:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/pll_74_25_clk/pll_74_25_clk.xci
+  read_ip -quiet D:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/fifo_72_72/fifo_72_72.xci
   read_xdc D:/programming/RLCBC_BROD/dbg/constraints.xdc
   link_design -top top -part xczu9eg-ffvb1156-3-e
   close_msg_db -file init_design.pb

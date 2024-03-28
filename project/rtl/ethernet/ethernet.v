@@ -1,17 +1,86 @@
-module ethernet(
-    input   i_CLK_125,
-    input   i_CLK_156_25_P,
-    input   i_CLK_156_25_N,
+module ethernet #(parameter FPGA_MAC = 48'h211abcdef112, parameter FPGA_IP = 32'hC0000186, parameter UDP_port_dst = 16'h0000)(
+    input   i_clk_156_25,
+    input   i_clk_125,
+    input   i_clk_156_25_P,
+    input   i_clk_156_25_N,
     input   i_reset,
+    input   i_await_init,
     output  o_ll_tx_p,
     output  o_ll_tx_n,
     input   i_ll_rx_p,
     input   i_ll_rx_n,
-    output  o_ll_tx_disable										// Clock domain - tx_clk_out
+    output  o_ll_tx_disable,									// Clock domain - tx_clk_out
+    
+    output          ila_tx_clk_out,
+    output          ila_tx_axis_tvalid,
+    output  [63:0]  ila_tx_axis_tdata, 
+    output          ila_tx_axis_tlast, 
+    output  [7:0]   ila_tx_axis_tkeep, 
+    output          ila_tx_axis_tuser, 
+    output          ila_rx_axis_tvalid,       
+    output  [63:0]  ila_rx_axis_tdata, 
+    output          ila_rx_axis_tlast,        
+    output  [7:0]   ila_rx_axis_tkeep,  
+    output          ila_rx_axis_tuser,        
+    output  [55:0]  ila_rx_preambleout,
+    output          ila_transmit_fake_flag,
+    
+    output 		    ila_rx_crx_contr_tvalid,    
+    output  [63:0]  ila_rx_contr_tdata,
+    output 		    ila_rx_crx_contr_tlast,     
+    output  [7:0]   ila_rx_contr_tkeep, 
+    output 		    ila_tx_ctx_contr_tvalid,    
+    output  [63:0]  ila_tx_contr_tdata,
+    output 		    ila_tx_ctx_contr_tlast,     
+    output  [7:0]	ila_tx_contr_tkeep,
+    
+    output [42*8-1:0] ila_data_head,
+    output [48*8-1:0] ila_transmit_data_head,
+    
+    output              ila_payload_transmit_start,     
+                                         
+    output [63:0]       ila_payload_fifo_din,      
+    output              ila_payload_fifo_empty,       
+    output              ila_payload_fifo_wr_en,       
+    output              ila_payload_fifo_rd_en,       
+    output [63:0]       ila_payload_fifo_dout,        
+    output              ila_payload_fifo_full,        
+    output [3:0]        ila_payload_fifo_data_count,  
+                                 
+    output [7:0]        ila_payload_keep_fifo_din,       
+    output              ila_payload_keep_fifo_wr_en,         
+    output              ila_payload_keep_fifo_rd_en,         
+    output [7:0]        ila_payload_keep_fifo_dout,      
+    output              ila_payload_keep_fifo_full,          
+    output              ila_payload_keep_fifo_empty,         
+    output [3:0]        ila_payload_keep_fifo_data_count,
+    
+    output ila_rd_en_axis_tx_64,          
+    output [71:0] ila_dout_axis_tx_64,    
+    output ila_full_axis_tx_64,           
+    output ila_empty_axis_tx_64,          
+    output ila_wr_rst_busy_axis_tx_64,    
+    output ila_rd_rst_busy_axis_tx_64,    
+    output ila_rd_en_contr_rx_64,         
+    output [71:0] ila_dout_contr_rx_64,
+    output ila_full_contr_rx_64,       
+    output ila_empty_contr_rx_64,      
+    output ila_wr_rst_busy_contr_rx_64,
+    output ila_rd_rst_busy_contr_rx_64,
+    
+    output ila_stat_tx_frame_error,
+    output ila_stat_tx_packet_small,
+    output ila_stat_tx_bad_fcs,
+    output ila_stat_tx_fifo_error,
+    output ila_stat_tx_local_fault,
+    output ila_stat_tx_bad_parity,
+    
+    output ila_icmp_valid,    
+    output [20:0] ila_icmp_crc_part1,
+    output [15:0] ila_icmp_crc,      
+    output ila_icmp_crc_ready 
 );
-	reg ip_init;												// Clock domain - Async & ???
-	
-	reg o_ll_tx_disable_r; assign o_ll_tx_disable = o_ll_tx_disable_r;
+	assign o_ll_tx_disable = 1;
 	
 	wire gt_rxp_in = i_ll_rx_p;                             	// Clock domain - global input
 	wire gt_rxn_in = i_ll_rx_n;                             	// Clock domain - global input
@@ -19,10 +88,12 @@ module ethernet(
 	wire gt_txn_out; assign o_ll_tx_n = gt_txn_out; 			// Clock domain - global output
 	wire tx_clk_out;											// Clock domain - tx_clk_out
 	wire rx_clk_out;											// Clock domain - rx_clk_out
-		
-    reg  [2:0] gt_loopback_in;									// Clock domain - ???
+	
+	assign ila_tx_clk_out = tx_clk_out;
+	
+    wire  [2:0] gt_loopback_in = 0;								// Clock domain - ???
     
-    reg rx_reset_r; wire rx_reset = rx_reset_r || i_reset;		// Clock domain - Async
+    wire rx_reset = 0; // i_reset;		                            // Clock domain - Async
 																
     wire user_rx_reset;                                         // Clock domain - ???
     wire rxrecclkout;                                           // Clock domain - ???
@@ -34,19 +105,26 @@ module ethernet(
     wire rx_axis_tuser;                                         // Clock domain - rx_core_clk == tx_clk_out
     wire [55:0] rx_preambleout;                                 // Clock domain - rx_core_clk == tx_clk_out
     
-    reg ctl_rx_test_pattern;                                    // Clock domain - rx_clk_out
-    reg ctl_rx_test_pattern_enable;                             // Clock domain - rx_clk_out
-    reg ctl_rx_data_pattern_select;                             // Clock domain - rx_clk_out
-    reg ctl_rx_enable;                                          // Clock domain - rx_clk_out
-    reg ctl_rx_delete_fcs;                                      // Clock domain - rx_clk_out
-    reg ctl_rx_ignore_fcs;                                      // Clock domain - rx_clk_out
-    reg [14:0] ctl_rx_max_packet_len;                           // Clock domain - rx_clk_out
-    reg [7:0] ctl_rx_min_packet_len;                            // Clock domain - rx_clk_out
-    reg ctl_rx_custom_preamble_enable;                          // Clock domain - rx_clk_out
-    reg ctl_rx_check_sfd;                                       // Clock domain - rx_clk_out
-    reg ctl_rx_check_preamble;                                  // Clock domain - rx_clk_out
-    reg ctl_rx_process_lfi;                                     // Clock domain - rx_clk_out
-    reg ctl_rx_force_resync;                                    // Clock domain - rx_clk_out
+    assign ila_rx_axis_tvalid   =   rx_axis_tvalid;
+    assign ila_rx_axis_tdata    =   rx_axis_tdata;
+    assign ila_rx_axis_tlast    =   rx_axis_tlast;
+    assign ila_rx_axis_tkeep    =   rx_axis_tkeep;
+    assign ila_rx_axis_tuser    =   rx_axis_tuser;
+    assign ila_rx_preambleout   =   rx_preambleout;
+    
+    wire ctl_rx_test_pattern            = 0;                    // Clock domain - rx_clk_out
+    wire ctl_rx_test_pattern_enable     = 0;                    // Clock domain - rx_clk_out
+    wire ctl_rx_data_pattern_select     = 0;                    // Clock domain - rx_clk_out
+    wire ctl_rx_enable                  = 1;                    // Clock domain - rx_clk_out
+    wire ctl_rx_delete_fcs              = 1;                    // Clock domain - rx_clk_out
+    wire ctl_rx_ignore_fcs              = 0;                    // Clock domain - rx_clk_out
+    wire [14:0] ctl_rx_max_packet_len   = 14'b00010111000000;   // Clock domain - rx_clk_out
+    wire [7:0] ctl_rx_min_packet_len    = 0;                    // Clock domain - rx_clk_out
+    wire ctl_rx_custom_preamble_enable  = 0;                    // Clock domain - rx_clk_out
+    wire ctl_rx_check_sfd               = 0;                    // Clock domain - rx_clk_out
+    wire ctl_rx_check_preamble          = 0;                    // Clock domain - rx_clk_out
+    wire ctl_rx_process_lfi             = 0;                    // Clock domain - rx_clk_out
+    wire ctl_rx_force_resync            = 0;                    // Clock domain - rx_clk_out
     
     wire stat_rx_block_lock;                                    // Clock domain - rx_clk_out
 	wire stat_rx_framing_err_valid;                             // Clock domain - rx_clk_out
@@ -96,34 +174,81 @@ module ethernet(
 	wire stat_rx_received_local_fault;                          // Clock domain - rx_clk_out
 	wire stat_rx_status;           
 	
-	reg tx_reset_r; wire tx_reset = tx_reset_r || i_reset;      // Clock domain - Async
+	wire tx_reset = 0; // i_reset;                                    // Clock domain - Async
 	
 	wire user_tx_reset;                                         // Clock domain - ???
 	wire tx_axis_tready;                                        // Clock domain - tx_clk_out
 	
-	wire tx_axis_tvalid;                                         // Clock domain - tx_clk_out
-	wire [63:0] tx_axis_tdata;                                   // Clock domain - tx_clk_out
-	wire tx_axis_tlast;                                          // Clock domain - tx_clk_out
-	wire [7:0] tx_axis_tkeep;                                    // Clock domain - tx_clk_out
-	wire tx_axis_tuser;                                          // Clock domain - tx_clk_out
+	// /* Fake transmitter logic */
+    // wire            transmit_fake_flag;
+    // 
+    // wire            tx_axis_tvalid_fake;
+    // wire    [63:0]  tx_axis_tdata_fake; 
+    // wire            tx_axis_tlast_fake; 
+    // wire    [7:0]   tx_axis_tkeep_fake; 
+    // 
+    // ethernet_fake_transmitter ethernet_fake_transmitter_inst(
+    //     .i_clk(tx_clk_out),                         //  input                 i_clk,
+    //     .i_reset(i_reset || i_await_init),          //  input                 i_reset,
+    //                                                 //  
+    //     .o_transmit_fake_flag(transmit_fake_flag),  //  output reg            o_transmit_fake_flag,
+    //                                                 //  
+    //     .o_tx_axis_tvalid(tx_axis_tvalid_fake),     //  output reg            o_tx_axis_tvalid,
+    //     .o_tx_axis_tdata(tx_axis_tdata_fake),       //  output reg    [63:0]  o_tx_axis_tdata,
+    //     .o_tx_axis_tlast(tx_axis_tlast_fake),       //  output reg            o_tx_axis_tlast, 
+    //     .o_tx_axis_tkeep(tx_axis_tkeep_fake)        //  output reg    [7:0]   o_tx_axis_tkeep 
+    // );
+    // 
+    // //// TX_0 User Interface  Signals    
+    // wire        tx_axis_tvalid_bridge;
+    // wire [63:0] tx_axis_tdata_bridge;
+    // wire        tx_axis_tlast_bridge;
+    // wire [7:0]  tx_axis_tkeep_bridge;
+    // wire        tx_axis_tuser_bridge;
+    // 
+    // wire        tx_axis_tvalid   = transmit_fake_flag ? tx_axis_tvalid_fake : tx_axis_tvalid_bridge;  // Clock domain - tx_clk_out
+    // wire [63:0] tx_axis_tdata    = transmit_fake_flag ? tx_axis_tdata_fake  : tx_axis_tdata_bridge;   // Clock domain - tx_clk_out
+    // wire        tx_axis_tlast    = transmit_fake_flag ? tx_axis_tlast_fake  : tx_axis_tlast_bridge;   // Clock domain - tx_clk_out
+    // wire [7:0]  tx_axis_tkeep    = transmit_fake_flag ? tx_axis_tkeep_fake  : tx_axis_tkeep_bridge;   // Clock domain - tx_clk_out
+    // wire        tx_axis_tuser    = transmit_fake_flag ? 0: tx_axis_tuser_bridge;                      // Clock domain - tx_clk_out
+	// 
+    // assign ila_transmit_fake_flag  = transmit_fake_flag;
+    wire        tx_axis_tvalid_bridge; 
+    wire [63:0] tx_axis_tdata_bridge;  
+    wire        tx_axis_tlast_bridge;  
+    wire [7:0]  tx_axis_tkeep_bridge;  
+    wire        tx_axis_tuser_bridge;  
+    
+    wire        tx_axis_tvalid   = tx_axis_tvalid_bridge;  // Clock domain - tx_clk_out
+    wire [63:0] tx_axis_tdata    = tx_axis_tdata_bridge;   // Clock domain - tx_clk_out
+    wire        tx_axis_tlast    = tx_axis_tlast_bridge;   // Clock domain - tx_clk_out
+    wire [7:0]  tx_axis_tkeep    = tx_axis_tkeep_bridge;   // Clock domain - tx_clk_out
+    wire        tx_axis_tuser    = tx_axis_tuser_bridge;   // Clock domain - tx_clk_out
+    
+    assign ila_transmit_fake_flag  = 0;
+	assign ila_tx_axis_tvalid      = tx_axis_tvalid;
+	assign ila_tx_axis_tdata       = tx_axis_tdata;
+	assign ila_tx_axis_tlast       = tx_axis_tlast;
+	assign ila_tx_axis_tkeep       = tx_axis_tkeep;
+	assign ila_tx_axis_tuser       = tx_axis_tuser;
 	
-	wire tx_unfout;                                             // Clock domain - ???
-	reg [55:0] tx_preamblein;                                   // Clock domain - tx_clk_out
+	wire tx_unfout;                                 // Clock domain - ???
+	reg [55:0] tx_preamblein                = 0;    // Clock domain - tx_clk_out
 	
-	reg ctl_tx_test_pattern;                                    // Clock domain - tx_clk_out
-	reg ctl_tx_test_pattern_enable;                             // Clock domain - tx_clk_out
-	reg ctl_tx_test_pattern_select;                             // Clock domain - tx_clk_out
-	reg ctl_tx_data_pattern_select;                             // Clock domain - tx_clk_out
-	reg [57:0] ctl_tx_test_pattern_seed_a;                      // Clock domain - tx_clk_out
-	reg [57:0] ctl_tx_test_pattern_seed_b;                      // Clock domain - tx_clk_out
-	reg ctl_tx_enable;                                          // Clock domain - tx_clk_out
-	reg ctl_tx_fcs_ins_enable;                                  // Clock domain - tx_clk_out
-	reg [3:0] ctl_tx_ipg_value;                                 // Clock domain - tx_clk_out
-	reg ctl_tx_send_lfi;                                        // Clock domain - tx_clk_out
-	reg ctl_tx_send_rfi;                                        // Clock domain - tx_clk_out
-	reg ctl_tx_send_idle;                                       // Clock domain - tx_clk_out
-	reg ctl_tx_custom_preamble_enable;                          // Clock domain - tx_clk_out
-	reg ctl_tx_ignore_fcs;                                      // Clock domain - tx_clk_out
+	wire ctl_tx_test_pattern                = 0;    // Clock domain - tx_clk_out
+	wire ctl_tx_test_pattern_enable         = 0;    // Clock domain - tx_clk_out
+	wire ctl_tx_test_pattern_select         = 0;    // Clock domain - tx_clk_out
+	wire ctl_tx_data_pattern_select         = 0;    // Clock domain - tx_clk_out
+	wire [57:0] ctl_tx_test_pattern_seed_a  = 0;    // Clock domain - tx_clk_out
+	wire [57:0] ctl_tx_test_pattern_seed_b  = 0;    // Clock domain - tx_clk_out
+	wire ctl_tx_enable                      = 1;    // Clock domain - tx_clk_out
+	wire ctl_tx_fcs_ins_enable              = 1;    // Clock domain - tx_clk_out
+	wire [3:0] ctl_tx_ipg_value             = 0;    // Clock domain - tx_clk_out
+	wire ctl_tx_send_lfi                    = 0;    // Clock domain - tx_clk_out
+	wire ctl_tx_send_rfi                    = 0;    // Clock domain - tx_clk_out
+	wire ctl_tx_send_idle                   = 0;    // Clock domain - tx_clk_out
+	wire ctl_tx_custom_preamble_enable      = 0;    // Clock domain - tx_clk_out
+	wire ctl_tx_ignore_fcs                  = 0;    // Clock domain - tx_clk_out
 	
 	wire stat_tx_total_packets;                                 // Clock domain - tx_clk_out
 	wire [3:0] stat_tx_total_bytes;                             // Clock domain - tx_clk_out
@@ -151,113 +276,19 @@ module ethernet(
 	wire stat_tx_frame_error;                                   // Clock domain - tx_clk_out
 	wire stat_tx_local_fault;                                   // Clock domain - tx_clk_out
 
-	reg gtwiz_reset_tx_datapath_r; 	wire gtwiz_reset_tx_datapath = gtwiz_reset_tx_datapath_r || i_reset;	// Clock domain - ???
-	reg gtwiz_reset_rx_datapath_r; 	wire gtwiz_reset_rx_datapath = gtwiz_reset_rx_datapath_r || i_reset;    // Clock domain - ???
-	reg qpllreset_in_r; 			wire qpllreset_in			 = qpllreset_in_r || i_reset;               // Clock domain - ???
-	wire gtpowergood_out;                                                                                   // Clock domain - ???
-	reg [2:0] txoutclksel_in;                                                                               // Clock domain - ???
-	reg [2:0] rxoutclksel_in;                                                                               // Clock domain - ???
-	wire gt_refclk_p = i_CLK_156_25_P;                                                                      // Clock domain - global input
-	wire gt_refclk_n = i_CLK_156_25_N;                                                                      // Clock domain - global input
-	wire gt_refclk_out;                                                                                     // Clock domain - gt_refclk_out
-	reg sys_reset_r; 				wire sys_reset				 = sys_reset_r || i_reset;                  // Clock domain - ???
-	wire dclk = i_CLK_125;                                                                                  // Clock domain - global input
+	wire gtwiz_reset_tx_datapath   = 0; // i_reset;    // Clock domain - ???
+	wire gtwiz_reset_rx_datapath   = 0; // i_reset;    // Clock domain - ???
+	wire qpllreset_in              = 0; // i_reset;    // Clock domain - ???
+	wire gtpowergood_out;                              // Clock domain - ???
+	wire [2:0] txoutclksel_in      = 3'b101;           // Clock domain - ???
+	wire [2:0] rxoutclksel_in      = 3'b101;           // Clock domain - ???
+	wire gt_refclk_p               = i_clk_156_25_P;   // Clock domain - global input
+	wire gt_refclk_n               = i_clk_156_25_N;   // Clock domain - global input
+	wire gt_refclk_out;                                // Clock domain - gt_refclk_out
+	wire sys_reset                 = 0; // i_reset;    // Clock domain - ???
+	wire dclk = i_clk_125;                             // Clock domain - global input
 	
-	always @(posedge tx_clk_out, posedge i_reset) begin		// Clock domain - tx_clk_out
-		if (i_reset) begin
-			o_ll_tx_disable_r 				<= 0;
-			tx_preamblein					<= 0;
-				
-			ctl_tx_test_pattern				<= 0;              
-			ctl_tx_test_pattern_enable		<= 0;       
-			ctl_tx_test_pattern_select		<= 0;       
-			ctl_tx_data_pattern_select		<= 0;       
-			ctl_tx_test_pattern_seed_a		<= 0;
-			ctl_tx_test_pattern_seed_b		<= 0;
-			ctl_tx_enable					<= 1;                    
-			ctl_tx_fcs_ins_enable			<= 1;            
-			ctl_tx_ipg_value				<= 0;           
-			ctl_tx_send_lfi					<= 0;                  
-			ctl_tx_send_rfi					<= 0;                  
-			ctl_tx_send_idle				<= 0;                 
-			ctl_tx_custom_preamble_enable	<= 0;    
-			ctl_tx_ignore_fcs				<= 0;  
-		end else begin
-			if (~ip_init) begin
-				ctl_tx_test_pattern				<= 0;
-				ctl_tx_test_pattern_enable		<= 0;
-				ctl_tx_test_pattern_select		<= 0;
-				ctl_tx_data_pattern_select		<= 0;
-				ctl_tx_test_pattern_seed_a		<= 0;
-				ctl_tx_test_pattern_seed_b		<= 0;
-				ctl_tx_enable					<= 1;
-				ctl_tx_fcs_ins_enable			<= 1;
-				ctl_tx_ipg_value				<= 0;
-				ctl_tx_send_lfi					<= 0;
-				ctl_tx_send_rfi					<= 0;
-				ctl_tx_send_idle				<= 0;
-				ctl_tx_custom_preamble_enable	<= 0;
-				ctl_tx_ignore_fcs				<= 0;
-			end else;
-		end
-	end
-	
-	always @(posedge rx_clk_out, posedge i_reset) begin 	// Clock domain - rx_clk_out
-		if (i_reset) begin
-			ctl_rx_test_pattern				<= 0;          
-			ctl_rx_test_pattern_enable		<= 0;   
-			ctl_rx_data_pattern_select		<= 0;   
-			ctl_rx_enable					<= 1;                
-			ctl_rx_delete_fcs				<= 1;            
-			ctl_rx_ignore_fcs				<= 0;            
-			ctl_rx_max_packet_len			<= 14'b00010111000000; // 1472 - max UDP packe lenght
-			ctl_rx_min_packet_len			<= 8'd4; // min packet lenght = arp request length (42 bits)
-			ctl_rx_custom_preamble_enable	<= 0;
-			ctl_rx_check_sfd				<= 0;             
-			ctl_rx_check_preamble			<= 0;        
-			ctl_rx_process_lfi				<= 0;           
-			ctl_rx_force_resync				<= 0;          
-		end else begin
-			if (~ip_init) begin
-				ctl_rx_test_pattern				<= 0;
-				ctl_rx_test_pattern_enable		<= 0;
-				ctl_rx_data_pattern_select		<= 0;
-				ctl_rx_enable					<= 1;
-				ctl_rx_delete_fcs				<= 1;
-				ctl_rx_ignore_fcs				<= 0;
-				ctl_rx_max_packet_len			<= 14'b00010111000000;
-				ctl_rx_min_packet_len			<= 8'd4;
-				ctl_rx_custom_preamble_enable	<= 0;
-				ctl_rx_check_sfd				<= 0;
-				ctl_rx_check_preamble			<= 0;
-				ctl_rx_process_lfi				<= 0;
-				ctl_rx_force_resync				<= 0;
-			end else;
-		end
-	end
-	
-	always @(posedge tx_clk_out, posedge i_reset) begin		// Clock domain - Async & ???
-		if (i_reset) begin
-			rx_reset_r 					<= 0;
-			tx_reset_r 					<= 0;
-			gt_loopback_in 				<= 0;
-			gtwiz_reset_tx_datapath_r 	<= 0;
-			gtwiz_reset_rx_datapath_r 	<= 0;
-			qpllreset_in_r 				<= 0;
-			txoutclksel_in 				<= 3'b101;
-			rxoutclksel_in 				<= 3'b101;
-			sys_reset_r 				<= 0;
-			ip_init 					<= 0;
-		end else begin
-			ip_init <= (ip_init == 0) ? 1: ip_init;
-			
-			if (~ip_init) begin
-				txoutclksel_in <= 3'b101;
-				rxoutclksel_in <= 3'b101;
-			end else;
-		end
-	end
-	
+	/* Fake transmitter */
     axi4_stream_sfp_ethernet_controller axi4_stream_sfp_ethernet_controller_inst(
              //// GT_0 Signals
         .gt_rxp_in_0(gt_rxp_in),                    							//	GT rx in   							//  input  wire gt_rxp_in_0;  
@@ -443,9 +474,18 @@ module ethernet(
 	wire 		tx_contr_tlast;
 	wire [7:0]	tx_contr_tkeep;
 	
-	ethernet_controller #(48'h211abcdef112, 32'hC0000186) ethernet_controller_inst(
-		.i_clk(i_clk),						//	input 			i_clk,
-		.i_reset(i_reset),					//	input 			i_reset,
+	assign ila_rx_crx_contr_tvalid     = rx_contr_tvalid; 
+    assign ila_rx_contr_tdata          = rx_contr_tdata;
+    assign ila_rx_crx_contr_tlast      = rx_contr_tlast;
+    assign ila_rx_contr_tkeep          = rx_contr_tkeep;
+    assign ila_tx_ctx_contr_tvalid     = tx_contr_tvalid;
+    assign ila_tx_contr_tdata          = tx_contr_tdata;
+    assign ila_tx_ctx_contr_tlast      = tx_contr_tlast;
+    assign ila_tx_contr_tkeep          = tx_contr_tkeep;
+    
+	ethernet_controller #(.FPGA_MAC(FPGA_MAC), .FPGA_IP(FPGA_IP), .UDP_port_dst(UDP_port_dst)) ethernet_controller_inst(
+		.i_clk(i_clk_156_25),				//	input 			i_clk,
+		.i_reset(i_reset || i_await_init),	//	input 			i_reset,
 											//	
 		.rx_axis_tvalid(rx_contr_tvalid),	//	input 			rx_axis_tvalid,
 		.rx_axis_tdata(rx_contr_tdata), 	//	input [63:0]	rx_axis_tdata, 
@@ -455,35 +495,80 @@ module ethernet(
 		.tx_axis_tvalid(tx_contr_tvalid),	//	output 			tx_axis_tvalid,
 		.tx_axis_tdata(tx_contr_tdata), 	//	output [63:0]	tx_axis_tdata, 
 		.tx_axis_tlast(tx_contr_tlast), 	//	output 			tx_axis_tlast, 
-		.tx_axis_tkeep(tx_contr_tkeep)		//	output [7:0]	tx_axis_tkeep
+		.tx_axis_tkeep(tx_contr_tkeep),		//	output [7:0]	tx_axis_tkeep,
+		                                    //	
+		.ila_data_head(ila_data_head),       //  output [42*8-1:0] ila_data_head
+		.ila_transmit_data_head(ila_transmit_data_head),                //  output [48*8-1:0] ila_transmit_data_head
+		.ila_payload_transmit_start(ila_payload_transmit_start),        //  output              ila_payload_transmit_start,        
+                                                                        //                                                      
+        .ila_payload_fifo_din(ila_payload_fifo_din),                    //  output [63:0]       ila_payload_fifo_din,           
+        .ila_payload_fifo_empty(ila_payload_fifo_empty),                //  output              ila_payload_fifo_empty,         
+        .ila_payload_fifo_wr_en(ila_payload_fifo_wr_en),                //  output              ila_payload_fifo_wr_en,         
+        .ila_payload_fifo_rd_en(ila_payload_fifo_rd_en),                //  output              ila_payload_fifo_rd_en,         
+        .ila_payload_fifo_dout(ila_payload_fifo_dout),                  //  output [63:0]       ila_payload_fifo_dout,          
+        .ila_payload_fifo_full(ila_payload_fifo_full),                  //  output              ila_payload_fifo_full,          
+        .ila_payload_fifo_data_count(ila_payload_fifo_data_count),      //  output [3:0]        ila_payload_fifo_data_count,    
+                                                                        //                                                      
+        .ila_payload_keep_fifo_din(ila_payload_keep_fifo_din),              //  output [7:0]        ila_payload_keep_fifo_din,      
+        .ila_payload_keep_fifo_wr_en(ila_payload_keep_fifo_wr_en),          //  output              ila_payload_keep_fifo_wr_en,    
+        .ila_payload_keep_fifo_rd_en(ila_payload_keep_fifo_rd_en),          //  output              ila_payload_keep_fifo_rd_en,    
+        .ila_payload_keep_fifo_dout(ila_payload_keep_fifo_dout),            //  output [7:0]        ila_payload_keep_fifo_dout,     
+        .ila_payload_keep_fifo_full(ila_payload_keep_fifo_full),            //  output              ila_payload_keep_fifo_full,     
+        .ila_payload_keep_fifo_empty(ila_payload_keep_fifo_empty),          //  output              ila_payload_keep_fifo_empty,    
+        .ila_payload_keep_fifo_data_count(ila_payload_keep_fifo_data_count),//  output [3:0]        ila_payload_keep_fifo_data_count
+        
+        .ila_icmp_valid(ila_icmp_valid),            //  output ila_icmp_valid,    
+        .ila_icmp_crc_part1(ila_icmp_crc_part1),    //  output ila_icmp_crc_part1,
+        .ila_icmp_crc(ila_icmp_crc),                //  output ila_icmp_crc,      
+        .ila_icmp_crc_ready(ila_icmp_crc_ready)     //  output ila_icmp_crc_ready 
 	);
 	
 	ethernet_controller_axi_stream_bridge ethernet_controller_axi_stream_bridge_inst(
-												//  /* System */
-	   .i_clk(i_clk),                           //  input 				i_clk,
-	   .i_reset(i_reset),                       //  input 				i_reset,
-												//  /* Ethernet controller */
-	   .i_ethernet_controller_clk(i_CLK_125),   //  input 				i_ethernet_controller_clk,
-	   .o_rx_contr_tvalid(rx_contr_tvalid),     //  output reg 			o_rx_contr_tvalid,
-	   .o_rx_contr_tdata(rx_contr_tdata),       //  output reg 	[63:0] 	o_rx_contr_tdata,
-	   .o_rx_contr_tlast(rx_contr_tlast),       //  output reg 			o_rx_contr_tlast, 
-	   .o_rx_contr_tkeep(rx_contr_tkeep),       //  output reg 	[7:0] 	o_rx_contr_tkeep, 
-	   .i_tx_contr_tvalid(tx_contr_tvalid),     //  input 				i_tx_contr_tvalid,
-	   .i_tx_contr_tdata(tx_contr_tdata),       //  input 		[63:0] 	i_tx_contr_tdata,
-	   .i_tx_contr_tlast(tx_contr_tlast),       //  input 				i_tx_contr_tlast, 
-	   .i_tx_contr_tkeep(tx_contr_tkeep),       //  input 		[7:0] 	i_tx_contr_tkeep, 
-												//  /* AXI Stream */
-	   .i_axi_stream_clk(tx_clk_out),           //  input 				i_axi_stream_clk,
-	   .i_tx_axis_tready(tx_axis_tready),       //  input 				i_tx_axis_tready,
-	   .o_tx_axis_tvalid(tx_axis_tvalid),       //  output reg 			o_tx_axis_tvalid,      
-	   .o_tx_axis_tdata(tx_axis_tdata),         //  output reg 	[63:0] 	o_tx_axis_tdata,
-	   .o_tx_axis_tlast(tx_axis_tlast),         //  output reg 			o_tx_axis_tlast,       
-	   .o_tx_axis_tkeep(tx_axis_tkeep),         //  output reg 	[7:0] 	o_tx_axis_tkeep,      
-	   .i_rx_axis_tvalid(rx_axis_tvalid),       //  input 				i_rx_axis_tvalid,       
-	   .i_rx_axis_tdata(rx_axis_tdata),         //  input 		[63:0] 	i_rx_axis_tdata,
-	   .i_rx_axis_tlast(rx_axis_tlast),         //  input 				i_rx_axis_tlast,        
-	   .i_rx_axis_tkeep(rx_axis_tkeep),         //  input 		[7:0] 	i_rx_axis_tkeep,      
-	   .i_rx_preambleout(rx_preambleout)        //  input 		[55:0] 	i_rx_preambleout
+												   //  /* System */
+	   .i_reset(i_reset || i_await_init),          //  input 				i_reset,
+												   //  /* Ethernet controller */
+	   .i_ethernet_controller_clk(i_clk_156_25),   //  input 				i_ethernet_controller_clk,
+	   .o_rx_contr_tvalid(rx_contr_tvalid),        //  output reg 			o_rx_contr_tvalid,
+	   .o_rx_contr_tdata(rx_contr_tdata),          //  output reg 	[63:0] 	o_rx_contr_tdata,
+	   .o_rx_contr_tlast(rx_contr_tlast),          //  output reg 			o_rx_contr_tlast, 
+	   .o_rx_contr_tkeep(rx_contr_tkeep),          //  output reg 	[7:0] 	o_rx_contr_tkeep, 
+	   .i_tx_contr_tvalid(tx_contr_tvalid),        //  input 				i_tx_contr_tvalid,
+	   .i_tx_contr_tdata(tx_contr_tdata),          //  input 		[63:0] 	i_tx_contr_tdata,
+	   .i_tx_contr_tlast(tx_contr_tlast),          //  input 				i_tx_contr_tlast, 
+	   .i_tx_contr_tkeep(tx_contr_tkeep),          //  input 		[7:0] 	i_tx_contr_tkeep, 
+												   //  /* AXI Stream */
+	   .i_axi_stream_clk(tx_clk_out),              //  input 				i_axi_stream_clk,
+	   .i_tx_axis_tready(tx_axis_tready),          //  input 				i_tx_axis_tready,
+	   .o_tx_axis_tvalid(tx_axis_tvalid_bridge),   //  output reg 			o_tx_axis_tvalid,      
+	   .o_tx_axis_tdata(tx_axis_tdata_bridge),     //  output reg 	[63:0] 	o_tx_axis_tdata,
+	   .o_tx_axis_tlast(tx_axis_tlast_bridge),     //  output reg 			o_tx_axis_tlast,       
+	   .o_tx_axis_tkeep(tx_axis_tkeep_bridge),     //  output reg 	[7:0] 	o_tx_axis_tkeep,
+	   .o_tx_axis_tuser(tx_axis_tuser_bridge),     //  output reg 	        o_tx_axis_tuser,   
+	   .i_rx_axis_tvalid(rx_axis_tvalid),          //  input 				i_rx_axis_tvalid,       
+	   .i_rx_axis_tdata(rx_axis_tdata),            //  input 		[63:0] 	i_rx_axis_tdata,
+	   .i_rx_axis_tlast(rx_axis_tlast),            //  input 				i_rx_axis_tlast,        
+	   .i_rx_axis_tkeep(rx_axis_tkeep),            //  input 		[7:0] 	i_rx_axis_tkeep,      
+	   .i_rx_preambleout(rx_preambleout),          //  input 		[55:0] 	i_rx_preambleout
+	   
+	   .ila_rd_en_axis_tx_64(ila_rd_en_axis_tx_64),                 //  output ila_rd_en_axis_tx_64,             
+       .ila_dout_axis_tx_64(ila_dout_axis_tx_64),                   //  output [63:0] ila_dout_axis_tx_64,       
+       .ila_full_axis_tx_64(ila_full_axis_tx_64),                   //  output ila_full_axis_tx_64,              
+       .ila_empty_axis_tx_64(ila_empty_axis_tx_64),                 //  output ila_empty_axis_tx_64,             
+       .ila_wr_rst_busy_axis_tx_64(ila_wr_rst_busy_axis_tx_64),     //  output ila_wr_rst_busy_axis_tx_64,       
+       .ila_rd_rst_busy_axis_tx_64(ila_rd_rst_busy_axis_tx_64),     //  output ila_rd_rst_busy_axis_tx_64,
+       .ila_rd_en_contr_rx_64(ila_rd_en_contr_rx_64),               //  output ila_rd_en_contr_rx_64,      
+       .ila_dout_contr_rx_64(ila_dout_contr_rx_64),                 //  output [63:0] ila_dout_contr_rx_64,
+       .ila_full_contr_rx_64(ila_full_contr_rx_64),                 //  output ila_full_contr_rx_64,       
+       .ila_empty_contr_rx_64(ila_empty_contr_rx_64),               //  output ila_empty_contr_rx_64,      
+       .ila_wr_rst_busy_contr_rx_64(ila_wr_rst_busy_contr_rx_64),   //  output ila_wr_rst_busy_contr_rx_64,
+       .ila_rd_rst_busy_contr_rx_64(ila_rd_rst_busy_contr_rx_64)    //  output ila_rd_rst_busy_contr_rx_64
     );
+    
+    assign ila_stat_tx_frame_error  = stat_tx_frame_error;
+    assign ila_stat_tx_packet_small = stat_tx_packet_small;
+    assign ila_stat_tx_bad_fcs      = stat_tx_bad_fcs;
+    assign ila_stat_tx_fifo_error   = 0;
+    assign ila_stat_tx_local_fault  = stat_tx_local_fault;
+    assign ila_stat_tx_bad_parity   = 0;
     
 endmodule

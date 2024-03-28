@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Thu Mar 28 12:27:00 2024
+# Process ID: 2148
+# Current directory: D:/programming/RLCBC_BROD/project/Ethernet10G.runs/fifo_72_72_synth_1
+# Command line: vivado.exe -log fifo_72_72.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fifo_72_72.tcl
+# Log file: D:/programming/RLCBC_BROD/project/Ethernet10G.runs/fifo_72_72_synth_1/fifo_72_72.vds
+# Journal file: D:/programming/RLCBC_BROD/project/Ethernet10G.runs/fifo_72_72_synth_1\vivado.jou
+#-----------------------------------------------------------
+source fifo_72_72.tcl -notrace

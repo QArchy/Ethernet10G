@@ -5,17 +5,17 @@ module status_led_control(
     input      [7:0]    i_DIP_sw,
     output reg [7:0]    o_led
 );
-    reg [25:0] frequency_divider;
+    reg [26:0] frequency_divider;
 	always @(posedge i_clk, posedge i_reset) begin
 		if (i_reset) begin
 		    o_led[7:0]          <= 0;
-            frequency_divider   <= 26'd0;
+            frequency_divider   <= 27'd0;
 		end else begin
 		    frequency_divider <= frequency_divider + 1;
 		    
-			if (frequency_divider == {26{1'b1}}) begin	// Blink once in ~1 seconds
+			if (frequency_divider == {27{1'b1}}) begin	// Blink once in ~1 seconds
 				o_led[7]            <= i_DIP_sw[7] && ~o_led[7];
-				frequency_divider   <= 26'd0;
+				frequency_divider   <= 27'd0;
 			end
 			
 			o_led[0] <= i_DIP_sw[0] && i_push_btn[0];

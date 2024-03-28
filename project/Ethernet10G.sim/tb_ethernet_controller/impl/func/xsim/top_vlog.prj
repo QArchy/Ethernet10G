@@ -1,0 +1,6 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../../Ethernet10G.srcs/sources_1/ip/pll_125_clk" --include "../../../../../Ethernet10G.srcs/sources_1/ip/pll_74_25_clk" \
+"top_func_impl.v" \
+
+# Do not sort compile order
+nosort

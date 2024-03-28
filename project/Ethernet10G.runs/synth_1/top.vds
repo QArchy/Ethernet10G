@@ -2,8 +2,8 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Sun Mar  3 13:54:05 2024
-# Process ID: 1592
+# Start of session at: Thu Mar 28 12:37:18 2024
+# Process ID: 6616
 # Current directory: D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 # Log file: D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1/top.vds
@@ -16,82 +16,81 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xczu9eg'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu9eg'
 INFO: [Device 21-403] Loading part xczu9eg-ffvb1156-3-e
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 672 
-WARNING: [Synth 8-6901] identifier 'payload_fifo_empty' is used before its declaration [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller/ethernet_reply_transmitter.v:64]
+INFO: Helper process launched with PID 4836 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1560.812 ; gain = 73.629
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1573.926 ; gain = 64.184
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top' [D:/programming/RLCBC_BROD/project/rtl/top.v:1]
 INFO: [Synth 8-6157] synthesizing module 'clock_generator' [D:/programming/RLCBC_BROD/project/rtl/clock_generator.v:1]
-INFO: [Synth 8-6157] synthesizing module 'IBUFDS' [D:/Programs/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:32952]
+INFO: [Synth 8-6157] synthesizing module 'IBUFGDS' [D:/Programs/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:33416]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter DIFF_TERM bound to: FALSE - type: string 
-	Parameter DQS_BIAS bound to: FALSE - type: string 
 	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
 	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
-	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
 	Parameter IOSTANDARD bound to: LVDS_25 - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'IBUFDS' (1#1) [D:/Programs/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:32952]
-INFO: [Synth 8-6155] done synthesizing module 'clock_generator' (2#1) [D:/programming/RLCBC_BROD/project/rtl/clock_generator.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'IBUFGDS' (1#1) [D:/Programs/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:33416]
+INFO: [Synth 8-6157] synthesizing module 'pll_74_25_clk' [D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1/.Xil/Vivado-6616-LAPTOP-3EF4A3RH/realtime/pll_74_25_clk_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'pll_74_25_clk' (2#1) [D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1/.Xil/Vivado-6616-LAPTOP-3EF4A3RH/realtime/pll_74_25_clk_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clock_generator' (3#1) [D:/programming/RLCBC_BROD/project/rtl/clock_generator.v:1]
+INFO: [Synth 8-6157] synthesizing module 'reset_init_block' [D:/programming/RLCBC_BROD/project/rtl/reset_init_block.v:1]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/programming/RLCBC_BROD/project/rtl/reset_init_block.v:18]
+INFO: [Synth 8-6155] done synthesizing module 'reset_init_block' (4#1) [D:/programming/RLCBC_BROD/project/rtl/reset_init_block.v:1]
 INFO: [Synth 8-6157] synthesizing module 'ethernet' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:1]
-INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller' [D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1/.Xil/Vivado-1592-LAPTOP-3EF4A3RH/realtime/axi4_stream_sfp_ethernet_controller_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller' (3#1) [D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1/.Xil/Vivado-1592-LAPTOP-3EF4A3RH/realtime/axi4_stream_sfp_ethernet_controller_stub.v:6]
+	Parameter FPGA_MAC bound to: 48'b001000010001101010111100110111101111000100010010 
+	Parameter FPGA_IP bound to: -1073741434 - type: integer 
+	Parameter UDP_port_dst bound to: 16'b0000000000000000 
+INFO: [Synth 8-6157] synthesizing module 'axi4_stream_sfp_ethernet_controller' [D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1/.Xil/Vivado-6616-LAPTOP-3EF4A3RH/realtime/axi4_stream_sfp_ethernet_controller_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'axi4_stream_sfp_ethernet_controller' (5#1) [D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1/.Xil/Vivado-6616-LAPTOP-3EF4A3RH/realtime/axi4_stream_sfp_ethernet_controller_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'ethernet_controller' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller/ethernet_controller.v:1]
 	Parameter FPGA_MAC bound to: 48'b001000010001101010111100110111101111000100010010 
 	Parameter FPGA_IP bound to: -1073741434 - type: integer 
+	Parameter UDP_port_dst bound to: 16'b0000000000000000 
 INFO: [Synth 8-6157] synthesizing module 'ethernet_receiver' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller/ethernet_receiver_lib/ethernet_receiver.v:1]
 	Parameter FPGA_MAC bound to: 48'b001000010001101010111100110111101111000100010010 
 	Parameter FPGA_IP bound to: -1073741434 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'ethernet_header_receiver' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller/ethernet_receiver_lib/ethernet_header_receiver.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'ethernet_header_receiver' (4#1) [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller/ethernet_receiver_lib/ethernet_header_receiver.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'ethernet_header_receiver' (6#1) [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller/ethernet_receiver_lib/ethernet_header_receiver.v:1]
 WARNING: [Synth 8-5788] Register o_icmp_crc_part_ready_reg in module ethernet_receiver is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller/ethernet_receiver_lib/ethernet_receiver.v:121]
-INFO: [Synth 8-6155] done synthesizing module 'ethernet_receiver' (5#1) [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller/ethernet_receiver_lib/ethernet_receiver.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'ethernet_receiver' (7#1) [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller/ethernet_receiver_lib/ethernet_receiver.v:1]
 INFO: [Synth 8-6157] synthesizing module 'ethernet_head_reply_builder' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller/ethernet_head_reply_builder.v:1]
 	Parameter FPGA_MAC bound to: 48'b001000010001101010111100110111101111000100010010 
 	Parameter FPGA_IP bound to: -1073741434 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'ethernet_head_reply_builder' (6#1) [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller/ethernet_head_reply_builder.v:1]
+	Parameter UDP_port_dst bound to: 16'b0000000000000000 
+INFO: [Synth 8-6155] done synthesizing module 'ethernet_head_reply_builder' (8#1) [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller/ethernet_head_reply_builder.v:1]
 INFO: [Synth 8-6157] synthesizing module 'ethernet_icmp_checksum_counter' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller/ethernet_icmp_checksum_counter.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'ethernet_icmp_checksum_counter' (7#1) [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller/ethernet_icmp_checksum_counter.v:1]
+WARNING: [Synth 8-6014] Unused sequential element enable_r_reg was removed.  [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller/ethernet_icmp_checksum_counter.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ethernet_icmp_checksum_counter' (9#1) [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller/ethernet_icmp_checksum_counter.v:1]
 INFO: [Synth 8-6157] synthesizing module 'ethernet_reply_transmitter' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller/ethernet_reply_transmitter.v:1]
-INFO: [Synth 8-6157] synthesizing module 'fifo_ethernet_payload' [D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1/.Xil/Vivado-1592-LAPTOP-3EF4A3RH/realtime/fifo_ethernet_payload_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'fifo_ethernet_payload' (8#1) [D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1/.Xil/Vivado-1592-LAPTOP-3EF4A3RH/realtime/fifo_ethernet_payload_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'fifo_ethernet_payload_keep' [D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1/.Xil/Vivado-1592-LAPTOP-3EF4A3RH/realtime/fifo_ethernet_payload_keep_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'fifo_ethernet_payload_keep' (9#1) [D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1/.Xil/Vivado-1592-LAPTOP-3EF4A3RH/realtime/fifo_ethernet_payload_keep_stub.v:6]
-WARNING: [Synth 8-6014] Unused sequential element protocol_reg was removed.  [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller/ethernet_reply_transmitter.v:112]
-WARNING: [Synth 8-6014] Unused sequential element data_head_sent_reg was removed.  [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller/ethernet_reply_transmitter.v:130]
-INFO: [Synth 8-6155] done synthesizing module 'ethernet_reply_transmitter' (10#1) [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller/ethernet_reply_transmitter.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'ethernet_controller' (11#1) [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller/ethernet_controller.v:1]
+INFO: [Synth 8-6157] synthesizing module 'fifo_ethernet_payload' [D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1/.Xil/Vivado-6616-LAPTOP-3EF4A3RH/realtime/fifo_ethernet_payload_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_ethernet_payload' (10#1) [D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1/.Xil/Vivado-6616-LAPTOP-3EF4A3RH/realtime/fifo_ethernet_payload_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'fifo_ethernet_payload_keep' [D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1/.Xil/Vivado-6616-LAPTOP-3EF4A3RH/realtime/fifo_ethernet_payload_keep_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_ethernet_payload_keep' (11#1) [D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1/.Xil/Vivado-6616-LAPTOP-3EF4A3RH/realtime/fifo_ethernet_payload_keep_stub.v:6]
+WARNING: [Synth 8-6014] Unused sequential element data_head_sent_reg was removed.  [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller/ethernet_reply_transmitter.v:151]
+INFO: [Synth 8-6155] done synthesizing module 'ethernet_reply_transmitter' (12#1) [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller/ethernet_reply_transmitter.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'ethernet_controller' (13#1) [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller/ethernet_controller.v:1]
 INFO: [Synth 8-6157] synthesizing module 'ethernet_controller_axi_stream_bridge' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller_axi_stream_bridge.v:1]
-INFO: [Synth 8-6157] synthesizing module 'ethernet_controller_to_axi_mem' [D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1/.Xil/Vivado-1592-LAPTOP-3EF4A3RH/realtime/ethernet_controller_to_axi_mem_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ethernet_controller_to_axi_mem' (12#1) [D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1/.Xil/Vivado-1592-LAPTOP-3EF4A3RH/realtime/ethernet_controller_to_axi_mem_stub.v:6]
-WARNING: [Synth 8-5788] Register enable_read_B_reg in module ethernet_controller_axi_stream_bridge is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller_axi_stream_bridge.v:80]
-INFO: [Synth 8-6155] done synthesizing module 'ethernet_controller_axi_stream_bridge' (13#1) [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller_axi_stream_bridge.v:1]
-WARNING: [Synth 8-3848] Net tx_axis_tuser in module/entity ethernet does not have driver. [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:108]
-WARNING: [Synth 8-3848] Net i_clk in module/entity ethernet does not have driver. [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:447]
-INFO: [Synth 8-6155] done synthesizing module 'ethernet' (14#1) [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:1]
+INFO: [Synth 8-6157] synthesizing module 'fifo_72_72' [D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1/.Xil/Vivado-6616-LAPTOP-3EF4A3RH/realtime/fifo_72_72_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_72_72' (14#1) [D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1/.Xil/Vivado-6616-LAPTOP-3EF4A3RH/realtime/fifo_72_72_stub.v:6]
+WARNING: [Synth 8-5788] Register fifo_tx_rd_en_reg in module ethernet_controller_axi_stream_bridge is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller_axi_stream_bridge.v:52]
+WARNING: [Synth 8-5788] Register fifo_rx_rd_en_reg in module ethernet_controller_axi_stream_bridge is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller_axi_stream_bridge.v:104]
+INFO: [Synth 8-6155] done synthesizing module 'ethernet_controller_axi_stream_bridge' (15#1) [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller_axi_stream_bridge.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'ethernet' (16#1) [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:1]
+WARNING: [Synth 8-689] width (64) of port connection 'ila_dout_axis_tx_64' does not match port width (72) of module 'ethernet' [D:/programming/RLCBC_BROD/project/rtl/top.v:192]
+WARNING: [Synth 8-689] width (64) of port connection 'ila_dout_contr_rx_64' does not match port width (72) of module 'ethernet' [D:/programming/RLCBC_BROD/project/rtl/top.v:198]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [D:/programming/RLCBC_BROD/project/rtl/top.v:217]
+INFO: [Synth 8-6157] synthesizing module 'ila_ethernet' [D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1/.Xil/Vivado-6616-LAPTOP-3EF4A3RH/realtime/ila_ethernet_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ila_ethernet' (17#1) [D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1/.Xil/Vivado-6616-LAPTOP-3EF4A3RH/realtime/ila_ethernet_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'status_led_control' [D:/programming/RLCBC_BROD/project/rtl/status_led_control.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'status_led_control' (15#1) [D:/programming/RLCBC_BROD/project/rtl/status_led_control.v:1]
-WARNING: [Synth 8-3848] Net global_reset in module/entity top does not have driver. [D:/programming/RLCBC_BROD/project/rtl/top.v:117]
-INFO: [Synth 8-6155] done synthesizing module 'top' (16#1) [D:/programming/RLCBC_BROD/project/rtl/top.v:1]
-WARNING: [Synth 8-3331] design ethernet_controller_axi_stream_bridge has unconnected port i_clk
+INFO: [Synth 8-6155] done synthesizing module 'status_led_control' (18#1) [D:/programming/RLCBC_BROD/project/rtl/status_led_control.v:1]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ethernet_inst'. This will prevent further optimization [D:/programming/RLCBC_BROD/project/rtl/top.v:134]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ila_ethernet_inst'. This will prevent further optimization [D:/programming/RLCBC_BROD/project/rtl/top.v:217]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'reset_init_block_inst'. This will prevent further optimization [D:/programming/RLCBC_BROD/project/rtl/top.v:46]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'status_led_control_inst'. This will prevent further optimization [D:/programming/RLCBC_BROD/project/rtl/top.v:290]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'clock_generator_inst'. This will prevent further optimization [D:/programming/RLCBC_BROD/project/rtl/top.v:34]
+INFO: [Synth 8-6155] done synthesizing module 'top' (19#1) [D:/programming/RLCBC_BROD/project/rtl/top.v:1]
 WARNING: [Synth 8-3331] design ethernet_controller_axi_stream_bridge has unconnected port i_tx_contr_tlast
-WARNING: [Synth 8-3331] design ethernet_controller_axi_stream_bridge has unconnected port i_tx_contr_tkeep[7]
-WARNING: [Synth 8-3331] design ethernet_controller_axi_stream_bridge has unconnected port i_tx_contr_tkeep[6]
-WARNING: [Synth 8-3331] design ethernet_controller_axi_stream_bridge has unconnected port i_tx_contr_tkeep[5]
-WARNING: [Synth 8-3331] design ethernet_controller_axi_stream_bridge has unconnected port i_tx_contr_tkeep[4]
-WARNING: [Synth 8-3331] design ethernet_controller_axi_stream_bridge has unconnected port i_tx_contr_tkeep[3]
-WARNING: [Synth 8-3331] design ethernet_controller_axi_stream_bridge has unconnected port i_tx_contr_tkeep[2]
-WARNING: [Synth 8-3331] design ethernet_controller_axi_stream_bridge has unconnected port i_tx_contr_tkeep[1]
-WARNING: [Synth 8-3331] design ethernet_controller_axi_stream_bridge has unconnected port i_tx_contr_tkeep[0]
+WARNING: [Synth 8-3331] design ethernet_controller_axi_stream_bridge has unconnected port i_tx_axis_tready
 WARNING: [Synth 8-3331] design ethernet_controller_axi_stream_bridge has unconnected port i_rx_axis_tlast
-WARNING: [Synth 8-3331] design ethernet_controller_axi_stream_bridge has unconnected port i_rx_axis_tkeep[7]
-WARNING: [Synth 8-3331] design ethernet_controller_axi_stream_bridge has unconnected port i_rx_axis_tkeep[6]
-WARNING: [Synth 8-3331] design ethernet_controller_axi_stream_bridge has unconnected port i_rx_axis_tkeep[5]
-WARNING: [Synth 8-3331] design ethernet_controller_axi_stream_bridge has unconnected port i_rx_axis_tkeep[4]
-WARNING: [Synth 8-3331] design ethernet_controller_axi_stream_bridge has unconnected port i_rx_axis_tkeep[3]
-WARNING: [Synth 8-3331] design ethernet_controller_axi_stream_bridge has unconnected port i_rx_axis_tkeep[2]
-WARNING: [Synth 8-3331] design ethernet_controller_axi_stream_bridge has unconnected port i_rx_axis_tkeep[1]
-WARNING: [Synth 8-3331] design ethernet_controller_axi_stream_bridge has unconnected port i_rx_axis_tkeep[0]
 WARNING: [Synth 8-3331] design ethernet_controller_axi_stream_bridge has unconnected port i_rx_preambleout[55]
 WARNING: [Synth 8-3331] design ethernet_controller_axi_stream_bridge has unconnected port i_rx_preambleout[54]
 WARNING: [Synth 8-3331] design ethernet_controller_axi_stream_bridge has unconnected port i_rx_preambleout[53]
@@ -148,22 +147,50 @@ WARNING: [Synth 8-3331] design ethernet_controller_axi_stream_bridge has unconne
 WARNING: [Synth 8-3331] design ethernet_controller_axi_stream_bridge has unconnected port i_rx_preambleout[2]
 WARNING: [Synth 8-3331] design ethernet_controller_axi_stream_bridge has unconnected port i_rx_preambleout[1]
 WARNING: [Synth 8-3331] design ethernet_controller_axi_stream_bridge has unconnected port i_rx_preambleout[0]
-WARNING: [Synth 8-3331] design ethernet_reply_transmitter has unconnected port icmp_valid
-WARNING: [Synth 8-3331] design ethernet_reply_transmitter has unconnected port udp_valid
+WARNING: [Synth 8-3331] design ethernet_reply_transmitter has unconnected port data_head_frame_payload_keep[5]
+WARNING: [Synth 8-3331] design ethernet_reply_transmitter has unconnected port data_head_frame_payload_keep[4]
+WARNING: [Synth 8-3331] design ethernet_reply_transmitter has unconnected port data_head_frame_payload_keep[3]
+WARNING: [Synth 8-3331] design ethernet_reply_transmitter has unconnected port data_head_frame_payload_keep[2]
+WARNING: [Synth 8-3331] design ethernet_reply_transmitter has unconnected port data_head_frame_payload_keep[1]
+WARNING: [Synth 8-3331] design ethernet_reply_transmitter has unconnected port data_head_frame_payload_keep[0]
 WARNING: [Synth 8-3331] design ethernet_reply_transmitter has unconnected port rx_axis_tvalid
-WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tkeep[7]
-WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tkeep[6]
-WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tkeep[5]
-WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tkeep[4]
-WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tkeep[3]
-WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tkeep[2]
-WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tkeep[1]
-WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tkeep[0]
-WARNING: [Synth 8-3331] design ethernet_header_receiver has unconnected port i_rx_axis_tlast
-WARNING: [Synth 8-3331] design ethernet_header_receiver has unconnected port i_rx_axis_tkeep[1]
-WARNING: [Synth 8-3331] design ethernet_header_receiver has unconnected port i_rx_axis_tkeep[0]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[63]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[62]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[61]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[60]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[59]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[58]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[57]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[56]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[55]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[54]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[53]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[52]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[51]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[50]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[49]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[48]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[47]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[46]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[45]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[44]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[43]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[42]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[41]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[40]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[39]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[38]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[37]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[36]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[35]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[34]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[33]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[32]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[31]
+WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tdata[30]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1612.391 ; gain = 125.207
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1652.758 ; gain = 143.016
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -176,47 +203,51 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1630.316 ; gain = 143.133
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1660.621 ; gain = 150.879
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1630.316 ; gain = 143.133
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1660.621 ; gain = 150.879
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.150 . Memory (MB): peak = 1642.328 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.177 . Memory (MB): peak = 1672.637 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_in_context.xdc] for cell 'ethernet_inst/axi4_stream_sfp_ethernet_controller_inst'
-create_clock: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1759.406 ; gain = 5.984
+create_clock: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1791.684 ; gain = 5.996
 Finished Parsing XDC File [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_in_context.xdc] for cell 'ethernet_inst/axi4_stream_sfp_ethernet_controller_inst'
 Parsing XDC File [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/fifo_ethernet_payload/fifo_ethernet_payload/fifo_ethernet_payload_in_context.xdc] for cell 'ethernet_inst/ethernet_controller_inst/ethernet_reply_transmitter_inst/fifo_ethernet_payload_inst'
 Finished Parsing XDC File [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/fifo_ethernet_payload/fifo_ethernet_payload/fifo_ethernet_payload_in_context.xdc] for cell 'ethernet_inst/ethernet_controller_inst/ethernet_reply_transmitter_inst/fifo_ethernet_payload_inst'
 Parsing XDC File [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/fifo_ethernet_payload_keep/fifo_ethernet_payload_keep/fifo_ethernet_payload_keep_in_context.xdc] for cell 'ethernet_inst/ethernet_controller_inst/ethernet_reply_transmitter_inst/fifo_ethernet_payload_keep_inst'
 Finished Parsing XDC File [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/fifo_ethernet_payload_keep/fifo_ethernet_payload_keep/fifo_ethernet_payload_keep_in_context.xdc] for cell 'ethernet_inst/ethernet_controller_inst/ethernet_reply_transmitter_inst/fifo_ethernet_payload_keep_inst'
-Parsing XDC File [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/ethernet_controller_to_axi_mem/ethernet_controller_to_axi_mem/ethernet_controller_to_axi_mem_in_context.xdc] for cell 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/ethernet_controller_to_axi_mem_inst'
-Finished Parsing XDC File [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/ethernet_controller_to_axi_mem/ethernet_controller_to_axi_mem/ethernet_controller_to_axi_mem_in_context.xdc] for cell 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/ethernet_controller_to_axi_mem_inst'
+Parsing XDC File [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/ila_ethernet/ila_ethernet/ila_ethernet_in_context.xdc] for cell 'ila_ethernet_inst'
+Finished Parsing XDC File [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/ila_ethernet/ila_ethernet/ila_ethernet_in_context.xdc] for cell 'ila_ethernet_inst'
+Parsing XDC File [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/pll_74_25_clk/pll_74_25_clk/pll_74_25_clk_in_context.xdc] for cell 'clock_generator_inst/pll_74_25_clk_inst'
+Finished Parsing XDC File [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/pll_74_25_clk/pll_74_25_clk/pll_74_25_clk_in_context.xdc] for cell 'clock_generator_inst/pll_74_25_clk_inst'
+Parsing XDC File [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/fifo_72_72/fifo_72_72/fifo_72_72_in_context.xdc] for cell 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/fifo_72_72_tx'
+Finished Parsing XDC File [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/fifo_72_72/fifo_72_72/fifo_72_72_in_context.xdc] for cell 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/fifo_72_72_tx'
+Parsing XDC File [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/fifo_72_72/fifo_72_72/fifo_72_72_in_context.xdc] for cell 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/fifo_72_72_rx'
+Finished Parsing XDC File [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/fifo_72_72/fifo_72_72/fifo_72_72_in_context.xdc] for cell 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/fifo_72_72_rx'
 Parsing XDC File [D:/programming/RLCBC_BROD/dbg/constraints.xdc]
-CRITICAL WARNING: [Constraints 18-1056] Clock 'CLK_156_25_P' completely overrides clock 'i_CLK_156_25_P'.
-New: create_clock -period 6.400 -name CLK_156_25_P -waveform {0.000 3.200} [get_ports i_CLK_156_25_P], [D:/programming/RLCBC_BROD/dbg/constraints.xdc:6]
-Previous: create_clock -period 6.400 [get_ports i_CLK_156_25_P], [d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_in_context.xdc:2]
-Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
 Finished Parsing XDC File [D:/programming/RLCBC_BROD/dbg/constraints.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/programming/RLCBC_BROD/dbg/constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1762.348 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1791.684 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 2 instances were transformed.
-  IBUFDS => IBUFDS (DIFFINBUF, IBUFCTRL): 2 instances
+  A total of 1 instances were transformed.
+  IBUFGDS => IBUFDS (DIFFINBUF, IBUFCTRL): 1 instance 
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1762.348 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1791.684 ; gain = 0.000
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'ila_ethernet_inst' at clock pin 'clk' is different from the actual clock period '6.206', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '6.400' specified during out-of-context synthesis of instance 'ethernet_inst/axi4_stream_sfp_ethernet_controller_inst' at clock pin 'rx_core_clk_0' is different from the actual clock period '6.206', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/ethernet_controller_to_axi_mem_inst' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '6.410' specified during out-of-context synthesis of instance 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/fifo_72_72_rx' at clock pin 'wr_clk' is different from the actual clock period '6.206', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '6.410' specified during out-of-context synthesis of instance 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/fifo_72_72_tx' at clock pin 'rd_clk' is different from the actual clock period '6.206', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1765.363 ; gain = 278.180
+Finished Constraint Validation : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1791.684 ; gain = 281.941
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -224,15 +255,15 @@ Start Loading Part and Timing Information
 Loading part: xczu9eg-ffvb1156-3-e
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1765.363 ; gain = 278.180
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1791.684 ; gain = 281.941
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for i_CLK_156_25_N. (constraint file  d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_in_context.xdc, line 5).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for i_CLK_156_25_N. (constraint file  d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_in_context.xdc, line 6).
-Applied set_property IO_BUFFER_TYPE = NONE for i_CLK_156_25_P. (constraint file  d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_in_context.xdc, line 7).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for i_CLK_156_25_P. (constraint file  d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_in_context.xdc, line 8).
+Applied set_property IO_BUFFER_TYPE = NONE for i_clk_156_25_N. (constraint file  d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_in_context.xdc, line 5).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for i_clk_156_25_N. (constraint file  d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_in_context.xdc, line 6).
+Applied set_property IO_BUFFER_TYPE = NONE for i_clk_156_25_P. (constraint file  d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_in_context.xdc, line 7).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for i_clk_156_25_P. (constraint file  d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_in_context.xdc, line 8).
 Applied set_property IO_BUFFER_TYPE = NONE for i_ll_rx_n. (constraint file  d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_in_context.xdc, line 9).
 Applied set_property CLOCK_BUFFER_TYPE = NONE for i_ll_rx_n. (constraint file  d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_in_context.xdc, line 10).
 Applied set_property IO_BUFFER_TYPE = NONE for i_ll_rx_p. (constraint file  d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_in_context.xdc, line 11).
@@ -241,36 +272,29 @@ Applied set_property IO_BUFFER_TYPE = NONE for o_ll_tx_n. (constraint file  d:/p
 Applied set_property CLOCK_BUFFER_TYPE = NONE for o_ll_tx_n. (constraint file  d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_in_context.xdc, line 14).
 Applied set_property IO_BUFFER_TYPE = NONE for o_ll_tx_p. (constraint file  d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_in_context.xdc, line 15).
 Applied set_property CLOCK_BUFFER_TYPE = NONE for o_ll_tx_p. (constraint file  d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller_in_context.xdc, line 16).
+WARNING: set_property CLOCK_DEDICATED_ROUTE could not find object (constraint file  D:/programming/RLCBC_BROD/dbg/constraints.xdc, line 8).
 Applied set_property DONT_TOUCH = true for ethernet_inst/axi4_stream_sfp_ethernet_controller_inst. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for ethernet_inst/ethernet_controller_inst/ethernet_reply_transmitter_inst/fifo_ethernet_payload_inst. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for ethernet_inst/ethernet_controller_inst/ethernet_reply_transmitter_inst/fifo_ethernet_payload_keep_inst. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for ethernet_inst/ethernet_controller_axi_stream_bridge_inst/ethernet_controller_to_axi_mem_inst. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for ila_ethernet_inst. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for clock_generator_inst/pll_74_25_clk_inst. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for ethernet_inst/ethernet_controller_axi_stream_bridge_inst/fifo_72_72_rx. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for ethernet_inst/ethernet_controller_axi_stream_bridge_inst/fifo_72_72_tx. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1765.363 ; gain = 278.180
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1791.684 ; gain = 281.941
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller/ethernet_icmp_checksum_counter.v:41]
-INFO: [Synth 8-4471] merging register 'ctl_tx_test_pattern_enable_reg' into 'ctl_tx_test_pattern_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:172]
-INFO: [Synth 8-4471] merging register 'ctl_tx_test_pattern_select_reg' into 'ctl_tx_test_pattern_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:173]
-INFO: [Synth 8-4471] merging register 'ctl_tx_data_pattern_select_reg' into 'ctl_tx_test_pattern_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:174]
-INFO: [Synth 8-4471] merging register 'ctl_tx_test_pattern_seed_b_reg[57:0]' into 'ctl_tx_test_pattern_seed_a_reg[57:0]' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:176]
-INFO: [Synth 8-4471] merging register 'ctl_tx_fcs_ins_enable_reg' into 'ctl_tx_enable_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:178]
-INFO: [Synth 8-4471] merging register 'ctl_tx_send_lfi_reg' into 'ctl_tx_test_pattern_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:180]
-INFO: [Synth 8-4471] merging register 'ctl_tx_send_rfi_reg' into 'ctl_tx_test_pattern_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:181]
-INFO: [Synth 8-4471] merging register 'ctl_tx_send_idle_reg' into 'ctl_tx_test_pattern_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:182]
-INFO: [Synth 8-4471] merging register 'ctl_tx_custom_preamble_enable_reg' into 'ctl_tx_test_pattern_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:183]
-INFO: [Synth 8-4471] merging register 'ctl_tx_ignore_fcs_reg' into 'ctl_tx_test_pattern_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:184]
-INFO: [Synth 8-4471] merging register 'ctl_rx_test_pattern_enable_reg' into 'ctl_rx_test_pattern_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:208]
-INFO: [Synth 8-4471] merging register 'ctl_rx_data_pattern_select_reg' into 'ctl_rx_test_pattern_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:209]
-INFO: [Synth 8-4471] merging register 'ctl_rx_delete_fcs_reg' into 'ctl_rx_enable_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:211]
-INFO: [Synth 8-4471] merging register 'ctl_rx_ignore_fcs_reg' into 'ctl_rx_test_pattern_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:212]
-INFO: [Synth 8-4471] merging register 'ctl_rx_custom_preamble_enable_reg' into 'ctl_rx_test_pattern_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:215]
-INFO: [Synth 8-4471] merging register 'ctl_rx_check_sfd_reg' into 'ctl_rx_test_pattern_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:216]
-INFO: [Synth 8-4471] merging register 'ctl_rx_check_preamble_reg' into 'ctl_rx_test_pattern_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:217]
-INFO: [Synth 8-4471] merging register 'ctl_rx_process_lfi_reg' into 'ctl_rx_test_pattern_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:218]
-INFO: [Synth 8-4471] merging register 'ctl_rx_force_resync_reg' into 'ctl_rx_test_pattern_reg' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:219]
-INFO: [Synth 8-4471] merging register 'rxoutclksel_in_reg[2:0]' into 'txoutclksel_in_reg[2:0]' [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet.v:248]
+INFO: [Synth 8-802] inferred FSM for state register 'reset_state_reg' in module 'reset_init_block'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE1 |                             0001 |                              000
+                 iSTATE2 |                             0010 |                              001
+                  iSTATE |                             0100 |                              010
+                 iSTATE0 |                             1000 |                              011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'reset_state_reg' using encoding 'one-hot' in module 'reset_init_block'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 1765.363 ; gain = 278.180
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1791.684 ; gain = 281.941
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -283,39 +307,34 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     26 Bit       Adders := 1     
-	   5 Input     21 Bit       Adders := 1     
+	   2 Input     27 Bit       Adders := 3     
 	  10 Input     20 Bit       Adders := 1     
 	   2 Input     17 Bit       Adders := 1     
-	   2 Input      7 Bit       Adders := 2     
 	   2 Input      3 Bit       Adders := 1     
 +---Registers : 
 	              384 Bit    Registers := 1     
 	              336 Bit    Registers := 2     
 	               64 Bit    Registers := 3     
-	               58 Bit    Registers := 1     
-	               56 Bit    Registers := 1     
 	               48 Bit    Registers := 1     
-	               26 Bit    Registers := 1     
+	               27 Bit    Registers := 3     
 	               21 Bit    Registers := 2     
-	               15 Bit    Registers := 1     
-	                8 Bit    Registers := 5     
-	                7 Bit    Registers := 2     
-	                6 Bit    Registers := 2     
-	                4 Bit    Registers := 1     
-	                3 Bit    Registers := 3     
-	                1 Bit    Registers := 32    
+	                8 Bit    Registers := 4     
+	                6 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 28    
 +---Muxes : 
 	   2 Input    384 Bit        Muxes := 2     
 	   2 Input    336 Bit        Muxes := 3     
-	   2 Input     64 Bit        Muxes := 4     
-	   2 Input     26 Bit        Muxes := 1     
-	   2 Input     21 Bit        Muxes := 3     
+	   2 Input     64 Bit        Muxes := 7     
+	   2 Input     27 Bit        Muxes := 3     
+	   2 Input     21 Bit        Muxes := 2     
 	   2 Input     16 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 3     
-	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 7     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 25    
+	   2 Input      1 Bit        Muxes := 29    
+	   4 Input      1 Bit        Muxes := 3     
 	   3 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -324,6 +343,19 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
+Module reset_init_block 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     27 Bit       Adders := 2     
++---Registers : 
+	               27 Bit    Registers := 2     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     27 Bit        Muxes := 2     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+	   4 Input      1 Bit        Muxes := 3     
 Module ethernet_header_receiver 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -358,60 +390,45 @@ Detailed RTL Component Info :
 Module ethernet_icmp_checksum_counter 
 Detailed RTL Component Info : 
 +---Adders : 
-	   5 Input     21 Bit       Adders := 1     
 	   2 Input     17 Bit       Adders := 1     
 +---Registers : 
 	               21 Bit    Registers := 1     
 	                1 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     21 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 2     
+	   2 Input     21 Bit        Muxes := 1     
 Module ethernet_reply_transmitter 
 Detailed RTL Component Info : 
 +---Registers : 
 	              384 Bit    Registers := 1     
 	               64 Bit    Registers := 1     
 	                8 Bit    Registers := 1     
-	                6 Bit    Registers := 1     
-	                1 Bit    Registers := 6     
+	                1 Bit    Registers := 9     
 +---Muxes : 
 	   2 Input    384 Bit        Muxes := 2     
-	   2 Input     64 Bit        Muxes := 2     
+	   2 Input     64 Bit        Muxes := 3     
 	   2 Input     16 Bit        Muxes := 1     
 	   2 Input      8 Bit        Muxes := 3     
-	   2 Input      6 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 12    
+	   2 Input      1 Bit        Muxes := 13    
 	   3 Input      1 Bit        Muxes := 1     
 Module ethernet_controller_axi_stream_bridge 
 Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      7 Bit       Adders := 2     
 +---Registers : 
 	               64 Bit    Registers := 2     
 	                8 Bit    Registers := 2     
-	                7 Bit    Registers := 2     
-	                1 Bit    Registers := 6     
+	                1 Bit    Registers := 7     
 +---Muxes : 
-	   2 Input     64 Bit        Muxes := 2     
-Module ethernet 
-Detailed RTL Component Info : 
-+---Registers : 
-	               58 Bit    Registers := 1     
-	               56 Bit    Registers := 1     
-	               15 Bit    Registers := 1     
-	                8 Bit    Registers := 1     
-	                4 Bit    Registers := 1     
-	                3 Bit    Registers := 2     
-	                1 Bit    Registers := 12    
+	   2 Input     64 Bit        Muxes := 4     
+	   2 Input      8 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 2     
 Module status_led_control 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     26 Bit       Adders := 1     
+	   2 Input     27 Bit       Adders := 1     
 +---Registers : 
-	               26 Bit    Registers := 1     
+	               27 Bit    Registers := 1     
 	                8 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input     26 Bit        Muxes := 1     
+	   2 Input     27 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -428,194 +445,14 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-WARNING: [Synth 8-3331] design ethernet_reply_transmitter has unconnected port icmp_valid
-WARNING: [Synth 8-3331] design ethernet_reply_transmitter has unconnected port udp_valid
-WARNING: [Synth 8-3331] design ethernet_reply_transmitter has unconnected port rx_axis_tvalid
-WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tkeep[7]
-WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tkeep[6]
-WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tkeep[5]
-WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tkeep[4]
-WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tkeep[3]
-WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tkeep[2]
-WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tkeep[1]
-WARNING: [Synth 8-3331] design ethernet_icmp_checksum_counter has unconnected port i_rx_axis_tkeep[0]
-INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/ethernet_controller_inst/ethernet_receiver_inst/o_icmp_crc_part_reg[20] )
+INFO: [Synth 8-3886] merging instance 'ethernet_inst/ethernet_controller_inst/ethernet_icmp_checksum_counter_inst/o_icmp_crc_r_reg[17]' (FDC) to 'ethernet_inst/ethernet_controller_inst/ethernet_icmp_checksum_counter_inst/o_icmp_crc_r_reg[20]'
+INFO: [Synth 8-3886] merging instance 'ethernet_inst/ethernet_controller_inst/ethernet_icmp_checksum_counter_inst/o_icmp_crc_r_reg[18]' (FDC) to 'ethernet_inst/ethernet_controller_inst/ethernet_icmp_checksum_counter_inst/o_icmp_crc_r_reg[20]'
+INFO: [Synth 8-3886] merging instance 'ethernet_inst/ethernet_controller_inst/ethernet_icmp_checksum_counter_inst/o_icmp_crc_r_reg[19]' (FDC) to 'ethernet_inst/ethernet_controller_inst/ethernet_icmp_checksum_counter_inst/o_icmp_crc_r_reg[20]'
+INFO: [Synth 8-3886] merging instance 'ethernet_inst/ethernet_controller_inst/ethernet_icmp_checksum_counter_inst/o_icmp_crc_r_reg[20]' (FDC) to 'ethernet_inst/ethernet_controller_inst/ethernet_icmp_checksum_counter_inst/o_icmp_crc_ready_reg'
 INFO: [Synth 8-3886] merging instance 'ethernet_inst/ethernet_controller_inst/ethernet_icmp_checksum_counter_inst/rx_axis_tlast_suspend_reg' (FDC) to 'ethernet_inst/ethernet_controller_inst/ethernet_reply_transmitter_inst/rx_axis_tlast_suspend_reg'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/o_rx_contr_tkeep_reg[0]' (FDC) to 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/o_rx_contr_tvalid_reg'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/o_rx_contr_tkeep_reg[1]' (FDC) to 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/o_rx_contr_tvalid_reg'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/o_rx_contr_tkeep_reg[2]' (FDC) to 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/o_rx_contr_tvalid_reg'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/o_rx_contr_tkeep_reg[3]' (FDC) to 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/o_rx_contr_tvalid_reg'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/o_rx_contr_tkeep_reg[4]' (FDC) to 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/o_rx_contr_tvalid_reg'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/o_rx_contr_tkeep_reg[5]' (FDC) to 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/o_rx_contr_tvalid_reg'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/o_rx_contr_tkeep_reg[6]' (FDC) to 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/o_rx_contr_tvalid_reg'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/o_rx_contr_tkeep_reg[7]' (FDC) to 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/o_rx_contr_tvalid_reg'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/sys_reset_r_reg )
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/txoutclksel_in_reg[0]' (FDPE) to 'ethernet_inst/ctl_tx_enable_reg'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/txoutclksel_in_reg[1] )
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/txoutclksel_in_reg[2]' (FDPE) to 'ethernet_inst/ctl_tx_enable_reg'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/qpllreset_in_r_reg )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/gtwiz_reset_rx_datapath_r_reg )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/gtwiz_reset_tx_datapath_r_reg )
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_ipg_value_reg[0]' (FDCE) to 'ethernet_inst/ctl_tx_ipg_value_reg[1]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_ipg_value_reg[1]' (FDCE) to 'ethernet_inst/ctl_tx_ipg_value_reg[2]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_ipg_value_reg[2]' (FDCE) to 'ethernet_inst/ctl_tx_ipg_value_reg[3]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_ipg_value_reg[3]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[0]'
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\ethernet_inst/ctl_tx_enable_reg )
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[0]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[1]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[1]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[2]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[2]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[3]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[3]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[4]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[4]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[5]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[5]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[6]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[6]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[7]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[7]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[8]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[8]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[9]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[9]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[10]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[10]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[11]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[11]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[12]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[12]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[13]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[13]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[14]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[14]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[15]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[15]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[16]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[16]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[17]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[17]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[18]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[18]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[19]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[19]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[20]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[20]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[21]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[21]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[22]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[22]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[23]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[23]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[24]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[24]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[25]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[25]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[26]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[26]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[27]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[27]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[28]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[28]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[29]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[29]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[30]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[30]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[31]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[31]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[32]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[32]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[33]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[33]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[34]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[34]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[35]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[35]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[36]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[36]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[37]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[37]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[38]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[38]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[39]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[39]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[40]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[40]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[41]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[41]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[42]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[42]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[43]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[43]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[44]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[44]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[45]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[45]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[46]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[46]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[47]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[47]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[48]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[48]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[49]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[49]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[50]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[50]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[51]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[51]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[52]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[52]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[53]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[53]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[54]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[54]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[55]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[55]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[56]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[56]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[57]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_tx_test_pattern_seed_a_reg[57]' (FDCE) to 'ethernet_inst/ctl_tx_test_pattern_reg'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/ctl_tx_test_pattern_reg )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[11] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[13] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[15] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[16] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[17] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[18] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[19] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[20] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[21] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[22] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[23] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[24] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[25] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[26] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[27] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[28] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[29] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[30] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[31] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[32] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[33] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[34] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[35] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[36] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[37] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[38] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[39] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[40] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[41] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[42] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[43] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[44] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[45] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[46] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[47] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[48] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[49] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[50] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[51] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[52] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[53] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[54] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_preamblein_reg[55] )
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/o_tx_axis_tkeep_reg[0]' (FDC) to 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/o_tx_axis_tkeep_reg[1]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/o_tx_axis_tkeep_reg[1]' (FDC) to 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/o_tx_axis_tkeep_reg[2]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/o_tx_axis_tkeep_reg[2]' (FDC) to 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/o_tx_axis_tkeep_reg[3]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/o_tx_axis_tkeep_reg[3]' (FDC) to 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/o_tx_axis_tkeep_reg[4]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/o_tx_axis_tkeep_reg[4]' (FDC) to 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/o_tx_axis_tkeep_reg[5]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/o_tx_axis_tkeep_reg[5]' (FDC) to 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/o_tx_axis_tkeep_reg[6]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/o_tx_axis_tkeep_reg[6]' (FDC) to 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/o_tx_axis_tkeep_reg[7]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/o_tx_axis_tkeep_reg[7]' (FDC) to 'ethernet_inst/ethernet_controller_axi_stream_bridge_inst/o_tx_axis_tvalid_reg'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/tx_reset_r_reg )
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_rx_min_packet_len_reg[0]' (FDCE) to 'ethernet_inst/ctl_rx_min_packet_len_reg[1]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_rx_min_packet_len_reg[1]' (FDCE) to 'ethernet_inst/ctl_rx_min_packet_len_reg[3]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_rx_min_packet_len_reg[2]' (FDPE) to 'ethernet_inst/ctl_rx_enable_reg'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_rx_min_packet_len_reg[3]' (FDCE) to 'ethernet_inst/ctl_rx_min_packet_len_reg[4]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_rx_min_packet_len_reg[4]' (FDCE) to 'ethernet_inst/ctl_rx_min_packet_len_reg[5]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_rx_min_packet_len_reg[5]' (FDCE) to 'ethernet_inst/ctl_rx_min_packet_len_reg[6]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_rx_min_packet_len_reg[6]' (FDCE) to 'ethernet_inst/ctl_rx_min_packet_len_reg[7]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_rx_min_packet_len_reg[7]' (FDCE) to 'ethernet_inst/ctl_rx_max_packet_len_reg[14]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_rx_max_packet_len_reg[0]' (FDCE) to 'ethernet_inst/ctl_rx_max_packet_len_reg[14]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_rx_max_packet_len_reg[1]' (FDCE) to 'ethernet_inst/ctl_rx_max_packet_len_reg[14]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_rx_max_packet_len_reg[2]' (FDCE) to 'ethernet_inst/ctl_rx_max_packet_len_reg[14]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_rx_max_packet_len_reg[3]' (FDCE) to 'ethernet_inst/ctl_rx_max_packet_len_reg[14]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_rx_max_packet_len_reg[4]' (FDCE) to 'ethernet_inst/ctl_rx_max_packet_len_reg[14]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_rx_max_packet_len_reg[5]' (FDCE) to 'ethernet_inst/ctl_rx_max_packet_len_reg[14]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_rx_max_packet_len_reg[6]' (FDPE) to 'ethernet_inst/ctl_rx_enable_reg'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_rx_max_packet_len_reg[7]' (FDPE) to 'ethernet_inst/ctl_rx_enable_reg'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_rx_max_packet_len_reg[8]' (FDPE) to 'ethernet_inst/ctl_rx_enable_reg'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_rx_max_packet_len_reg[9]' (FDCE) to 'ethernet_inst/ctl_rx_max_packet_len_reg[14]'
-INFO: [Synth 8-3886] merging instance 'ethernet_inst/ctl_rx_max_packet_len_reg[10]' (FDPE) to 'ethernet_inst/ctl_rx_enable_reg'
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/ctl_rx_max_packet_len_reg[14] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\ethernet_inst/ctl_rx_enable_reg )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/ctl_rx_test_pattern_reg )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/rx_reset_r_reg )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/gt_loopback_in_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/gt_loopback_in_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/gt_loopback_in_reg[2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ethernet_inst/o_ll_tx_disable_r_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ethernet_inst/\ethernet_controller_axi_stream_bridge_inst/o_tx_axis_tuser_reg )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 1765.363 ; gain = 278.180
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:12 ; elapsed = 00:01:12 . Memory (MB): peak = 1796.758 ; gain = 287.016
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -627,13 +464,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:06 ; elapsed = 00:01:11 . Memory (MB): peak = 2334.121 ; gain = 846.938
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:31 ; elapsed = 00:01:34 . Memory (MB): peak = 2353.930 ; gain = 844.188
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:07 ; elapsed = 00:01:13 . Memory (MB): peak = 2347.984 ; gain = 860.801
+Finished Timing Optimization : Time (s): cpu = 00:01:34 ; elapsed = 00:01:36 . Memory (MB): peak = 2366.527 ; gain = 856.785
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -644,15 +481,8 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-Found timing loop:
-     0: \ethernet_inst/i_97 /O (LUT2)
-      [D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller/ethernet_reply_transmitter.v:67]
-     1: \ethernet_inst/i_97 /I1 (LUT2)
-     2: \ethernet_inst/i_97 /O (LUT2)
-CRITICAL WARNING: [Synth 8-295] found timing loop. [D:/programming/RLCBC_BROD/project/rtl/top.v:1]
-Inferred a: "set_disable_timing -from I1 -to O \ethernet_inst/i_97 "
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:08 ; elapsed = 00:01:13 . Memory (MB): peak = 2351.590 ; gain = 864.406
+Finished Technology Mapping : Time (s): cpu = 00:01:38 ; elapsed = 00:01:40 . Memory (MB): peak = 2389.324 ; gain = 879.582
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -675,15 +505,14 @@ Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \ethernet_inst/axi4_stream_sfp_ethernet_controller_inst  has unconnected pin tx_axis_tuser_0
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:16 ; elapsed = 00:01:21 . Memory (MB): peak = 2362.930 ; gain = 875.746
+Finished IO Insertion : Time (s): cpu = 00:01:45 ; elapsed = 00:01:48 . Memory (MB): peak = 2394.863 ; gain = 885.121
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:16 ; elapsed = 00:01:21 . Memory (MB): peak = 2362.930 ; gain = 875.746
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:45 ; elapsed = 00:01:48 . Memory (MB): peak = 2394.863 ; gain = 885.121
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -702,25 +531,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:16 ; elapsed = 00:01:21 . Memory (MB): peak = 2362.930 ; gain = 875.746
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:46 ; elapsed = 00:01:49 . Memory (MB): peak = 2394.863 ; gain = 885.121
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:16 ; elapsed = 00:01:21 . Memory (MB): peak = 2362.930 ; gain = 875.746
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:46 ; elapsed = 00:01:49 . Memory (MB): peak = 2394.863 ; gain = 885.121
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:16 ; elapsed = 00:01:21 . Memory (MB): peak = 2362.930 ; gain = 875.746
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:47 ; elapsed = 00:01:49 . Memory (MB): peak = 2394.863 ; gain = 885.121
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:16 ; elapsed = 00:01:21 . Memory (MB): peak = 2362.930 ; gain = 875.746
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:47 ; elapsed = 00:01:49 . Memory (MB): peak = 2394.863 ; gain = 885.121
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -730,10 +559,12 @@ Report BlackBoxes:
 +------+------------------------------------+----------+
 |      |BlackBox name                       |Instances |
 +------+------------------------------------+----------+
-|1     |axi4_stream_sfp_ethernet_controller |         1|
-|2     |fifo_ethernet_payload               |         1|
-|3     |fifo_ethernet_payload_keep          |         1|
-|4     |ethernet_controller_to_axi_mem      |         1|
+|1     |pll_74_25_clk                       |         1|
+|2     |axi4_stream_sfp_ethernet_controller |         1|
+|3     |fifo_72_72                          |         2|
+|4     |fifo_ethernet_payload               |         1|
+|5     |fifo_ethernet_payload_keep          |         1|
+|6     |ila_ethernet                        |         1|
 +------+------------------------------------+----------+
 
 Report Cell Usage: 
@@ -741,58 +572,66 @@ Report Cell Usage:
 |      |Cell                                |Count |
 +------+------------------------------------+------+
 |1     |axi4_stream_sfp_ethernet_controller |     1|
-|2     |ethernet_controller_to_axi_mem      |     1|
-|3     |fifo_ethernet_payload               |     1|
-|4     |fifo_ethernet_payload_keep          |     1|
-|5     |BUFG                                |     1|
-|6     |CARRY8                              |     4|
-|7     |LUT1                                |     1|
-|8     |LUT2                                |    31|
-|9     |LUT3                                |     1|
-|10    |LUT4                                |     5|
-|11    |LUT6                                |     2|
-|12    |FDRE                                |    34|
-|13    |IBUF                                |    14|
-|14    |IBUFDS                              |     2|
-|15    |OBUF                                |     9|
+|2     |fifo_72_72                          |     1|
+|3     |fifo_72_72__2                       |     1|
+|4     |fifo_ethernet_payload               |     1|
+|5     |fifo_ethernet_payload_keep          |     1|
+|6     |ila_ethernet                        |     1|
+|7     |pll_74_25_clk                       |     1|
+|8     |CARRY8                              |    41|
+|9     |LUT1                                |     5|
+|10    |LUT2                                |   349|
+|11    |LUT3                                |   560|
+|12    |LUT4                                |   493|
+|13    |LUT5                                |   176|
+|14    |LUT6                                |    52|
+|15    |FDCE                                |  1416|
+|16    |FDRE                                |    64|
+|17    |IBUF                                |    14|
+|18    |IBUFGDS                             |     1|
+|19    |OBUF                                |     9|
 +------+------------------------------------+------+
 
 Report Instance Areas: 
 +------+-----------------------------------------------+--------------------------------------+------+
 |      |Instance                                       |Module                                |Cells |
 +------+-----------------------------------------------+--------------------------------------+------+
-|1     |top                                            |                                      |   565|
-|2     |  clock_generator_inst                         |clock_generator                       |     2|
-|3     |  ethernet_inst                                |ethernet                              |   462|
-|4     |    ethernet_controller_inst                   |ethernet_controller                   |    84|
-|5     |      ethernet_reply_transmitter_inst          |ethernet_reply_transmitter            |    84|
-|6     |    ethernet_controller_axi_stream_bridge_inst |ethernet_controller_axi_stream_bridge |   128|
-|7     |  status_led_control_inst                      |status_led_control                    |    77|
+|1     |top                                            |                                      |  3668|
+|2     |  clock_generator_inst                         |clock_generator                       |     4|
+|3     |  reset_init_block_inst                        |reset_init_block                      |   110|
+|4     |  ethernet_inst                                |ethernet                              |  3452|
+|5     |    ethernet_controller_axi_stream_bridge_inst |ethernet_controller_axi_stream_bridge |   532|
+|6     |    ethernet_controller_inst                   |ethernet_controller                   |  2671|
+|7     |      ethernet_head_reply_builder_inst         |ethernet_head_reply_builder           |   353|
+|8     |      ethernet_icmp_checksum_counter_inst      |ethernet_icmp_checksum_counter        |    26|
+|9     |      ethernet_receiver_inst                   |ethernet_receiver                     |  1212|
+|10    |        ethernet_header_receiver_inst          |ethernet_header_receiver              |  1144|
+|11    |      ethernet_reply_transmitter_inst          |ethernet_reply_transmitter            |  1080|
+|12    |  status_led_control_inst                      |status_led_control                    |    79|
 +------+-----------------------------------------------+--------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:16 ; elapsed = 00:01:21 . Memory (MB): peak = 2362.930 ; gain = 875.746
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:47 ; elapsed = 00:01:49 . Memory (MB): peak = 2394.863 ; gain = 885.121
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 2 critical warnings and 14 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:53 ; elapsed = 00:01:07 . Memory (MB): peak = 2362.930 ; gain = 740.699
-Synthesis Optimization Complete : Time (s): cpu = 00:01:16 ; elapsed = 00:01:21 . Memory (MB): peak = 2362.930 ; gain = 875.746
+Synthesis finished with 0 errors, 0 critical warnings and 105 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:24 ; elapsed = 00:01:36 . Memory (MB): peak = 2394.863 ; gain = 754.059
+Synthesis Optimization Complete : Time (s): cpu = 00:01:47 ; elapsed = 00:01:49 . Memory (MB): peak = 2394.863 ; gain = 885.121
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 2371.012 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 21 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.155 . Memory (MB): peak = 2402.961 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 56 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2398.426 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2430.797 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 17 instances were transformed.
-  BUFG => BUFGCE: 1 instance 
+  A total of 15 instances were transformed.
   IBUF => IBUF (IBUFCTRL, INBUF): 14 instances
-  IBUFDS => IBUFDS (DIFFINBUF, IBUFCTRL): 2 instances
+  IBUFGDS => IBUFDS (DIFFINBUF, IBUFCTRL): 1 instance 
 
 INFO: [Common 17-83] Releasing license: Synthesis
-243 Infos, 110 Warnings, 3 Critical Warnings and 0 Errors encountered.
+68 Infos, 112 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:28 ; elapsed = 00:01:35 . Memory (MB): peak = 2398.426 ; gain = 1894.184
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2398.426 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:59 ; elapsed = 00:02:03 . Memory (MB): peak = 2430.797 ; gain = 1907.652
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2430.797 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'D:/programming/RLCBC_BROD/project/Ethernet10G.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Mar  3 13:56:00 2024...
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 28 12:39:45 2024...

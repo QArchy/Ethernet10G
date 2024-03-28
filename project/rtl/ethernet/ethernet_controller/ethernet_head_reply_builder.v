@@ -1,4 +1,4 @@
-module ethernet_head_reply_builder #(parameter FPGA_MAC = 48'h211abcdef112, parameter FPGA_IP  = 32'hC0000186) (
+module ethernet_head_reply_builder #(parameter FPGA_MAC = 48'h211abcdef112, parameter FPGA_IP = 32'hC0000186, parameter UDP_port_dst = 16'h0000) (
 	input 					i_clk,
 	input 					i_reset,
 	
@@ -22,10 +22,26 @@ module ethernet_head_reply_builder #(parameter FPGA_MAC = 48'h211abcdef112, para
 			o_data_head_reply_ready				<= 0;
 		end else if (i_data_head_valid) begin
 			if (i_arp_valid) begin
-				o_data_head_reply 				<= {i_data_head[36*8-1:30*8] /*MAC_DST*/, FPGA_MAC /*MAC_SRC*/, i_data_head[30*8-1:28*8], 
-													i_data_head[28*8-1:26*8], i_data_head[26*8-1:24*8], i_data_head[24*8-1:23*8], 
-													i_data_head[23*8-1:22*8], 16'h0002 /*OPER*/, FPGA_MAC /*SHA*/, FPGA_IP /*SPA*/,
-													i_data_head[20*8-1:14*8] /*THA*/, i_data_head[14*8-1:10*8] /*TPA*/};
+				o_data_head_reply <=           {i_data_head[36*8-1:30*8] /*MAC_DST*/, FPGA_MAC /*MAC_SRC*/, i_data_head[30*8-1:28*8], 
+												i_data_head[28*8-1:26*8], i_data_head[26*8-1:24*8], i_data_head[24*8-1:23*8], 
+												i_data_head[23*8-1:22*8], 16'h0002 /*OPER*/, FPGA_MAC /*SHA*/, FPGA_IP /*SPA*/,
+												i_data_head[20*8-1:14*8] /*THA*/, i_data_head[14*8-1:10*8] /*TPA*/};
+										//     {{i_data_head[31*8-1:30*8], i_data_head[32*8-1:31*8], i_data_head[33*8-1:32*8], 
+										//       i_data_head[34*8-1:33*8], i_data_head[35*8-1:34*8], i_data_head[36*8-1:35*8]} /*MAC_DST*/, 
+										//      {FPGA_MAC[1*8-1:0], FPGA_MAC[2*8-1:1*8], FPGA_MAC[3*8-1:2*8], 
+                                        //       FPGA_MAC[4*8-1:3*8], FPGA_MAC[5*8-1:4*8], FPGA_MAC[6*8-1:5*8]} /*FPGA_MAC*/, 
+										//      i_data_head[29*8-1:28*8], i_data_head[30*8-1:29*8],
+                                        //      i_data_head[27*8-1:26*8], i_data_head[28*8-1:27*8],
+                                        //      i_data_head[25*8-1:24*8], i_data_head[26*8-1:25*8],
+                                        //      i_data_head[24*8-1:23*8], 
+                                        //      i_data_head[23*8-1:22*8], 
+                                        //      16'h0200 /*OPER*/, 
+                                        //      {FPGA_MAC[1*8-1:0], FPGA_MAC[2*8-1:1*8], FPGA_MAC[3*8-1:2*8], 
+                                        //       FPGA_MAC[4*8-1:3*8], FPGA_MAC[5*8-1:4*8], FPGA_MAC[6*8-1:5*8]} /*SHA*/, 
+                                        //      {FPGA_IP[1*8-1:0], FPGA_IP[2*8-1:1*8], FPGA_IP[3*8-1:2*8], FPGA_IP[4*8-1:3*8]} /*SPA*/,
+                                        //      {i_data_head[15*8-1:14*8], i_data_head[16*8-1:15*8], i_data_head[17*8-1:16*8], 
+                                        //       i_data_head[18*8-1:17*8], i_data_head[19*8-1:18*8], i_data_head[20*8-1:19*8]} /*THA*/,
+                                        //        {i_data_head[11*8-1:10*8], i_data_head[12*8-1:11*8], i_data_head[13*8-1:12*8], i_data_head[14*8-1:13*8]} /*TPA*/ }; 
 				o_data_head_reply_ready 		<= 1;
 			end else if (i_icmp_valid) begin
 				o_data_head_reply 				<= {i_data_head[36*8-1:30*8] /*MAC_DST*/, i_data_head[42*8-1:36*8] /*MAC_SRC*/, i_data_head[30*8-1:28*8], 
@@ -42,7 +58,7 @@ module ethernet_head_reply_builder #(parameter FPGA_MAC = 48'h211abcdef112, para
 													i_data_head[27*8-3:26*8], i_data_head[26*8-1:24*8], i_data_head[24*8-1:22*8], 
 													i_data_head[22*8-1:20*8+13], i_data_head[22*8-4:20*8], i_data_head[20*8-1:19*8], 
 													i_data_head[19*8-1:18*8], i_data_head[18*8-1:16*8], i_data_head[12*8-1:8*8] /*IP_SRC*/, 
-													i_data_head[16*8-1:12*8] /*IP_DST*/, i_data_head[6*8-1:4*8] /*SRC_PORT*/, i_data_head[8*8-1:6*8] /*DST_PORT*/, 
+													i_data_head[16*8-1:12*8] /*IP_DST*/, i_data_head[6*8-1:4*8] /*SRC_PORT*/, UDP_port_dst /*i_data_head[8*8-1:6*8]*/ /*DST_PORT*/, 
 													i_data_head[4*8-1:2*8], 16'hFFFF /*udp_header_checksum*/};
 				o_data_head_reply_ready 		<= 1;
 			end else;

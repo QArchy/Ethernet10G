@@ -52,6 +52,8 @@ read_verilog -library xil_defaultlib {
   D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller/ethernet_icmp_checksum_counter.v
   D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller/ethernet_receiver_lib/ethernet_header_receiver.v
   D:/programming/RLCBC_BROD/project/rtl/ethernet/ethernet_controller/ethernet_controller.v
+  D:/programming/RLCBC_BROD/project/rtl/tb_ethernet_fake_transmitter.v
+  D:/programming/RLCBC_BROD/project/rtl/reset_init_block.v
 }
 read_ip -quiet D:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/axi4_stream_sfp_ethernet_controller.xci
 set_property used_in_implementation false [get_files -all d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/axi4_stream_sfp_ethernet_controller/ip_0/synth/axi4_stream_sfp_ethernet_controller_gt_ooc.xdc]
@@ -69,8 +71,21 @@ read_ip -quiet D:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/f
 set_property used_in_implementation false [get_files -all d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/fifo_ethernet_payload_keep/fifo_ethernet_payload_keep.xdc]
 set_property used_in_implementation false [get_files -all d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/fifo_ethernet_payload_keep/fifo_ethernet_payload_keep_ooc.xdc]
 
-read_ip -quiet d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/ethernet_controller_to_axi_mem/ethernet_controller_to_axi_mem.xci
-set_property used_in_implementation false [get_files -all d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/ethernet_controller_to_axi_mem/ethernet_controller_to_axi_mem_ooc.xdc]
+read_ip -quiet D:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/ila_ethernet/ila_ethernet.xci
+set_property used_in_synthesis false [get_files -all d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/ila_ethernet/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/ila_ethernet/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/ila_ethernet/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/ila_ethernet/ila_ethernet_ooc.xdc]
+
+read_ip -quiet D:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/pll_74_25_clk/pll_74_25_clk.xci
+set_property used_in_implementation false [get_files -all d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/pll_74_25_clk/pll_74_25_clk_board.xdc]
+set_property used_in_implementation false [get_files -all d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/pll_74_25_clk/pll_74_25_clk.xdc]
+set_property used_in_implementation false [get_files -all d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/pll_74_25_clk/pll_74_25_clk_ooc.xdc]
+
+read_ip -quiet D:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/fifo_72_72/fifo_72_72.xci
+set_property used_in_implementation false [get_files -all d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/fifo_72_72/fifo_72_72.xdc]
+set_property used_in_implementation false [get_files -all d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/fifo_72_72/fifo_72_72_clocks.xdc]
+set_property used_in_implementation false [get_files -all d:/programming/RLCBC_BROD/project/Ethernet10G.srcs/sources_1/ip/fifo_72_72/fifo_72_72_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Mon Mar 11 09:13:17 2024
+# Process ID: 6068
+# Current directory: E:/KhudyakovFiles/MyProjects/RLCBC_BROD/project/Ethernet10G.runs/fifo_dual_clk_64_synth_1
+# Command line: vivado.exe -log fifo_dual_clk_64.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fifo_dual_clk_64.tcl
+# Log file: E:/KhudyakovFiles/MyProjects/RLCBC_BROD/project/Ethernet10G.runs/fifo_dual_clk_64_synth_1/fifo_dual_clk_64.vds
+# Journal file: E:/KhudyakovFiles/MyProjects/RLCBC_BROD/project/Ethernet10G.runs/fifo_dual_clk_64_synth_1\vivado.jou
+#-----------------------------------------------------------
+source fifo_dual_clk_64.tcl -notrace

@@ -25,7 +25,26 @@ module ethernet_reply_transmitter(
 	output 	reg			tx_axis_tvalid,	
 	output 	reg	[63:0]	tx_axis_tdata, 	
 	output 	reg			tx_axis_tlast, 	
-	output 	reg	[7:0]	tx_axis_tkeep	
+	output 	reg	[7:0]	tx_axis_tkeep,
+	
+	output [48*8-1:0]   ila_transmit_data_head,
+	output              ila_payload_transmit_start,     
+                                 
+    output [63:0]       ila_payload_fifo_din,      
+    output              ila_payload_fifo_empty,       
+    output              ila_payload_fifo_wr_en,       
+    output              ila_payload_fifo_rd_en,       
+    output [63:0]       ila_payload_fifo_dout,        
+    output              ila_payload_fifo_full,        
+    output [3:0]        ila_payload_fifo_data_count,  
+                                 
+    output [7:0]        ila_payload_keep_fifo_din,       
+    output              ila_payload_keep_fifo_wr_en,         
+    output              ila_payload_keep_fifo_rd_en,         
+    output [7:0]        ila_payload_keep_fifo_dout,      
+    output              ila_payload_keep_fifo_full,          
+    output              ila_payload_keep_fifo_empty,         
+    output [3:0]        ila_payload_keep_fifo_data_count
 );
 	initial begin
 		tx_axis_tvalid	<= 0;	
@@ -35,18 +54,13 @@ module ethernet_reply_transmitter(
 	end
 	
 	reg rx_axis_tlast_suspend;
-	reg [2:0] protocol;
-	
-	initial begin
-		rx_axis_tlast_suspend 	<= 0;
-		protocol 				<= 0;
-	end
+	initial rx_axis_tlast_suspend 	<= 0;
 	
 	/* Head transmit registers */
 	reg 	 		payload_transmit_start;
 	reg 	 		head_transmit_start;
 	reg [48*8-1:0] 	transmit_data_head;
-	reg [5:0] 		transmit_data_head_payload_keep;
+	assign ila_transmit_data_head = transmit_data_head;
 	reg 			data_head_sent;	// 1 clk signal
 	reg 			data_head_to_be_sent;
 	
@@ -54,17 +68,18 @@ module ethernet_reply_transmitter(
 		payload_transmit_start				    <= 0;
 		head_transmit_start				        <= 0;
 		transmit_data_head				        <= 0;
-		transmit_data_head_payload_keep         <= 0;
 		data_head_sent					        <= 0;	// 1 clk signal
 		data_head_to_be_sent					<= 0;
 	end
 	
-	wire [63:0]	payload_fifo_din			= rx_axis_tdata;
-	wire 		payload_fifo_wr_en			= rx_axis_tlast_suspend ? 0 : (data_head_valid && ~arp_valid) ? 1 : payload_fifo_wr_en;
-	wire 		payload_fifo_rd_en			= payload_fifo_empty ? 0 :  data_head_to_be_sent ? 1 : payload_fifo_rd_en;
+	wire [63:0]	payload_fifo_din		    = rx_axis_tdata;
+    wire        payload_fifo_empty;                         
+	reg 		payload_fifo_wr_en_r;                       
+	wire 		payload_fifo_wr_en	        = rx_axis_tlast_suspend ? 0 : ((data_head_valid && (arp_valid || icmp_valid || udp_valid)) ? 1 : payload_fifo_wr_en_r);
+	reg 		payload_fifo_rd_en_r;
+	wire 		payload_fifo_rd_en		    = payload_fifo_empty ? 0 : (data_head_to_be_sent ? 1 : payload_fifo_rd_en_r); //payload_fifo_rd_en;
 	wire [63:0]	payload_fifo_dout;
 	wire 		payload_fifo_full;
-	wire 		payload_fifo_empty;
 	wire [3:0]	payload_fifo_data_count;
 	
 	fifo_ethernet_payload fifo_ethernet_payload_inst(
@@ -99,6 +114,11 @@ module ethernet_reply_transmitter(
 		.data_count(payload_keep_fifo_data_count)	//	output [3:0]data_count;
 	);
 	
+	initial begin
+	   payload_fifo_wr_en_r <= 0;
+	   payload_fifo_rd_en_r <= 0;
+	end
+	
 	always @(posedge i_clk, posedge i_reset) begin
 		if (i_reset) begin
 			rx_axis_tlast_suspend <= 0;
@@ -108,14 +128,16 @@ module ethernet_reply_transmitter(
 	end
 	
 	always @(posedge i_clk, posedge i_reset) begin
-		if (i_reset) begin
-			protocol <= 0;
-		end else begin
-			if (data_head_valid)
-				protocol <=	arp_valid ? 2'b01 : icmp_valid ? 2'b10 : udp_valid ? 2'b11 : 0;
-		end
-	end
+        if (i_reset) begin
+            payload_fifo_wr_en_r <= 0;
+            payload_fifo_rd_en_r <= 0;
+        end else begin
+            payload_fifo_wr_en_r <= payload_fifo_wr_en;
+            payload_fifo_rd_en_r <= payload_fifo_rd_en;
+        end
+    end
 	
+	reg additional_payload_transmit_start;
 	always @(posedge i_clk, posedge i_reset) begin
 		if (i_reset) begin
 			tx_axis_tvalid	<= 0;
@@ -126,20 +148,22 @@ module ethernet_reply_transmitter(
 			payload_transmit_start			<= 0;
 			head_transmit_start				<= 0;
 			transmit_data_head				<= 0;
-			transmit_data_head_payload_keep	<= 0;
 			data_head_sent					<= 0;
 			data_head_to_be_sent			<= 0;
+			
+			additional_payload_transmit_start    <= 0;
 		end else begin
 		    
-			if (data_head_reply_ready) begin
+			if (data_head_reply_ready && (arp_valid || icmp_valid || udp_valid)) begin
 				head_transmit_start 			<= 1;
-				transmit_data_head 				<= {data_head_reply, data_head_frame_payload};
-				transmit_data_head_payload_keep <= data_head_frame_payload_keep;
+				transmit_data_head 				<= {data_head_reply, 
+				                                   {data_head_frame_payload[1*8-1:0],   data_head_frame_payload[2*8-1:1*8], data_head_frame_payload[3*8-1:2*8],
+				                                    data_head_frame_payload[4*8-1:3*8], data_head_frame_payload[5*8-1:4*8], data_head_frame_payload[6*8-1:5*8]}};
 			end else begin
 				if (head_transmit_start) begin
 					head_transmit_start 	<= (transmit_data_head[40*8-1:0] == 0) ? 0 : head_transmit_start;
-					payload_transmit_start 	<= ((transmit_data_head[40*8-1:0] == 0) && ~arp_valid) ? 1 : payload_transmit_start;
-					data_head_to_be_sent	<= ((transmit_data_head[32*8-1:0] == 0) && ~arp_valid) ? 1 : 0;
+					payload_transmit_start 	<= (transmit_data_head[40*8-1:0] == 0) ? 1 : payload_transmit_start;
+					data_head_to_be_sent	<= (transmit_data_head[32*8-1:0] == 0) ? 1 : 0;
 					data_head_sent			<= (transmit_data_head[40*8-1:0] == 0) ? 1 : 0;
 					
 					transmit_data_head <= transmit_data_head << 8*8;
@@ -151,27 +175,34 @@ module ethernet_reply_transmitter(
 					tx_axis_tvalid	<= 1;
 					
 					/* Realign data for AXI Stream */
-					tx_axis_tdata[8*8-1:7*8]	<= transmit_data_head[41*8-1:40*8]; 	
-					tx_axis_tdata[7*8-1:6*8]	<= transmit_data_head[42*8-1:41*8]; 	
-					tx_axis_tdata[6*8-1:5*8]	<= transmit_data_head[43*8-1:42*8]; 	
-					tx_axis_tdata[5*8-1:4*8]	<= transmit_data_head[44*8-1:43*8]; 	
-					tx_axis_tdata[4*8-1:3*8]	<= transmit_data_head[45*8-1:44*8]; 	
-					tx_axis_tdata[3*8-1:2*8]	<= transmit_data_head[46*8-1:45*8]; 	
-					tx_axis_tdata[2*8-1:1*8]	<= transmit_data_head[47*8-1:46*8]; 	
+					tx_axis_tdata[8*8-1:7*8]	<= transmit_data_head[41*8-1:40*8];
+					tx_axis_tdata[7*8-1:6*8]	<= transmit_data_head[42*8-1:41*8];
+					tx_axis_tdata[6*8-1:5*8]	<= transmit_data_head[43*8-1:42*8];
+					tx_axis_tdata[5*8-1:4*8]	<= transmit_data_head[44*8-1:43*8];
+					tx_axis_tdata[4*8-1:3*8]	<= transmit_data_head[45*8-1:44*8];
+					tx_axis_tdata[3*8-1:2*8]	<= transmit_data_head[46*8-1:45*8];
+					tx_axis_tdata[2*8-1:1*8]	<= transmit_data_head[47*8-1:46*8];
 					tx_axis_tdata[1*8-1:0]		<= transmit_data_head[48*8-1:47*8]; 
 					
-					tx_axis_tlast	<= ((transmit_data_head[40*8-1:0] == 0) && arp_valid) ? 1 : 0;
-					tx_axis_tkeep	<= ((transmit_data_head[40*8-1:0] == 0) && ~arp_valid) ? {2'b11, transmit_data_head_payload_keep} : 8'hFF;
+					tx_axis_tlast	<= 0;
+					tx_axis_tkeep	<= 8'hFF;
 					
 				end else if (payload_transmit_start) begin
-				    data_head_to_be_sent    <= 0;
-				    data_head_sent          <= 0;
-				    payload_transmit_start 	<= (payload_fifo_data_count == 4'd0) ? 0: payload_transmit_start;
+				    data_head_to_be_sent                <= 0;
+				    data_head_sent                      <= 0;
+				    payload_transmit_start 	            <= (payload_fifo_data_count == 4'd0) ? 0: payload_transmit_start;
+				    additional_payload_transmit_start   <= (payload_fifo_data_count == 4'd0 && arp_valid) ? 1: additional_payload_transmit_start;
 				    
-					tx_axis_tvalid			<= 1;
-					tx_axis_tdata			<= payload_fifo_dout;	
-					tx_axis_tlast			<= (payload_fifo_data_count == 4'd0) ? 1: 0;
-					tx_axis_tkeep			<= payload_keep_fifo_dout;
+					tx_axis_tvalid			            <= 1;
+					tx_axis_tdata			            <= ((payload_fifo_data_count == 4'd0) && arp_valid) ? 64'd0 : payload_fifo_dout;	
+					tx_axis_tlast			            <= ((payload_fifo_data_count == 4'd0) && ~arp_valid) ? 1 : 0;
+					tx_axis_tkeep			            <= ((payload_fifo_data_count == 4'd0) && arp_valid) ? 8'hFF : payload_keep_fifo_dout;
+				end else if (additional_payload_transmit_start) begin
+				    tx_axis_tvalid			            <= 1;
+				    tx_axis_tdata			            <= 64'd0;	
+                    tx_axis_tlast                       <= 1;
+                    tx_axis_tkeep                       <= 8'hFF;
+                    additional_payload_transmit_start   <= 0;
 				end else begin
 					tx_axis_tvalid	<= 0;
 					tx_axis_tdata	<= 0;
@@ -180,11 +211,28 @@ module ethernet_reply_transmitter(
 					
 					head_transmit_start						<= 0;
 					transmit_data_head				        <= 0;
-					transmit_data_head_payload_keep	        <= 0;
 					data_head_sent					        <= 0;
 				end
 			end
 		end
 	end
+	
+	assign ila_payload_transmit_start = payload_transmit_start;
+	
+	assign ila_payload_fifo_din            = payload_fifo_din;
+    assign ila_payload_fifo_empty          = payload_fifo_empty;
+    assign ila_payload_fifo_wr_en          = payload_fifo_wr_en;
+    assign ila_payload_fifo_rd_en          = payload_fifo_rd_en;
+    assign ila_payload_fifo_dout           = payload_fifo_dout;
+    assign ila_payload_fifo_full           = payload_fifo_full;
+    assign ila_payload_fifo_data_count     = payload_fifo_data_count;
+	
+	assign ila_payload_keep_fifo_din           = payload_keep_fifo_din;
+	assign ila_payload_keep_fifo_wr_en         = payload_keep_fifo_wr_en;
+	assign ila_payload_keep_fifo_rd_en         = payload_keep_fifo_rd_en;
+	assign ila_payload_keep_fifo_dout          = payload_keep_fifo_dout;
+	assign ila_payload_keep_fifo_full          = payload_keep_fifo_full;
+	assign ila_payload_keep_fifo_empty         = payload_keep_fifo_empty;
+	assign ila_payload_keep_fifo_data_count    = payload_keep_fifo_data_count;
 	
 endmodule

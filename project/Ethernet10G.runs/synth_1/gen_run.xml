@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xczu9eg-ffvb1156-3-e" LaunchTime="1709463240">
+<GenRun Id="synth_1" LaunchPart="xczu9eg-ffvb1156-3-e" LaunchTime="1711618632">
   <File Type="PA-TCL" Name="top.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="top_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="top_reports.tcl"/>
@@ -88,6 +88,20 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/rtl/tb_ethernet_fake_transmitter.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/rtl/reset_init_block.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="top"/>
@@ -116,8 +130,10 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="ila_ethernet"/>
   <BlockFileSet Type="BlockSrcs" Name="axi4_stream_sfp_ethernet_controller"/>
+  <BlockFileSet Type="BlockSrcs" Name="pll_74_25_clk"/>
   <BlockFileSet Type="BlockSrcs" Name="fifo_ethernet_payload"/>
   <BlockFileSet Type="BlockSrcs" Name="fifo_ethernet_payload_keep"/>
-  <BlockFileSet Type="BlockSrcs" Name="ethernet_controller_to_axi_mem"/>
+  <BlockFileSet Type="BlockSrcs" Name="fifo_72_72"/>
 </GenRun>

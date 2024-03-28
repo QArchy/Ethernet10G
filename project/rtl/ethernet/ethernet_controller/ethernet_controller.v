@@ -1,4 +1,4 @@
-module ethernet_controller #(parameter FPGA_MAC = 48'h211abcdef112, parameter FPGA_IP  = 32'hC0000186) (
+module ethernet_controller #(parameter FPGA_MAC = 48'h211abcdef112, parameter FPGA_IP = 32'hC0000186, parameter UDP_port_dst = 16'h0000) (
 	input 			i_clk,
 	input 			i_reset,
 	
@@ -10,7 +10,33 @@ module ethernet_controller #(parameter FPGA_MAC = 48'h211abcdef112, parameter FP
 	output 			tx_axis_tvalid,
 	output [63:0]	tx_axis_tdata, 
 	output 			tx_axis_tlast, 
-	output [7:0]	tx_axis_tkeep
+	output [7:0]	tx_axis_tkeep,
+	
+	output [42*8-1:0] ila_data_head,
+	output [48*8-1:0] ila_transmit_data_head,
+	
+	output              ila_payload_transmit_start,     
+                                     
+    output [63:0]       ila_payload_fifo_din,      
+    output              ila_payload_fifo_empty,       
+    output              ila_payload_fifo_wr_en,       
+    output              ila_payload_fifo_rd_en,       
+    output [63:0]       ila_payload_fifo_dout,        
+    output              ila_payload_fifo_full,        
+    output [3:0]        ila_payload_fifo_data_count,  
+                                 
+    output [7:0]        ila_payload_keep_fifo_din,       
+    output              ila_payload_keep_fifo_wr_en,         
+    output              ila_payload_keep_fifo_rd_en,         
+    output [7:0]        ila_payload_keep_fifo_dout,      
+    output              ila_payload_keep_fifo_full,          
+    output              ila_payload_keep_fifo_empty,         
+    output [3:0]        ila_payload_keep_fifo_data_count,
+    
+    output ila_icmp_valid,
+    output [20:0] ila_icmp_crc_part1,
+    output [15:0] ila_icmp_crc,
+    output ila_icmp_crc_ready
 );
 	wire 				arp_valid; 
 	wire 				icmp_valid;
@@ -50,8 +76,9 @@ module ethernet_controller #(parameter FPGA_MAC = 48'h211abcdef112, parameter FP
 	
 	wire [42*8-1:0] data_head_reply;
 	wire 			data_head_reply_ready;
+	assign ila_data_head = data_head_reply;
 	
-	ethernet_head_reply_builder ethernet_head_reply_builder_inst(
+	ethernet_head_reply_builder #(.FPGA_MAC(FPGA_MAC), .FPGA_IP(FPGA_IP), .UDP_port_dst(UDP_port_dst)) ethernet_head_reply_builder_inst(
 		.i_clk(i_clk),									//	input 					i_clk,
 		.i_reset(i_reset),								//	input 					i_reset,
 														//	
@@ -82,7 +109,7 @@ module ethernet_controller #(parameter FPGA_MAC = 48'h211abcdef112, parameter FP
 		.i_icmp_crc_part1_ready(icmp_crc_part1_ready),	//	input 				i_icmp_crc_part1_ready,
 														//	
 		.o_icmp_crc(icmp_crc),							//	output reg 	[20:0]	o_icmp_crc,
-		.o_icmp_crc_ready(icmp_crc_ready)					//	output reg 			o_icmp_crc_ready
+		.o_icmp_crc_ready(icmp_crc_ready)				//	output reg 			o_icmp_crc_ready
 	);
 	
 	ethernet_reply_transmitter ethernet_reply_transmitter_inst(
@@ -112,7 +139,31 @@ module ethernet_controller #(parameter FPGA_MAC = 48'h211abcdef112, parameter FP
 		.tx_axis_tvalid(tx_axis_tvalid),								//	output 	reg			tx_axis_tvalid,	
 		.tx_axis_tdata(tx_axis_tdata), 									//	output 	reg	[63:0]	tx_axis_tdata, 	
 		.tx_axis_tlast(tx_axis_tlast), 									//	output 	reg			tx_axis_tlast, 	
-		.tx_axis_tkeep(tx_axis_tkeep)									//	output 	reg	[7:0]	tx_axis_tkeep	
+		.tx_axis_tkeep(tx_axis_tkeep),									//	output 	reg	[7:0]	tx_axis_tkeep	
+		
+		.ila_transmit_data_head(ila_transmit_data_head),			    //	output [48*8-1:0]   ila_transmit_data_head
+		.ila_payload_transmit_start(ila_payload_transmit_start),        //  output              ila_payload_transmit_start,        
+                                                                        //                                                      
+        .ila_payload_fifo_din(ila_payload_fifo_din),                    //  output [63:0]       ila_payload_fifo_din,           
+        .ila_payload_fifo_empty(ila_payload_fifo_empty),                //  output              ila_payload_fifo_empty,         
+        .ila_payload_fifo_wr_en(ila_payload_fifo_wr_en),                //  output              ila_payload_fifo_wr_en,         
+        .ila_payload_fifo_rd_en(ila_payload_fifo_rd_en),                //  output              ila_payload_fifo_rd_en,         
+        .ila_payload_fifo_dout(ila_payload_fifo_dout),                  //  output [63:0]       ila_payload_fifo_dout,          
+        .ila_payload_fifo_full(ila_payload_fifo_full),                  //  output              ila_payload_fifo_full,          
+        .ila_payload_fifo_data_count(ila_payload_fifo_data_count),      //  output [3:0]        ila_payload_fifo_data_count,    
+                                                                        //                                                      
+        .ila_payload_keep_fifo_din(ila_payload_keep_fifo_din),              //  output [7:0]        ila_payload_keep_fifo_din,      
+        .ila_payload_keep_fifo_wr_en(ila_payload_keep_fifo_wr_en),          //  output              ila_payload_keep_fifo_wr_en,    
+        .ila_payload_keep_fifo_rd_en(ila_payload_keep_fifo_rd_en),          //  output              ila_payload_keep_fifo_rd_en,    
+        .ila_payload_keep_fifo_dout(ila_payload_keep_fifo_dout),            //  output [7:0]        ila_payload_keep_fifo_dout,     
+        .ila_payload_keep_fifo_full(ila_payload_keep_fifo_full),            //  output              ila_payload_keep_fifo_full,     
+        .ila_payload_keep_fifo_empty(ila_payload_keep_fifo_empty),          //  output              ila_payload_keep_fifo_empty,    
+        .ila_payload_keep_fifo_data_count(ila_payload_keep_fifo_data_count) //  output [3:0]        ila_payload_keep_fifo_data_count
 	);
+	
+	assign ila_icmp_valid      = icmp_valid;
+    assign ila_icmp_crc_part1  = icmp_crc_part1;
+    assign ila_icmp_crc        = icmp_crc;
+    assign ila_icmp_crc_ready  = icmp_crc_ready;
 	
 endmodule

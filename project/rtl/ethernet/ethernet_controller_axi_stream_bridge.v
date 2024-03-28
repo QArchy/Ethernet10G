@@ -1,6 +1,5 @@
 module ethernet_controller_axi_stream_bridge(
 	/* System */
-	input 				i_clk,
 	input 				i_reset,
 	/* Ethernet controller */
 	input 				i_ethernet_controller_clk,
@@ -19,11 +18,25 @@ module ethernet_controller_axi_stream_bridge(
 	output reg 	[63:0] 	o_tx_axis_tdata,
 	output reg 			o_tx_axis_tlast,       
 	output reg 	[7:0] 	o_tx_axis_tkeep,      
+	output reg 	 	    o_tx_axis_tuser,      
 	input 				i_rx_axis_tvalid,       
 	input 		[63:0] 	i_rx_axis_tdata,
 	input 				i_rx_axis_tlast,        
 	input 		[7:0] 	i_rx_axis_tkeep,      
-	input 		[55:0] 	i_rx_preambleout
+	input 		[55:0] 	i_rx_preambleout,
+	
+	output ila_rd_en_axis_tx_64,
+	output [71:0] ila_dout_axis_tx_64,
+	output ila_full_axis_tx_64,
+	output ila_empty_axis_tx_64,
+	output ila_wr_rst_busy_axis_tx_64,
+	output ila_rd_rst_busy_axis_tx_64,
+	output ila_rd_en_contr_rx_64,      
+    output [71:0] ila_dout_contr_rx_64,       
+    output ila_full_contr_rx_64,       
+    output ila_empty_contr_rx_64,      
+    output ila_wr_rst_busy_contr_rx_64,
+    output ila_rd_rst_busy_contr_rx_64
 );
 	initial begin
 		o_tx_axis_tvalid	<= 0;
@@ -36,87 +49,103 @@ module ethernet_controller_axi_stream_bridge(
 		o_rx_contr_tkeep	<= 0;
 	end
 	
-	reg 	[6:0] 	addra;
-	reg 	[6:0] 	addrb;
-	wire 		 	wea = i_tx_contr_tvalid;
-	wire 		 	web = i_rx_axis_tvalid;
-	wire 	[63:0] 	douta;
-	wire 	[63:0] 	doutb;
+	reg            fifo_tx_rd_en;          assign ila_rd_en_axis_tx_64         = fifo_tx_rd_en;      
+	wire   [71:0]  fifo_tx_dout;           assign ila_dout_axis_tx_64          = fifo_tx_dout;       
+	wire           fifo_tx_full;           assign ila_full_axis_tx_64          = fifo_tx_full;       
+	wire           fifo_tx_empty;          assign ila_empty_axis_tx_64         = fifo_tx_empty;      
+	wire           fifo_tx_wr_rst_busy;    assign ila_wr_rst_busy_axis_tx_64   = fifo_tx_wr_rst_busy;
+	wire           fifo_tx_rd_rst_busy;    assign ila_rd_rst_busy_axis_tx_64   = fifo_tx_rd_rst_busy;
+	fifo_72_72 fifo_72_72_tx( // controller to axis
+        .srst(i_reset),                             //  input           srst,
+        .wr_clk(i_ethernet_controller_clk),         //  input           wr_clk,
+        .rd_clk(i_axi_stream_clk),                  //  input           rd_clk,
+        .din({i_tx_contr_tdata, i_tx_contr_tkeep}), //  input   [71:0]  din,
+        .wr_en(i_tx_contr_tvalid),                  //  input           wr_en,
+        .rd_en(~fifo_tx_empty),                     //  input           rd_en,
+        .dout(fifo_tx_dout),                        //  output  [71:0]  dout,
+        .full(fifo_tx_full),                        //  output          full,
+        .empty(fifo_tx_empty),                      //  output          empty,
+        .wr_rst_busy(fifo_tx_wr_rst_busy),          //  output          wr_rst_busy,
+        .rd_rst_busy(fifo_tx_rd_rst_busy)           //  output          rd_rst_busy
+    );
+    
+    always @(posedge i_axi_stream_clk, posedge i_reset) begin
+        if (i_reset) begin
+            o_tx_axis_tvalid    <= 0;
+            o_tx_axis_tdata     <= 0;
+            o_tx_axis_tlast     <= 0;
+            o_tx_axis_tkeep     <= 0;
+            o_tx_axis_tuser     <= 0;
+        end else begin
+            fifo_tx_rd_en <= ~fifo_tx_empty;
+            
+            if (fifo_tx_rd_en && fifo_tx_empty) begin
+                o_tx_axis_tvalid  <= 1;                
+                o_tx_axis_tdata   <= fifo_tx_dout[71:8];  
+                o_tx_axis_tlast   <= 1;                
+                o_tx_axis_tkeep   <= fifo_tx_dout[7:0];   
+                o_tx_axis_tuser   <= 0;
+            end else if (fifo_tx_rd_en) begin
+                o_tx_axis_tvalid  <= 1;    
+                o_tx_axis_tdata   <= fifo_tx_dout[71:8];
+                o_tx_axis_tlast   <= 0;     
+                o_tx_axis_tkeep   <= fifo_tx_dout[7:0];
+                o_tx_axis_tuser   <= 0;                
+            end else begin
+                o_tx_axis_tvalid  <= 0;               
+                o_tx_axis_tdata   <= 0; 
+                o_tx_axis_tlast   <= 0;               
+                o_tx_axis_tkeep   <= 0;  
+                o_tx_axis_tuser   <= 0;       
+            end
+        end
+    end
+   
+    reg            fifo_rx_rd_en;          assign ila_rd_en_contr_rx_64         = fifo_rx_rd_en;      
+    wire   [71:0]  fifo_rx_dout;           assign ila_dout_contr_rx_64          = fifo_rx_dout;       
+    wire           fifo_rx_full;           assign ila_full_contr_rx_64          = fifo_rx_full;       
+    wire           fifo_rx_empty;          assign ila_empty_contr_rx_64         = fifo_rx_empty;      
+    wire           fifo_rx_wr_rst_busy;    assign ila_wr_rst_busy_contr_rx_64   = fifo_rx_wr_rst_busy;
+    wire           fifo_rx_rd_rst_busy;    assign ila_rd_rst_busy_contr_rx_64   = fifo_rx_rd_rst_busy;
+    fifo_72_72 fifo_72_72_rx( // controller to axis
+        .srst(i_reset),                             //  input           srst,
+        .wr_clk(i_axi_stream_clk),                  //  input           wr_clk,
+        .rd_clk(i_ethernet_controller_clk),         //  input           rd_clk,
+        .din({i_rx_axis_tdata, i_rx_axis_tkeep}),   //  input   [71:0]  din,
+        .wr_en(i_rx_axis_tvalid),                   //  input           wr_en,
+        .rd_en(~fifo_rx_empty),                     //  input           rd_en,
+        .dout(fifo_rx_dout),                        //  output  [71:0]  dout,
+        .full(fifo_rx_full),                        //  output          full,
+        .empty(fifo_rx_empty),                      //  output          empty,
+        .wr_rst_busy(fifo_rx_wr_rst_busy),          //  output          wr_rst_busy,
+        .rd_rst_busy(fifo_rx_rd_rst_busy)           //  output          rd_rst_busy
+    );
 	
-	initial begin
-		addra <= 0;
-		addrb <= 0;
-	end
-	
-	reg enable_read_A;
-	reg enable_read_B;
-	
-	initial begin
-		enable_read_A <= 0;
-		enable_read_B <= 0;
-	end
-	
-	ethernet_controller_to_axi_mem ethernet_controller_to_axi_mem_inst(
-		.clka(i_ethernet_controller_clk),	//	input 			clka,
-		.wea(wea),							//	input 			wea,
-		.addra(addra),						//	input 	[6:0] 	addra,
-		.dina(i_tx_contr_tdata),			//	input 	[63:0] 	dina,
-		.douta(douta),						//	output 	[63:0] 	douta,
-		.clkb(i_axi_stream_clk),			//	input 			clkb,
-		.web(web),							//	input 			web,
-		.addrb(addrb),						//	input 	[6:0] 	addrb,
-		.dinb(i_rx_axis_tdata),				//	input 	[63:0] 	dinb,
-		.doutb(doutb)						//	output 	[63:0] 	doutb
-	);
-	
-	always @(posedge i_ethernet_controller_clk, posedge i_reset) begin	// PORT A
+	always @(posedge i_ethernet_controller_clk, posedge i_reset) begin
 		if (i_reset) begin
 			o_rx_contr_tvalid	<= 0;
 			o_rx_contr_tdata	<= 0;
 			o_rx_contr_tlast	<= 0;
 			o_rx_contr_tkeep	<= 0;
-			addra				<= 0;
 		end else begin
-			enable_read_B <= i_tx_contr_tvalid;
-			
-			if (enable_read_A) begin
-				addra 				<= addra + 1;
-				o_rx_contr_tvalid	<= 1;
-				o_rx_contr_tdata	<= douta;
-				o_rx_contr_tlast	<= o_tx_axis_tvalid ? 0: 1;
-				o_rx_contr_tkeep	<= 8'hFF;
-			end else begin
-				o_rx_contr_tvalid	<= 0;
-				o_rx_contr_tdata	<= 0;
-				o_rx_contr_tlast	<= 0;
-				o_rx_contr_tkeep	<= 0;
-			end
-		end
-	end
-	
-	always @(posedge i_axi_stream_clk, posedge i_reset) begin	// PORT B
-		if (i_reset) begin
-			o_tx_axis_tvalid	<= 0;
-			o_tx_axis_tdata		<= 0;
-			o_tx_axis_tlast		<= 0;
-			o_tx_axis_tkeep		<= 0;
-			addrb				<= 0;
-			enable_read_A		<= 0;
-		end else begin
-			enable_read_A <= o_tx_axis_tvalid;
-			
-			if (enable_read_B && i_tx_axis_tready) begin
-				addrb 				<= addrb + 1;
-				o_tx_axis_tvalid	<= 1;
-				o_tx_axis_tdata		<= doutb;
-				o_tx_axis_tlast		<= i_tx_contr_tvalid ? 0: 1;
-				o_tx_axis_tkeep		<= 8'hFF;
-			end else begin
-				o_tx_axis_tvalid	<= 0;
-				o_tx_axis_tdata		<= 0;
-				o_tx_axis_tlast		<= 0;
-				o_tx_axis_tkeep		<= 0;
-			end
+		    fifo_rx_rd_en <= ~fifo_rx_empty;
+            
+            if (fifo_rx_rd_en && fifo_rx_empty) begin
+                o_rx_contr_tvalid  <= 1;                
+                o_rx_contr_tdata   <= fifo_rx_dout[71:8];  
+                o_rx_contr_tlast   <= 1;                
+                o_rx_contr_tkeep   <= fifo_rx_dout[7:0]; 
+            end else if (fifo_rx_rd_en) begin
+                o_rx_contr_tvalid  <= 1;    
+                o_rx_contr_tdata   <= fifo_rx_dout[71:8];
+                o_rx_contr_tlast   <= 0;     
+                o_rx_contr_tkeep   <= fifo_rx_dout[7:0];            
+            end else begin
+                o_rx_contr_tvalid  <= 0;               
+                o_rx_contr_tdata   <= 0; 
+                o_rx_contr_tlast   <= 0;               
+                o_rx_contr_tkeep   <= 0;       
+            end
 		end
 	end
 	
